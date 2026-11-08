@@ -1,0 +1,367 @@
+{
+  "created_at": "2026-10-26T11:36:57.767Z",
+  "figures": [
+    {
+      "path": "evidence_layout/screenshots/01_overview.png",
+      "title": "Không gian làm việc và tổng quan dữ liệu",
+      "description": "Màn hình đầu tiên hiển thị số nguồn, hồ sơ, luận điểm và vấn đề cần xem lại trong kho đang mở. Dữ liệu ban đầu thuộc bộ thực hành của bản mẫu. Các số đếm giúp người dùng chọn việc cần xử lý; chúng không phải số liệu hoạt động của Học viện. Nút tạo hồ sơ và đường dẫn tra cứu đưa người dùng vào hai công việc chính.",
+      "group": "overview",
+      "pixel_width": 1280,
+      "pixel_height": 1100,
+      "capture": "overview_viewport"
+    },
+    {
+      "path": "evidence_layout/screenshots/02_overview_counts.png",
+      "title": "Các chỉ số theo trạng thái hiện tại của kho",
+      "description": "Vùng thống kê được chụp cận cảnh để đọc rõ nhãn và số liệu. Chỉ số vấn đề cần xem lại được tính từ phép kiểm tra căn cứ kỹ thuật. Một luận điểm không có cảnh báo kỹ thuật vẫn cần được kiểm tra về nội dung và ý nghĩa. Kết quả đếm được lấy lại từ máy chủ khi mở tổng quan; đây không phải bảng theo dõi hiệu quả hay thành tích sử dụng.",
+      "group": "overview",
+      "pixel_width": 952,
+      "pixel_height": 136,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/03_search_accents.png",
+      "title": "Tra cứu từ khóa có dấu và đọc kết quả",
+      "description": "Truy vấn được gửi tới kho học liệu cục bộ và trả về các đoạn có mức khớp từ khóa phù hợp. Mỗi kết quả kèm trạng thái đối chiếu, tính chất văn bản, vị trí và phiên bản. Người dùng phải mở đoạn để đọc trước khi sử dụng. Thứ tự kết quả chỉ là thứ tự truy hồi của thuật toán; hệ thống không xác nhận đoạn đứng đầu đủ để kết luận về câu hỏi nghiên cứu.",
+      "group": "search",
+      "pixel_width": 960,
+      "pixel_height": 480,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/04_search_no_accents.png",
+      "title": "Tra cứu cùng nội dung bằng chữ không dấu",
+      "description": "Ảnh ghi nhận truy vấn không dấu trên cùng kho dữ liệu. Phép kiểm tra trình duyệt đối chiếu mã kết quả đầu tiên với truy vấn có dấu ở bước trước. Khả năng chuẩn hóa chữ giúp giảm trở ngại nhập liệu nhưng không thực hiện suy luận ngữ nghĩa. Người dùng vẫn cần chọn thuật ngữ đủ gần nội dung trong nguồn và kiểm tra các đoạn được trả về.",
+      "group": "search",
+      "pixel_width": 960,
+      "pixel_height": 480,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/05_search_filter.png",
+      "title": "Giới hạn tìm kiếm trong một nguồn",
+      "description": "Bộ chọn phạm vi thu hẹp truy vấn vào một tài liệu cụ thể. Việc đổi bộ lọc gửi lại truy vấn để kết quả và nhãn phạm vi thống nhất. Hình chụp cho thấy người dùng có thể đọc các đoạn thuộc nguồn đã chọn thay vì duyệt toàn kho. Phạm vi này chỉ bao gồm những đoạn đã nhập; nó không thay thế việc tìm kiếm toàn văn tài liệu gốc.",
+      "group": "search",
+      "pixel_width": 960,
+      "pixel_height": 480,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/06_search_empty.png",
+      "title": "Thông báo khi kho không có đoạn phù hợp",
+      "description": "Ứng dụng trả trạng thái không tìm thấy đoạn phù hợp đối với truy vấn ngoài phạm vi học liệu. Thông báo hướng dẫn điều chỉnh từ khóa hoặc phạm vi, đồng thời không suy diễn rằng nội dung đó không tồn tại trong tài liệu gốc. Đây là tình huống kiểm tra khả năng trả rỗng, không phải chức năng tư vấn về lĩnh vực được nêu trong câu truy vấn.",
+      "group": "search",
+      "pixel_width": 960,
+      "pixel_height": 289,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/07_source_law.png",
+      "title": "Thông tin xuất xứ và các đoạn học liệu đang lưu",
+      "description": "Nguồn pháp luật có tên tài liệu, cơ quan ban hành, số hiệu, ngày, đường dẫn và số đoạn đã lưu. Nhãn bản tóm lược được hiển thị để phân biệt nội dung diễn đạt lại với nguyên văn. Phần ghi nhận đối chiếu thuộc phiên bản hiện tại của kho thực hành. Các thông tin này giúp tìm lại tài liệu, không tạo ra xác nhận chính thức của cơ quan ban hành.",
+      "group": "sources",
+      "pixel_width": 655,
+      "pixel_height": 533,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/08_source_excerpt.png",
+      "title": "Cửa sổ đọc đoạn và cảnh báo về bản tóm lược",
+      "description": "Vùng đọc nguồn được chụp riêng, gồm nội dung học liệu, xuất xứ và cảnh báo về bản tóm lược. Dòng lưu ý yêu cầu mở tài liệu gốc khi cần trích nguyên văn quy định. Người dùng có thể rút ngắn đoạn liên tục nhưng không được sửa câu chữ trong ô trích. Ghi chú sử dụng được lưu riêng để tránh lẫn lời của người viết với nội dung nguồn.",
+      "group": "sources",
+      "pixel_width": 561,
+      "pixel_height": 443,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/09_source_create_metadata.png",
+      "title": "Biểu mẫu ghi nhận xuất xứ nguồn mới",
+      "description": "Nguồn trong kịch bản là học liệu tự biên soạn phục vụ trình diễn nên trường cơ quan hoặc tác giả nêu rõ tính chất này. Người nhập chọn loại nguồn, tính chất nội dung và mã học liệu trước khi lưu. Việc chọn nguyên văn ở đây chỉ mô tả đoạn tự biên soạn được nhập đúng chữ; không gắn nguồn thực hành với thẩm quyền của một cơ quan nhà nước.",
+      "group": "sources",
+      "pixel_width": 1032,
+      "pixel_height": 512,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/10_source_create_segment.png",
+      "title": "Cấu trúc nhập từng đoạn học liệu",
+      "description": "Mỗi đoạn có tiêu đề, vị trí và nội dung riêng. Cách nhập theo đoạn cho phép gắn căn cứ với vị trí cụ thể thay vì chỉ ghi tên tài liệu chung. Bộ kiểm tra phía máy chủ kiểm soát giới hạn ký tự và sự trùng vị trí trong một phiên bản. Bản mẫu chưa thực hiện nhận dạng ký tự hoặc trích xuất tự động từ tệp PDF; người dùng chịu trách nhiệm về nội dung đã nhập.",
+      "group": "sources",
+      "pixel_width": 1032,
+      "pixel_height": 371,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/11_source_draft.png",
+      "title": "Nguồn mới được lưu ở trạng thái chưa đối chiếu",
+      "description": "Sau khi lưu, phần chi tiết nguồn hiển thị trạng thái chưa đối chiếu. Phần mô tả giải thích rằng nội dung có thể được đọc khi bỏ bộ lọc nhưng chưa được gắn thành căn cứ mới. Quy tắc này ngăn việc bỏ qua bước kiểm tra nguồn trong quy trình sử dụng thông thường. Nó không chứng minh người dùng đã đọc đúng tài liệu sau khi tự ghi nhận đối chiếu.",
+      "group": "sources",
+      "pixel_width": 655,
+      "pixel_height": 381,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/12_source_draft_block.png",
+      "title": "Nút gắn căn cứ bị khóa khi nguồn chưa đối chiếu",
+      "description": "Cửa sổ vẫn cho đọc đoạn thực hành, đồng thời hiển thị lý do chưa thể gắn căn cứ. Nút thao tác bị vô hiệu hóa trong giao diện; bộ kiểm thử HTTP và lớp lưu trữ kiểm tra thêm việc từ chối ở phía máy chủ. Vì vậy, trạng thái này không chỉ dựa vào màu nhãn. Người dùng phải quay lại quản lý nguồn và hoàn thành bước đối chiếu cho phiên bản hiện hành.",
+      "group": "sources",
+      "pixel_width": 423,
+      "pixel_height": 145,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/13_source_review.png",
+      "title": "Biểu mẫu ghi nội dung đã đối chiếu",
+      "description": "Hộp thoại yêu cầu ghi phạm vi đã kiểm tra và xác nhận đã đọc nguồn phù hợp. Thông báo trong biểu mẫu nêu rõ đây là việc tự đối chiếu của người dùng, không thay thế thẩm định độc lập. Trong kịch bản này, đối tượng kiểm tra là đoạn thực hành do kịch bản nhập vào. Bằng chứng thao tác chỉ chứng minh ứng dụng lưu đúng quy trình, không đánh giá chất lượng thẩm định của một đơn vị.",
+      "group": "sources",
+      "pixel_width": 590,
+      "pixel_height": 572,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/14_source_reviewed.png",
+      "title": "Ghi nhận đối chiếu được hiển thị theo phiên bản",
+      "description": "Nguồn chuyển sang trạng thái đã đối chiếu và hiển thị nội dung ghi nhận. Đoạn học liệu lúc này đủ điều kiện kỹ thuật để gắn vào luận điểm. Khi tạo phiên bản mới, trạng thái sẽ trở về chưa đối chiếu; phần ghi nhận ở bước này không tự chuyển thành xác nhận cho nội dung đã sửa. Quy tắc tách phiên bản được kiểm tra tiếp ở chuỗi thao tác quản lý thay đổi.",
+      "group": "sources",
+      "pixel_width": 655,
+      "pixel_height": 381,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/15_project_create.png",
+      "title": "Xác định mục đích và phạm vi hồ sơ",
+      "description": "Hồ sơ được đặt tên theo nhiệm vụ thực hành và ghi rõ phạm vi kiểm tra. Phần mô tả ngăn việc hiểu dữ liệu trình diễn thành kết quả sử dụng thực tế. Một hồ sơ có thể chứa nhiều luận điểm nhưng cần giữ mục đích thống nhất để người đọc biết từng căn cứ đang phục vụ nội dung nào. Tên và mô tả có thể sửa sau khi tạo mà không làm thay đổi đoạn nguồn đã lưu.",
+      "group": "projects",
+      "pixel_width": 590,
+      "pixel_height": 516,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/16_project_empty.png",
+      "title": "Cảnh báo đối với hồ sơ chưa có luận điểm",
+      "description": "Ngay sau khi tạo, hồ sơ chưa có nội dung lập luận và xuất hiện cảnh báo EMPTY_PROJECT. Thông báo đi cùng nút thêm luận điểm để chỉ ra bước tiếp theo. Cảnh báo này cũng được giữ trong các định dạng xuất; bộ kiểm thử tự động có phép thử riêng cho trường hợp hồ sơ trống. Giao diện không dùng trạng thái không có lỗi trích dẫn để đánh đồng một hồ sơ trống với hồ sơ đã hoàn thiện.",
+      "group": "projects",
+      "pixel_width": 657,
+      "pixel_height": 276,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/17_claim_form.png",
+      "title": "Nhập luận điểm và xác định loại nội dung",
+      "description": "Biểu mẫu yêu cầu chọn nhận định thực tế, phân tích hoặc đề xuất. Dòng hướng dẫn giải thích rằng việc đổi nhãn không làm một nhận định thực tế trở thành đúng. Trong kịch bản, nhận định thực tế chỉ mô tả nội dung của học liệu thực hành, không suy rộng thành quy định chung. Phân loại hỗ trợ đặt mức cảnh báo nhưng vẫn cần sự tự giác và đánh giá nội dung của người viết.",
+      "group": "projects",
+      "pixel_width": 590,
+      "pixel_height": 658,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/18_claim_missing.png",
+      "title": "Phân biệt lỗi, cảnh báo và đề xuất chưa gắn căn cứ",
+      "description": "Sau khi thêm ba loại luận điểm, phần kiểm tra ghi nhận nhận định thực tế thiếu căn cứ là lỗi, phân tích thiếu căn cứ là nội dung cần xem lại. Đề xuất được giữ như ý kiến của người viết và có thể bổ sung căn cứ giải thích lựa chọn. Cơ chế này thể hiện chính sách kiểm tra của bản mẫu, không tự nhận diện nội dung bị phân loại sai.",
+      "group": "projects",
+      "pixel_width": 649,
+      "pixel_height": 333,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/19_claim_proposal.png",
+      "title": "Thẻ đề xuất và giới hạn của việc phân loại",
+      "description": "Thẻ đề xuất nêu rõ đây là ý kiến của người viết và cho phép bổ sung căn cứ khi cần. Nút sửa, xóa và tìm căn cứ nằm ngay trong phạm vi thẻ để giảm nhầm đích thao tác. Số căn cứ hiển thị là số liên kết đã lưu; số lượng nhiều không đồng nghĩa lập luận có chất lượng cao. Người dùng phải giải thích vai trò của từng nguồn khi hoàn thiện bài viết.",
+      "group": "projects",
+      "pixel_width": 649,
+      "pixel_height": 275,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/20_quote_rejected.png",
+      "title": "Thông báo từ chối đoạn trích không khớp",
+      "description": "Kịch bản cố ý thay toàn bộ nội dung ô trích bằng một câu không có trong đoạn học liệu. Máy chủ từ chối yêu cầu và giao diện giữ biểu mẫu để người dùng sửa. Hồ sơ được đọc lại để xác nhận chưa có căn cứ mới được tạo. Cơ chế chỉ kiểm tra sự khớp của đoạn trích với nội dung đã lưu; nó không phát hiện được một đoạn khớp chữ nhưng được dùng sai ý nghĩa.",
+      "group": "projects",
+      "pixel_width": 423,
+      "pixel_height": 601,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/21_quote_ready.png",
+      "title": "Chọn đúng luận điểm và ghi riêng lý do sử dụng",
+      "description": "Vùng nhập được chụp sau khi sửa ô trích về nguyên văn đoạn đang lưu và trước khi gửi lại. Người dùng kiểm tra hồ sơ, luận điểm đích và ghi chú; đây chưa phải thông báo lưu thành công. Ghi chú nêu phần nội dung mà nguồn hỗ trợ, đồng thời giới hạn phạm vi kết luận. Các trường lựa chọn đích được tải từ dữ liệu hồ sơ thực; kịch bản chờ đúng luận điểm xuất hiện trước khi gắn. Đây là bước cần thiết để tránh gắn nguồn đúng vào một luận điểm khác.",
+      "group": "projects",
+      "pixel_width": 423,
+      "pixel_height": 597,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/22_evidence_saved.png",
+      "title": "Căn cứ được hiển thị trong thẻ luận điểm",
+      "description": "Thẻ luận điểm giữ đoạn trích, tên học liệu, vị trí Mục 1, phiên bản và ghi chú sử dụng. Thông tin được đọc lại từ máy chủ sau khi lưu, không chỉ thêm tạm vào giao diện. Nút bỏ căn cứ xóa liên kết khỏi luận điểm nhưng không xóa nguồn học liệu. Bản chụp cho phép đối chiếu nội dung trước và sau khi nguồn được sửa trong các bước tiếp theo.",
+      "group": "projects",
+      "pixel_width": 649,
+      "pixel_height": 482,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/23_checks_clear.png",
+      "title": "Hồ sơ không còn cảnh báo kỹ thuật tại phiên bản đầu",
+      "description": "Sau khi bổ sung căn cứ cho nhận định thực tế và phân tích, hệ thống không còn ghi nhận lỗi trong phạm vi kiểm tra kỹ thuật. Phần mô tả trên màn hình vẫn yêu cầu người viết tiếp tục đối chiếu ý nghĩa với luận điểm. Kết quả này không phải điểm chất lượng, xác nhận pháp lý hoặc chứng nhận hoàn thành nghiên cứu. Nó chỉ phản ánh các điều kiện kỹ thuật đã được kiểm tra tại thời điểm chụp.",
+      "group": "projects",
+      "pixel_width": 649,
+      "pixel_height": 296,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/24_revision_form.png",
+      "title": "Ghi lý do tạo phiên bản và nội dung sửa",
+      "description": "Kịch bản bổ sung cụm yêu cầu ghi lý do xử lý vào đoạn thực hành. Hộp thoại nêu rõ phiên bản mới trở về trạng thái chưa đối chiếu và các căn cứ cũ sẽ cần xem lại. Người dùng nhập lý do thay đổi trước khi lưu. Việc ghi lý do giúp giải thích quá trình sửa học liệu, nhưng bản mẫu không đánh giá lý do đó có đầy đủ hoặc có được người khác phê duyệt hay chưa.",
+      "group": "versions",
+      "pixel_width": 1032,
+      "pixel_height": 672,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/25_version_history.png",
+      "title": "Lịch sử hai phiên bản của học liệu",
+      "description": "Khung lịch sử ghi nhận phiên bản trước và phiên bản mới, lý do thay đổi và giá trị kiểm tra nội dung. Phần căn cứ đang gắn không tự chuyển sang đoạn mới. Lịch sử này tạo điều kiện đối chiếu thao tác trong kho cục bộ; người có toàn quyền sửa cơ sở dữ liệu vẫn có thể can thiệp vào lịch sử, vì vậy cần kết hợp bản sao và trách nhiệm quản lý khi sử dụng thực tế.",
+      "group": "versions",
+      "pixel_width": 649,
+      "pixel_height": 333,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/26_stale_warning.png",
+      "title": "Cảnh báo khi nguồn đã chuyển sang phiên bản mới",
+      "description": "Sau khi nguồn đổi, phần kiểm tra hiển thị cảnh báo cho các luận điểm còn dùng căn cứ từ phiên bản trước. Kịch bản đọc lại dữ liệu để xác nhận đoạn trích cũ vẫn được giữ nguyên. Người viết có thể cần sửa luận điểm, gắn đoạn mới hoặc giữ căn cứ lịch sử với giải thích phù hợp. Ứng dụng không tự quyết định thay đổi nội dung lập luận.",
+      "group": "versions",
+      "pixel_width": 649,
+      "pixel_height": 502,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/27_stale_after_review.png",
+      "title": "Cảnh báo phiên bản cũ vẫn còn sau khi đối chiếu bản mới",
+      "description": "Đối chiếu bản mới chỉ xác lập trạng thái cho nguồn hiện hành. Các căn cứ đã gắn ở phiên bản trước vẫn giữ thông tin riêng và tiếp tục có cảnh báo. Hình này phân biệt hai công việc: kiểm tra học liệu mới và xem lại cách sử dụng học liệu trong từng luận điểm. Người dùng phải thực hiện bước thứ hai nếu muốn hồ sơ phản ánh căn cứ mới.",
+      "group": "versions",
+      "pixel_width": 649,
+      "pixel_height": 373,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/28_attach_version2.png",
+      "title": "Chọn căn cứ từ phiên bản thứ hai",
+      "description": "Vùng đọc nguồn cho biết phiên bản thứ hai, nội dung đã sửa và xuất xứ trước khi tạo liên kết mới. Người dùng cần đọc lại đoạn và xác định lý do thay căn cứ. Việc gắn bản mới được thực hiện trước khi bỏ bản cũ để còn cơ sở so sánh trong hồ sơ. Hai liên kết cùng tồn tại tạm thời là trạng thái trung gian của thao tác xử lý, không phải lỗi nhân đôi tự động.",
+      "group": "versions",
+      "pixel_width": 561,
+      "pixel_height": 325,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/29_remove_old_evidence.png",
+      "title": "Xác nhận bỏ liên kết căn cứ cũ",
+      "description": "Hộp thoại nêu rõ phạm vi xóa chỉ là liên kết căn cứ trong luận điểm. Nguồn và các phiên bản vẫn được giữ trong kho. Kịch bản chỉ xác nhận sau khi đã gắn căn cứ mới và đọc lại nội dung. Đây là thao tác có ý nghĩa học thuật do người dùng quyết định; thông báo của phần mềm không thay thế việc giải thích tại sao căn cứ cũ không còn phù hợp.",
+      "group": "versions",
+      "pixel_width": 590,
+      "pixel_height": 292,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/30_version_resolved.png",
+      "title": "Hồ sơ sau khi xử lý các liên kết phiên bản cũ",
+      "description": "Phần kiểm tra không còn cảnh báo sau khi từng luận điểm được gắn căn cứ mới và bỏ liên kết cũ. Chuỗi thao tác đã kiểm tra cả việc giữ nguyên bản cũ, phát sinh cảnh báo và xử lý bằng quyết định của người viết. Kết quả đạt chỉ áp dụng cho hồ sơ trình diễn này; không cho phép suy rộng tỷ lệ lỗi giảm hoặc thời gian tiết kiệm trong một lớp học chưa được đo.",
+      "group": "versions",
+      "pixel_width": 649,
+      "pixel_height": 296,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/31_export_html.png",
+      "title": "Bản HTML do sản phẩm xuất để đọc hoặc in",
+      "description": "Hình được chụp từ tệp HTML tải trực tiếp bằng nút xuất của ứng dụng. Bản xuất giữ nội dung luận điểm, đoạn trích, thông tin nguồn và trạng thái kiểm tra tại thời điểm tạo tệp. Người dùng có thể mở bằng trình duyệt để đọc hoặc in. Tệp này không tự cập nhật khi kho học liệu thay đổi; khi cần trạng thái mới phải kiểm tra hồ sơ và xuất lại.",
+      "group": "export",
+      "pixel_width": 908,
+      "pixel_height": 514,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/32_export_warning.png",
+      "title": "Xác nhận xuất kèm các cảnh báo còn tồn tại",
+      "description": "Hồ sơ thực hành ban đầu còn vấn đề cần xem lại nên ứng dụng yêu cầu xác nhận trước khi tải tệp. Nội dung hộp thoại giải thích rằng cảnh báo được giữ trong bản xuất để tiếp tục kiểm tra. Chức năng này hỗ trợ bàn giao hoặc sửa bản nháp, không hợp thức hóa hồ sơ chưa hoàn thiện. Việc xuất thành công không làm thay đổi trạng thái kiểm tra của hồ sơ đang lưu.",
+      "group": "export",
+      "pixel_width": 590,
+      "pixel_height": 292,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/33_audit.png",
+      "title": "Nhật ký thao tác sau chuỗi thực hành",
+      "description": "Màn hình nhật ký hiển thị các thao tác tạo nguồn, đối chiếu, sửa phiên bản, thêm luận điểm và thay liên kết căn cứ. Phần xác minh kiểm tra chuỗi giá trị trên toàn bộ nhật ký, trong khi bảng chỉ liệt kê số bản ghi gần đây theo phạm vi giao diện. Dòng giới hạn về người có toàn quyền sửa dữ liệu được giữ trên màn hình để tránh hiểu chuỗi băm thành cơ chế chống sửa tuyệt đối.",
+      "group": "audit",
+      "pixel_width": 960,
+      "pixel_height": 650,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/34_audit_hashes.png",
+      "title": "Giá trị liên kết của một bản ghi nhật ký",
+      "description": "Vùng mở rộng cho phép đọc giá trị của bản ghi hiện tại và giá trị liên kết trước đó. Những giá trị này phục vụ kiểm tra tính nhất quán của chuỗi ghi nhận. Chúng không xác định danh tính độc lập của người thao tác vì bản mẫu dùng một người trên máy cục bộ. Khi cần chứng cứ ngoài kho đang sử dụng, phải giữ bản sao hoặc mốc kiểm tra ở vị trí quản lý khác.",
+      "group": "audit",
+      "pixel_width": 950,
+      "pixel_height": 181,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/35_audit_verified.png",
+      "title": "Thông báo kết quả xác minh chuỗi nhật ký",
+      "description": "Thông báo ghi số bản ghi đã được kiểm tra trong lần thực hiện và trạng thái khớp của chuỗi. Tệp sao lưu đã được tải trong cùng kịch bản để kiểm tra riêng cấu trúc và cơ sở dữ liệu. Đây là hai phép kiểm tra liên quan nhưng khác phạm vi: màn hình kiểm tra chuỗi nhật ký, còn công cụ kiểm bản sao đọc tệp tải về và các thành phần bên trong.",
+      "group": "audit",
+      "pixel_width": 952,
+      "pixel_height": 105,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/36_guide.png",
+      "title": "Các bước khởi đầu trong hướng dẫn sử dụng",
+      "description": "Hai khung đầu của trang hướng dẫn được chụp cận cảnh, trình bày cách tạo hồ sơ và ghi nhận nguồn trong quy trình sáu bước. Mỗi bước có mô tả, thứ tự thao tác và đường dẫn đến chức năng liên quan. Nội dung hướng dẫn dùng đúng khả năng của phiên bản hiện hành; các chức năng như nhận dạng PDF, tài khoản tập thể hay phê duyệt nhiều cấp không được trình bày như đã có.",
+      "group": "guide",
+      "pixel_width": 960,
+      "pixel_height": 401,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/37_guide_scope.png",
+      "title": "Phạm vi sử dụng và ý nghĩa các trạng thái",
+      "description": "Khung phạm vi nhắc người dùng rằng ứng dụng chạy cục bộ cho một người và trạng thái đối chiếu là ghi nhận của chính người dùng. Nhãn trạng thái có chữ mô tả bên cạnh màu để giảm lệ thuộc vào nhận biết màu sắc. Học liệu tóm lược, nguồn chưa đối chiếu và nguồn đã đối chiếu được giải thích trong cùng khu vực nhằm hỗ trợ diễn giải đúng kết quả ở các màn hình khác.",
+      "group": "guide",
+      "pixel_width": 952,
+      "pixel_height": 255,
+      "capture": "element"
+    },
+    {
+      "path": "evidence_layout/screenshots/38_retrieval_limit.png",
+      "title": "Truy vấn bổ sung chưa tìm thấy đoạn chuẩn ở năm vị trí đầu",
+      "description": "Truy vấn này thuộc tập bổ sung được cố định sau giai đoạn phát triển thuật toán. Đoạn chuẩn quy định trước không nằm trong năm kết quả đầu, dù một số đoạn có từ gần với truy vấn được trả về. Hình giữ nguyên trường hợp chưa đạt để giải thích giới hạn của tra cứu theo từ khóa. Không sửa thuật toán theo riêng trường hợp này rồi dùng lại cùng tập để tuyên bố kiểm tra độc lập.",
+      "group": "testing",
+      "pixel_width": 960,
+      "pixel_height": 509,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/39_mobile_overview.png",
+      "title": "Tổng quan ở khung nhìn điện thoại",
+      "description": "Bản chụp sử dụng khung nhìn rộng 390 điểm ảnh trong trình duyệt kiểm thử. Vùng tiêu đề và các chỉ số được chụp riêng để thấy cách sắp nội dung ở chiều rộng hẹp, không làm toàn trang tràn ngang. Kết quả này chỉ xác nhận bố cục trong kích thước và trình duyệt đã thử, không thay thế kiểm tra trên nhiều thiết bị thực. Ứng dụng vẫn cần máy đang chạy dịch vụ cục bộ và không được công bố như một dịch vụ di động qua mạng.",
+      "group": "mobile",
+      "pixel_width": 358,
+      "pixel_height": 592,
+      "capture": "functional_region"
+    },
+    {
+      "path": "evidence_layout/screenshots/40_mobile_project.png",
+      "title": "Hồ sơ và điều khiển xuất ở khung nhìn hẹp",
+      "description": "Thông tin hồ sơ, các nút thao tác và bộ chọn định dạng xuất được chụp cận cảnh trong vùng nhìn hẹp. Kịch bản kiểm tra toàn trang không phát sinh tràn ngang ở sáu trang chính. Bảng nhật ký có vùng cuộn riêng khi cần đọc dữ liệu rộng; điều này khác với việc toàn giao diện vượt ngoài màn hình. Bản mẫu chưa được chứng nhận khả năng tiếp cận trên mọi thiết bị hoặc trình đọc màn hình.",
+      "group": "mobile",
+      "pixel_width": 358,
+      "pixel_height": 362,
+      "capture": "functional_region"
+    }
+  ],
+  "scope": "Original UI; API requests relayed to the actual localhost server in a navigation-restricted QA browser. Not a direct-navigation browser security test.",
+  "font_in_capture": "Comfortaa fallback; Nunito not available in the capture environment."
+}

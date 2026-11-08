@@ -1,0 +1,106 @@
+test_H01_health_and_bootstrap (test_contract_http.HttpContractTests.test_H01_health_and_bootstrap)
+Đọc phiên làm việc và kiểm tra số liệu xuất phát từ dữ liệu thật. ... ok
+test_H02_localhost_host_is_allowed (test_contract_http.HttpContractTests.test_H02_localhost_host_is_allowed)
+Địa chỉ localhost đúng cổng vẫn truy cập được máy chủ cục bộ. ... ok
+test_H03_foreign_host_is_rejected (test_contract_http.HttpContractTests.test_H03_foreign_host_is_rejected)
+Từ chối Host bên ngoài ngay cả khi kết nối tới loopback. ... ok
+test_H04_wrong_local_port_is_rejected (test_contract_http.HttpContractTests.test_H04_wrong_local_port_is_rejected)
+Host dùng sai cổng không được xem là địa chỉ tin cậy. ... ok
+test_H05_foreign_origin_read_is_rejected (test_contract_http.HttpContractTests.test_H05_foreign_origin_read_is_rejected)
+Không cấp dữ liệu phiên cho yêu cầu có Origin bên ngoài. ... ok
+test_H06_cross_site_metadata_is_rejected (test_contract_http.HttpContractTests.test_H06_cross_site_metadata_is_rejected)
+Dấu hiệu truy cập từ trang khác bị từ chối trước xử lý dữ liệu. ... ok
+test_H07_missing_csrf_token_is_rejected (test_contract_http.HttpContractTests.test_H07_missing_csrf_token_is_rejected)
+Yêu cầu ghi thiếu mã phiên không tạo hồ sơ. ... ok
+test_H08_wrong_csrf_token_is_rejected (test_contract_http.HttpContractTests.test_H08_wrong_csrf_token_is_rejected)
+Yêu cầu ghi có mã phiên sai không được chấp nhận. ... ok
+test_H09_foreign_origin_mutation_is_rejected (test_contract_http.HttpContractTests.test_H09_foreign_origin_mutation_is_rejected)
+Origin sai vẫn bị chặn khi biết mã phiên thử nghiệm. ... ok
+test_H10_json_content_type_required (test_contract_http.HttpContractTests.test_H10_json_content_type_required)
+Không diễn giải một biểu mẫu hoặc văn bản thường thành lệnh ghi JSON. ... ok
+test_H11_invalid_json_rejected (test_contract_http.HttpContractTests.test_H11_invalid_json_rejected)
+JSON sai cú pháp trả lỗi rõ ràng thay vì lỗi máy chủ. ... ok
+test_H12_invalid_utf8_rejected (test_contract_http.HttpContractTests.test_H12_invalid_utf8_rejected)
+Byte không phải UTF-8 không được lưu thành văn bản bị hỏng. ... ok
+test_H13_json_array_rejected (test_contract_http.HttpContractTests.test_H13_json_array_rejected)
+Hình dạng dữ liệu đầu vào phải là một đối tượng có trường xác định. ... ok
+test_H14_request_size_is_bounded (test_contract_http.HttpContractTests.test_H14_request_size_is_bounded)
+Giới hạn kích thước được kiểm tra trước khi đọc toàn bộ nội dung. ... ok
+test_H15_static_whitelist_blocks_traversal_and_database (test_contract_http.HttpContractTests.test_H15_static_whitelist_blocks_traversal_and_database)
+Chỉ tài sản giao diện được công bố; đường dẫn dữ liệu không được phục vụ. ... ok
+test_H16_static_security_headers (test_contract_http.HttpContractTests.test_H16_static_security_headers)
+Tệp giao diện có chính sách nguồn và loại nội dung phù hợp. ... ok
+test_H17_cross_origin_preflight_is_not_enabled (test_contract_http.HttpContractTests.test_H17_cross_origin_preflight_is_not_enabled)
+Ứng dụng không bật CORS cho trang bên ngoài gửi lệnh. ... ok
+test_H18_invalid_search_parameters (test_contract_http.HttpContractTests.test_H18_invalid_search_parameters)
+Giới hạn và bộ lọc tìm kiếm sai được báo tại giao diện API. ... ok
+test_H19_complete_dossier_workflow (test_contract_http.HttpContractTests.test_H19_complete_dossier_workflow)
+Tạo hồ sơ, gắn nguồn, đổi phiên bản và đọc lại căn cứ cũ qua HTTP. ... ok
+test_H20_backup_download_and_audit (test_contract_http.HttpContractTests.test_H20_backup_download_and_audit)
+Tải bản sao ZIP có thể mở và nhật ký còn nhất quán sau giao dịch. ... ok
+test_audit_detects_modified_event (test_store.StoreTests.test_audit_detects_modified_event) ... ok
+test_backup_is_valid_and_can_open_as_separate_store (test_store.StoreTests.test_backup_is_valid_and_can_open_as_separate_store) ... ok
+test_backup_verifier_rejects_changed_database (test_store.StoreTests.test_backup_verifier_rejects_changed_database) ... ok
+test_cannot_self_assign_reviewed_on_creation (test_store.StoreTests.test_cannot_self_assign_reviewed_on_creation) ... ok
+test_delete_claim_cascades_evidence (test_store.StoreTests.test_delete_claim_cascades_evidence) ... ok
+test_direct_metadata_corruption_is_detected (test_store.StoreTests.test_direct_metadata_corruption_is_detected) ... ok
+test_direct_segment_corruption_is_detected (test_store.StoreTests.test_direct_segment_corruption_is_detected) ... ok
+test_draft_cannot_be_attached (test_store.StoreTests.test_draft_cannot_be_attached) ... ok
+test_duplicate_evidence_rejected (test_store.StoreTests.test_duplicate_evidence_rejected) ... ok
+test_duplicate_locators_rejected (test_store.StoreTests.test_duplicate_locators_rejected) ... ok
+test_empty_or_short_segments_rejected (test_store.StoreTests.test_empty_or_short_segments_rejected) ... ok
+test_empty_project_warning_survives_each_export_format (test_store.StoreTests.test_empty_project_warning_survives_each_export_format) ... ok
+test_empty_quote_uses_entire_segment (test_store.StoreTests.test_empty_quote_uses_entire_segment) ... ok
+test_evidence_quote_corruption_is_detected (test_store.StoreTests.test_evidence_quote_corruption_is_detected) ... ok
+test_exact_quote_required (test_store.StoreTests.test_exact_quote_required) ... ok
+test_export_escapes_html_and_preserves_citation_metadata (test_store.StoreTests.test_export_escapes_html_and_preserves_citation_metadata) ... ok
+test_failed_transaction_rolls_back_content_and_audit (test_store.StoreTests.test_failed_transaction_rolls_back_content_and_audit) ... ok
+test_invalid_date_rejected (test_store.StoreTests.test_invalid_date_rejected) ... ok
+test_json_and_markdown_exports_include_warnings (test_store.StoreTests.test_json_and_markdown_exports_include_warnings) ... ok
+test_law_metadata_required (test_store.StoreTests.test_law_metadata_required) ... ok
+test_missing_evidence_severity_depends_on_claim_type (test_store.StoreTests.test_missing_evidence_severity_depends_on_claim_type) ... ok
+test_new_source_is_draft (test_store.StoreTests.test_new_source_is_draft) ... ok
+test_parallel_writes_preserve_audit_chain (test_store.StoreTests.test_parallel_writes_preserve_audit_chain) ... ok
+test_read_transaction_keeps_one_snapshot_during_other_write (test_store.StoreTests.test_read_transaction_keeps_one_snapshot_during_other_write) ... ok
+test_relink_new_version_resolves_staleness (test_store.StoreTests.test_relink_new_version_resolves_staleness) ... ok
+test_review_new_version_does_not_silently_refresh_evidence (test_store.StoreTests.test_review_new_version_does_not_silently_refresh_evidence) ... ok
+test_review_note_required (test_store.StoreTests.test_review_note_required) ... ok
+test_revision_preserves_old_evidence_and_marks_stale (test_store.StoreTests.test_revision_preserves_old_evidence_and_marks_stale) ... ok
+test_search_empty_stopwords_and_out_of_scope (test_store.StoreTests.test_search_empty_stopwords_and_out_of_scope) ... ok
+test_search_hides_drafts_by_default (test_store.StoreTests.test_search_hides_drafts_by_default) ... ok
+test_search_limits_are_bounded (test_store.StoreTests.test_search_limits_are_bounded) ... ok
+test_search_original_text_retains_accents (test_store.StoreTests.test_search_original_text_retains_accents) ... ok
+test_search_source_filter (test_store.StoreTests.test_search_source_filter) ... ok
+test_search_vietnamese_accent_equivalence (test_store.StoreTests.test_search_vietnamese_accent_equivalence) ... ok
+test_seed_is_idempotent_across_restart (test_store.StoreTests.test_seed_is_idempotent_across_restart) ... ok
+test_source_history_contains_all_versions (test_store.StoreTests.test_source_history_contains_all_versions) ... ok
+test_sql_control_characters_are_data (test_store.StoreTests.test_sql_control_characters_are_data) ... ok
+test_unknown_entities_return_not_found (test_store.StoreTests.test_unknown_entities_return_not_found) ... ok
+test_unsupported_export_format_rejected (test_store.StoreTests.test_unsupported_export_format_rejected) ... ok
+test_update_claim_preserves_evidence (test_store.StoreTests.test_update_claim_preserves_evidence) ... ok
+test_url_schemes_and_userinfo_rejected (test_store.StoreTests.test_url_schemes_and_userinfo_rejected) ... ok
+test_valid_evidence_has_no_technical_errors (test_store.StoreTests.test_valid_evidence_has_no_technical_errors) ... ok
+test_whitespace_normalized_quote_accepted (test_store.StoreTests.test_whitespace_normalized_quote_accepted) ... ok
+test_font_csp_remains_self_only (test_style_delivery.StyleDeliveryTests.test_font_csp_remains_self_only) ... ok
+test_font_route_does_not_open_arbitrary_files (test_style_delivery.StyleDeliveryTests.test_font_route_does_not_open_arbitrary_files) ... ok
+test_index_requests_font_css_from_same_origin (test_style_delivery.StyleDeliveryTests.test_index_requests_font_css_from_same_origin) ... ok
+test_local_font_css_uses_no_remote_cdn (test_style_delivery.StyleDeliveryTests.test_local_font_css_uses_no_remote_cdn) ... ok
+test_styles_have_green_palette_and_rounded_font_stack (test_style_delivery.StyleDeliveryTests.test_styles_have_green_palette_and_rounded_font_stack) ... ok
+test_new_static_assets (test_v2_features.HTTPV2Tests.test_new_static_assets) ... ok
+test_reject_public_host (test_v2_features.HTTPV2Tests.test_reject_public_host) ... ok
+test_semantic_offline_is_explicit_error (test_v2_features.HTTPV2Tests.test_semantic_offline_is_explicit_error) ... ok
+test_upload_then_search_draft_and_review (test_v2_features.HTTPV2Tests.test_upload_then_search_draft_and_review) ... ok
+test_bad_extension (test_v2_features.V2Tests.test_bad_extension) ... ok
+test_docx_import_is_draft_and_carries_locators (test_v2_features.V2Tests.test_docx_import_is_draft_and_carries_locators) ... ok
+test_overlarge (test_v2_features.V2Tests.test_overlarge) ... ok
+test_pdf_no_text_layer (test_v2_features.V2Tests.test_pdf_no_text_layer) ... ok
+test_public_allowlist_blocks_private_and_unknown (test_v2_features.V2Tests.test_public_allowlist_blocks_private_and_unknown) ... ok
+test_rag_citation_rejection_and_success (test_v2_features.V2Tests.test_rag_citation_rejection_and_success) ... ok
+test_rag_no_source_does_not_call_llm (test_v2_features.V2Tests.test_rag_no_source_does_not_call_llm) ... ok
+test_semantic_mocked_no_false_fallback (test_v2_features.V2Tests.test_semantic_mocked_no_false_fallback) ... ok
+test_txt_utf8_import (test_v2_features.V2Tests.test_txt_utf8_import) ... ok
+
+----------------------------------------------------------------------
+Ran 81 tests in 6.009s
+
+OK

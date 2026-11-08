@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "corpus_note": "Bộ dữ liệu trình diễn gồm học liệu tóm lược văn bản công khai và tài liệu thực hành tự biên soạn. Nhãn summary là nội dung diễn đạt lại, không phải nguyên văn pháp luật. Không có hồ sơ nghiệp vụ, dữ liệu cá nhân hoặc thông tin nội bộ của Học viện.",
+  "sources": [
+    {
+      "id": "src-nd125",
+      "title": "Nghị định số 125/2026/NĐ-CP về hoạt động khoa học, công nghệ và đổi mới sáng tạo trong cơ sở giáo dục đại học",
+      "issuer": "Chính phủ",
+      "document_number": "125/2026/NĐ-CP",
+      "published_date": "2026-04-06",
+      "url": "https://vanban.chinhphu.vn/?docid=217673&pageid=27160",
+      "kind": "law",
+      "text_kind": "summary",
+      "status": "reviewed",
+      "review_note": "Các đoạn dưới đây là học liệu tóm lược đã đối chiếu Điều 14–17 của văn bản công khai; không phải nguyên văn điều khoản. Khi áp dụng phải mở văn bản gốc và kiểm tra đầy đủ điều kiện.",
+      "segments": [
+        {
+          "id": "seg-nd125-01",
+          "title": "Quản lý thông tin khoa học",
+          "locator": "Điều 14",
+          "text": "Cơ sở giáo dục đại học tổ chức thu thập, cập nhật, quản lý, khai thác dữ liệu và tư liệu khoa học để phục vụ đào tạo, nghiên cứu và quản lý."
+        },
+        {
+          "id": "seg-nd125-02",
+          "title": "Bồi dưỡng liêm chính khoa học",
+          "locator": "Điều 15",
+          "text": "Giảng viên, nghiên cứu viên và người học phải tuân thủ liêm chính khoa học. Nhà trường ban hành quy định nội bộ, tổ chức thực hiện và lồng ghép nội dung này trong đào tạo, hỗ trợ."
+        },
+        {
+          "id": "seg-nd125-03",
+          "title": "Giới hạn chia sẻ dữ liệu",
+          "locator": "Điều 16",
+          "text": "Việc cập nhật, kết nối và chia sẻ dữ liệu có giới hạn đối với thông tin thuộc bí mật nhà nước, quốc phòng và an ninh; khai thác phải tuân thủ pháp luật liên quan."
+        },
+        {
+          "id": "seg-nd125-04",
+          "title": "Đánh giá dựa trên bằng chứng",
+          "locator": "Điều 17",
+          "text": "Đánh giá hoạt động khoa học cần sử dụng dữ liệu, bằng chứng và tiêu chí định lượng, định tính phù hợp đặc thù đơn vị; bảo đảm liêm chính học thuật và trách nhiệm giải trình."
+        }
+      ]
+    },
+    {
+      "id": "src-gddh125",
+      "title": "Luật Giáo dục đại học số 125/2025/QH15",
+      "issuer": "Quốc hội",
+      "document_number": "125/2025/QH15",
+      "published_date": "2025-12-10",
+      "url": "https://vanban.chinhphu.vn/?docid=216506&pageid=27160",
+      "kind": "law",
+      "text_kind": "summary",
+      "status": "reviewed",
+      "review_note": "Các đoạn dưới đây là học liệu tóm lược đã đối chiếu Điều 14, 27 và 28 của bản công khai; không thay thế toàn văn luật.",
+      "segments": [
+        {
+          "id": "seg-gddh125-01",
+          "title": "Giới hạn tự chủ đối với cơ sở thuộc Bộ Công an",
+          "locator": "Điểm c và điểm d khoản 1 Điều 14",
+          "text": "Quy định tự chủ chung về tài chính và số lượng người làm việc có ngoại lệ đối với cơ sở giáo dục đại học thuộc Bộ Quốc phòng, Bộ Công an."
+        },
+        {
+          "id": "seg-gddh125-02",
+          "title": "Chuyển kết quả nghiên cứu vào đào tạo",
+          "locator": "Khoản 3 Điều 27",
+          "text": "Hoạt động khoa học trong cơ sở giáo dục đại học bao gồm chuyển kết quả nghiên cứu vào chương trình đào tạo, phát triển nhân lực và ứng dụng công nghệ số trong nghiên cứu."
+        },
+        {
+          "id": "seg-gddh125-03",
+          "title": "Phát triển hệ thống thông tin khoa học",
+          "locator": "Điểm b và điểm đ khoản 2 Điều 28",
+          "text": "Phát triển tiềm lực nghiên cứu gắn với mạng lưới hợp tác, hệ thống thông tin, hạ tầng kỹ thuật và cơ sở dữ liệu phục vụ nghiên cứu, đổi mới sáng tạo."
+        },
+        {
+          "id": "seg-gddh125-04",
+          "title": "Trách nhiệm gắn nghiên cứu với đào tạo",
+          "locator": "Điểm a và điểm b khoản 3 Điều 28",
+          "text": "Cơ sở giáo dục đại học phải gắn nghiên cứu với đào tạo, bảo đảm chất lượng và minh bạch; quản trị nội bộ trong phạm vi quyền tự chủ, phù hợp pháp luật."
+        }
+      ]
+    },
+    {
+      "id": "src-khcn93",
+      "title": "Luật Khoa học, công nghệ và đổi mới sáng tạo số 93/2025/QH15",
+      "issuer": "Quốc hội",
+      "document_number": "93/2025/QH15",
+      "published_date": "2025-06-27",
+      "url": "https://vanban.chinhphu.vn/?docid=214603&pageid=27160",
+      "kind": "law",
+      "text_kind": "summary",
+      "status": "reviewed",
+      "review_note": "Các đoạn là học liệu tóm lược các yêu cầu tại Điều 8, 9 và 21; đã đối chiếu bản công khai. Phần mềm chỉ kiểm tra liên kết trích dẫn, không đưa ra quyết định pháp lý.",
+      "segments": [
+        {
+          "id": "seg-khcn93-01",
+          "title": "Ngụy tạo dữ liệu và đạo văn",
+          "locator": "Khoản 1 Điều 8",
+          "text": "Ngụy tạo dữ liệu, đạo văn, che giấu xung đột lợi ích hoặc làm sai lệch bản chất nghiên cứu là những hành vi vi phạm nghiêm trọng liêm chính khoa học."
+        },
+        {
+          "id": "seg-khcn93-02",
+          "title": "Quy tắc liêm chính tại tổ chức",
+          "locator": "Khoản 3 Điều 8",
+          "text": "Tổ chức khoa học và công nghệ xây dựng, ban hành quy tắc liêm chính và đạo đức nghề nghiệp phù hợp hướng dẫn của cơ quan nhà nước có thẩm quyền."
+        },
+        {
+          "id": "seg-khcn93-03",
+          "title": "Chấp nhận rủi ro có điều kiện",
+          "locator": "Điều 9",
+          "text": "Chấp nhận rủi ro nghiên cứu gắn với quản trị rủi ro và các điều kiện pháp luật. Kết quả không đạt mục tiêu không tự tạo ra sự miễn trách nhiệm chung."
+        },
+        {
+          "id": "seg-khcn93-04",
+          "title": "Thử nghiệm có kiểm soát",
+          "locator": "Khoản 1 Điều 21",
+          "text": "Thử nghiệm có kiểm soát là cơ chế được cơ quan có thẩm quyền cho phép đối với nội dung mới chưa có quy định hoặc khác quy định hiện hành, trong điều kiện thực tế có giới hạn."
+        }
+      ]
+    },
+    {
+      "id": "src-thuchanh01",
+      "title": "Học liệu thực hành quản lý căn cứ và viết luận điểm",
+      "issuer": "Tài liệu thực hành của sản phẩm mẫu",
+      "document_number": "DEMO-01",
+      "published_date": "2026-10-26",
+      "url": "",
+      "kind": "learning_note",
+      "text_kind": "original",
+      "status": "reviewed",
+      "review_note": "Học liệu tự biên soạn phục vụ kiểm thử và hướng dẫn sử dụng sản phẩm; không phải quy định hoặc tài liệu do Học viện ban hành. Đã kiểm tra cấu trúc và tính nhất quán của các tình huống.",
+      "segments": [
+        {
+          "id": "seg-thuchanh01-01",
+          "title": "Phân biệt dữ kiện nhận định và đề xuất",
+          "locator": "Mục 1 Phân loại luận điểm",
+          "text": "Dữ kiện mô tả điều có thể đối chiếu với nguồn. Nhận định giải thích ý nghĩa hoặc quan hệ giữa các dữ kiện. Đề xuất nêu hành động chưa được thực hiện. Hồ sơ cần ghi rõ loại luận điểm để người đọc biết căn cứ nào cần kiểm tra và kết luận nào thuộc trách nhiệm của người viết."
+        },
+        {
+          "id": "seg-thuchanh01-02",
+          "title": "Dẫn đúng đoạn có liên quan",
+          "locator": "Mục 2 Chọn đoạn nguồn",
+          "text": "Đoạn được dẫn phải liên quan trực tiếp đến luận điểm. Một đường dẫn đúng địa chỉ nhưng không chứa nội dung cần chứng minh chưa đủ làm căn cứ. Người viết đọc phần trước và sau đoạn trích để nhận biết điều kiện, đối tượng và phạm vi áp dụng."
+        },
+        {
+          "id": "seg-thuchanh01-03",
+          "title": "Kiểm tra bản tóm lược",
+          "locator": "Mục 3 Tóm lược và nguyên văn",
+          "text": "Bản tóm lược do người biên soạn lựa chọn và diễn đạt lại nội dung. Người dùng không đặt toàn bộ bản tóm lược trong ngoặc kép rồi coi đó là lời của cơ quan ban hành. Nếu cần dẫn nguyên văn, phải kiểm tra đúng câu chữ trong tài liệu gốc."
+        },
+        {
+          "id": "seg-thuchanh01-04",
+          "title": "Cập nhật khi tài liệu thay đổi",
+          "locator": "Mục 4 Quản lý phiên bản",
+          "text": "Khi nguồn có phiên bản mới, trích dẫn đã gắn với phiên bản cũ cần được xem xét lại. Việc thay đổi nguồn không đồng nghĩa mọi luận điểm cũ đều sai. Người viết đối chiếu phần thay đổi và ghi quyết định giữ, sửa hoặc loại căn cứ."
+        },
+        {
+          "id": "seg-thuchanh01-05",
+          "title": "Không đồng nhất đúng trích dẫn với đúng kết luận",
+          "locator": "Mục 5 Giới hạn kiểm tra tự động",
+          "text": "Một đoạn trích khớp từng ký tự vẫn có thể bị sử dụng sai ngữ cảnh. Kiểm tra tự động xác nhận quan hệ kỹ thuật giữa luận điểm và đoạn lưu trữ; việc kết luận nội dung có đủ sức hỗ trợ luận điểm cần người có chuyên môn xem xét."
+        },
+        {
+          "id": "seg-thuchanh01-06",
+          "title": "Chuẩn bị hồ sơ để người khác kiểm tra",
+          "locator": "Mục 6 Bàn giao hồ sơ",
+          "text": "Hồ sơ bàn giao gồm luận điểm, đoạn dẫn, thông tin nguồn, vị trí đoạn, phiên bản và kết quả rà soát. Người tiếp nhận cần mở được nội dung đã dùng tại thời điểm bàn giao, đồng thời nhận biết căn cứ nào đang chờ kiểm tra."
+        }
+      ]
+    },
+    {
+      "id": "src-thuchanh02",
+      "title": "Học liệu thực hành kiểm thử và đánh giá sản phẩm phần mềm",
+      "issuer": "Tài liệu thực hành của sản phẩm mẫu",
+      "document_number": "DEMO-02",
+      "published_date": "2026-10-26",
+      "url": "",
+      "kind": "learning_note",
+      "text_kind": "original",
+      "status": "reviewed",
+      "review_note": "Tình huống kiểm thử tự biên soạn, chỉ dùng dữ liệu mô phỏng. Các bước là phương án thực hành của sản phẩm mẫu, không mô tả kết quả triển khai tại Học viện.",
+      "segments": [
+        {
+          "id": "seg-thuchanh02-01",
+          "title": "Kiểm thử thao tác không có mạng",
+          "locator": "Mục 1 Vận hành cục bộ",
+          "text": "Để kiểm tra khả năng hoạt động cục bộ, chuẩn bị sẵn dữ liệu được phép sử dụng, ngắt kết nối mạng và thực hiện tra cứu, tạo hồ sơ, gắn đoạn dẫn, rà soát, xuất hồ sơ. Việc mở đường dẫn đến tài liệu trên Internet vẫn cần kết nối mạng."
+        },
+        {
+          "id": "seg-thuchanh02-02",
+          "title": "Đánh giá tìm kiếm tiếng Việt không dấu",
+          "locator": "Mục 2 Truy vấn tiếng Việt",
+          "text": "Bộ truy vấn cần có câu hỏi có dấu, không dấu, số hiệu văn bản và thuật ngữ gần nghĩa. Kết quả được đối chiếu với đoạn liên quan do người kiểm tra xác định trước. Truy vấn không thuộc kho dữ liệu cần được ghi nhận riêng."
+        },
+        {
+          "id": "seg-thuchanh02-03",
+          "title": "So sánh thời gian có kiểm soát",
+          "locator": "Mục 3 Đo thời gian thực hiện",
+          "text": "So sánh công cụ mới với cách làm hiện có phải dùng nhiệm vụ tương đương, cùng tiêu chuẩn đúng và ghi cả thời gian sửa lỗi. Đổi thứ tự công cụ giữa các nhóm giúp giảm ảnh hưởng của việc đã quen câu hỏi."
+        },
+        {
+          "id": "seg-thuchanh02-04",
+          "title": "Sao lưu và thử phục hồi",
+          "locator": "Mục 4 Phục hồi dữ liệu",
+          "text": "Sao lưu có giá trị thực hành khi bản sao có thể được mở và kiểm tra trên môi trường tách biệt. Cần đối chiếu số hồ sơ, số nguồn, đoạn dẫn và dấu vết kiểm tra sau phục hồi; không ghi đè dữ liệu đang sử dụng để thử nghiệm."
+        },
+        {
+          "id": "seg-thuchanh02-05",
+          "title": "Giới hạn của mã băm",
+          "locator": "Mục 5 Kiểm tra tính toàn vẹn",
+          "text": "Mã băm hỗ trợ phát hiện nội dung khác với bản đã ghi nhận. Mã băm không chứng minh nguồn là chính thức, không xác nhận người tạo và không ngăn người có toàn quyền sửa cả dữ liệu lẫn giá trị kiểm tra."
+        },
+        {
+          "id": "seg-thuchanh02-06",
+          "title": "Tiêu chí dừng thử nghiệm",
+          "locator": "Mục 6 Xử lý sự cố",
+          "text": "Tạm dừng thử nghiệm khi xuất hiện mất hồ sơ, sai liên kết giữa luận điểm và nguồn, lộ nội dung ngoài phạm vi cho phép hoặc không thể phục hồi bản sao đã chọn. Cần ghi hiện tượng, bảo toàn dữ liệu và kiểm tra nguyên nhân trước khi tiếp tục."
+        }
+      ]
+    }
+  ]
+}

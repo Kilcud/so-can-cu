@@ -1,0 +1,132 @@
+DANH MỤC ẢNH VÀ SƠ ĐỒ KÈM BÁO CÁO
+
+Ảnh chụp từ ứng dụng đang chạy với dữ liệu thực hành. Thứ tự dưới đây theo báo cáo Word.
+
+Hình 1. Kiến trúc thành phần và luồng xử lý của Sổ căn cứ
+docs/architecture/01_kien_truc_thanh_phan.png
+
+Hình 2. Các bảng chính và quan hệ tham chiếu trong cơ sở dữ liệu
+docs/architecture/03_quan_he_du_lieu.png
+
+Hình 3. Quan hệ giữa thay đổi phiên bản nguồn và trạng thái căn cứ
+docs/architecture/02_vong_doi_phien_ban.png
+
+Hình 4. Không gian làm việc và tổng quan dữ liệu
+evidence/screenshots/01_overview.png
+
+Hình 5. Các chỉ số theo trạng thái hiện tại của kho
+evidence/screenshots/02_overview_counts.png
+
+Hình 6. Tổng quan ở khung nhìn điện thoại
+evidence/screenshots/39_mobile_overview.png
+
+Hình 7. Thông tin xuất xứ và các đoạn học liệu đang lưu
+evidence/screenshots/07_source_law.png
+
+Hình 8. Phạm vi sử dụng và ý nghĩa các trạng thái
+evidence/screenshots/37_guide_scope.png
+
+Hình 9. Biểu mẫu ghi nhận xuất xứ nguồn mới
+evidence/screenshots/09_source_create_metadata.png
+
+Hình 10. Cấu trúc nhập từng đoạn học liệu
+evidence/screenshots/10_source_create_segment.png
+
+Hình 11. Nguồn mới được lưu ở trạng thái chưa đối chiếu
+evidence/screenshots/11_source_draft.png
+
+Hình 12. Nút gắn căn cứ bị khóa khi nguồn chưa đối chiếu
+evidence/screenshots/12_source_draft_block.png
+
+Hình 13. Lịch sử hai phiên bản của học liệu
+evidence/screenshots/25_version_history.png
+
+Hình 14. Biểu mẫu ghi nội dung đã đối chiếu
+evidence/screenshots/13_source_review.png
+
+Hình 15. Ghi nhận đối chiếu được hiển thị theo phiên bản
+evidence/screenshots/14_source_reviewed.png
+
+Hình 16. Ghi lý do tạo phiên bản và nội dung sửa
+evidence/screenshots/24_revision_form.png
+
+Hình 17. Cảnh báo phiên bản cũ vẫn còn sau khi đối chiếu bản mới
+evidence/screenshots/27_stale_after_review.png
+
+Hình 18. Tra cứu từ khóa có dấu và đọc kết quả
+evidence/screenshots/03_search_accents.png
+
+Hình 19. Tra cứu cùng nội dung bằng chữ không dấu
+evidence/screenshots/04_search_no_accents.png
+
+Hình 20. Giới hạn tìm kiếm trong một nguồn
+evidence/screenshots/05_search_filter.png
+
+Hình 21. Thông báo khi kho không có đoạn phù hợp
+evidence/screenshots/06_search_empty.png
+
+Hình 22. Cửa sổ đọc đoạn và cảnh báo về bản tóm lược
+evidence/screenshots/08_source_excerpt.png
+
+Hình 23. Xác định mục đích và phạm vi hồ sơ
+evidence/screenshots/15_project_create.png
+
+Hình 24. Cảnh báo đối với hồ sơ chưa có luận điểm
+evidence/screenshots/16_project_empty.png
+
+Hình 25. Thẻ đề xuất và giới hạn của việc phân loại
+evidence/screenshots/19_claim_proposal.png
+
+Hình 26. Nhập luận điểm và xác định loại nội dung
+evidence/screenshots/17_claim_form.png
+
+Hình 27. Chọn đúng luận điểm và ghi riêng lý do sử dụng
+evidence/screenshots/21_quote_ready.png
+
+Hình 28. Căn cứ được hiển thị trong thẻ luận điểm
+evidence/screenshots/22_evidence_saved.png
+
+Hình 29. Thông báo từ chối đoạn trích không khớp
+evidence/screenshots/20_quote_rejected.png
+
+Hình 30. Phân biệt lỗi, cảnh báo và đề xuất chưa gắn căn cứ
+evidence/screenshots/18_claim_missing.png
+
+Hình 31. Cảnh báo khi nguồn đã chuyển sang phiên bản mới
+evidence/screenshots/26_stale_warning.png
+
+Hình 32. Hồ sơ không còn cảnh báo kỹ thuật tại phiên bản đầu
+evidence/screenshots/23_checks_clear.png
+
+Hình 33. Chọn căn cứ từ phiên bản thứ hai
+evidence/screenshots/28_attach_version2.png
+
+Hình 34. Xác nhận bỏ liên kết căn cứ cũ
+evidence/screenshots/29_remove_old_evidence.png
+
+Hình 35. Hồ sơ sau khi xử lý các liên kết phiên bản cũ
+evidence/screenshots/30_version_resolved.png
+
+Hình 36. Hồ sơ và điều khiển xuất ở khung nhìn hẹp
+evidence/screenshots/40_mobile_project.png
+
+Hình 37. Xác nhận xuất kèm các cảnh báo còn tồn tại
+evidence/screenshots/32_export_warning.png
+
+Hình 38. Bản HTML do sản phẩm xuất để đọc hoặc in
+evidence/screenshots/31_export_html.png
+
+Hình 39. Nhật ký thao tác sau chuỗi thực hành
+evidence/screenshots/33_audit.png
+
+Hình 40. Thông báo kết quả xác minh chuỗi nhật ký
+evidence/screenshots/35_audit_verified.png
+
+Hình 41. Giá trị liên kết của một bản ghi nhật ký
+evidence/screenshots/34_audit_hashes.png
+
+Hình 42. Các bước khởi đầu trong hướng dẫn sử dụng
+evidence/screenshots/36_guide.png
+
+Hình 43. Truy vấn bổ sung chưa tìm thấy đoạn chuẩn ở năm vị trí đầu
+evidence/screenshots/38_retrieval_limit.png

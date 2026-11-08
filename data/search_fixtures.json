@@ -1,0 +1,275 @@
+{
+  "queries": [
+    {
+      "id": "Q01",
+      "query": "thu thập quản lý tư liệu khoa học phục vụ đào tạo",
+      "expected_segment_ids": [
+        "seg-nd125-01"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q02",
+      "query": "lồng ghép liêm chính trong đào tạo bồi dưỡng",
+      "expected_segment_ids": [
+        "seg-nd125-02"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q03",
+      "query": "giới hạn chia sẻ dữ liệu bí mật nhà nước",
+      "expected_segment_ids": [
+        "seg-nd125-03"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q04",
+      "query": "đánh giá bằng chứng định lượng định tính",
+      "expected_segment_ids": [
+        "seg-nd125-04"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q05",
+      "query": "tự chủ tài chính cơ sở thuộc Bộ Công an",
+      "expected_segment_ids": [
+        "seg-gddh125-01"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q06",
+      "query": "đưa kết quả nghiên cứu vào chương trình đào tạo",
+      "expected_segment_ids": [
+        "seg-gddh125-02"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q07",
+      "query": "mạng lưới hợp tác hệ thống thông tin khoa học",
+      "expected_segment_ids": [
+        "seg-gddh125-03"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q08",
+      "query": "nghiên cứu đào tạo chất lượng minh bạch",
+      "expected_segment_ids": [
+        "seg-gddh125-04"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q09",
+      "query": "ngụy tạo dữ liệu đạo văn xung đột lợi ích",
+      "expected_segment_ids": [
+        "seg-khcn93-01"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q10",
+      "query": "tổ chức ban hành quy tắc liêm chính",
+      "expected_segment_ids": [
+        "seg-khcn93-02"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q11",
+      "query": "rủi ro kết quả không đạt mục tiêu miễn trách nhiệm",
+      "expected_segment_ids": [
+        "seg-khcn93-03"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q12",
+      "query": "thử nghiệm có kiểm soát cơ quan có thẩm quyền",
+      "expected_segment_ids": [
+        "seg-khcn93-04"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q13",
+      "query": "phân biệt dữ kiện nhận định đề xuất",
+      "expected_segment_ids": [
+        "seg-thuchanh01-01"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q14",
+      "query": "đường dẫn đúng nhưng đoạn không liên quan",
+      "expected_segment_ids": [
+        "seg-thuchanh01-02"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q15",
+      "query": "bản tóm lược có phải nguyên văn",
+      "expected_segment_ids": [
+        "seg-thuchanh01-03"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q16",
+      "query": "nguồn thay đổi phiên bản cũ",
+      "expected_segment_ids": [
+        "seg-thuchanh01-04"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q17",
+      "query": "đoạn khớp ký tự nhưng sai ngữ cảnh",
+      "expected_segment_ids": [
+        "seg-thuchanh01-05"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q18",
+      "query": "hồ sơ bàn giao cần những thông tin nào",
+      "expected_segment_ids": [
+        "seg-thuchanh01-06"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q19",
+      "query": "kiểm tra vận hành cục bộ ngắt mạng",
+      "expected_segment_ids": [
+        "seg-thuchanh02-01"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q20",
+      "query": "đánh giá truy vấn tiếng Việt không dấu",
+      "expected_segment_ids": [
+        "seg-thuchanh02-02"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q21",
+      "query": "so sánh thời gian sửa lỗi đổi thứ tự công cụ",
+      "expected_segment_ids": [
+        "seg-thuchanh02-03"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q22",
+      "query": "sao lưu phục hồi môi trường tách biệt",
+      "expected_segment_ids": [
+        "seg-thuchanh02-04"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q23",
+      "query": "mã băm có xác nhận nguồn chính thức",
+      "expected_segment_ids": [
+        "seg-thuchanh02-05"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q24",
+      "query": "dừng thử nghiệm khi mất hồ sơ",
+      "expected_segment_ids": [
+        "seg-thuchanh02-06"
+      ],
+      "category": "accented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q25",
+      "query": "tu chu tai chinh Bo Cong an",
+      "expected_segment_ids": [
+        "seg-gddh125-01"
+      ],
+      "category": "unaccented",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q26",
+      "query": "93/2025/QH15 ngụy tạo dữ liệu",
+      "expected_segment_ids": [
+        "seg-khcn93-01"
+      ],
+      "category": "numeric",
+      "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động."
+    },
+    {
+      "id": "Q27",
+      "query": "lịch thi đấu bóng đá Champions League",
+      "expected_segment_ids": [],
+      "category": "no_match",
+      "note": "Ngoài phạm vi bộ học liệu; không được tạo nội dung trả lời giả."
+    },
+    {
+      "id": "Q28",
+      "query": "liều dùng amoxicillin trẻ sơ sinh",
+      "expected_segment_ids": [],
+      "category": "no_match",
+      "note": "Ngoài phạm vi bộ học liệu; không được suy diễn kiến thức y tế."
+    },
+    {
+      "id": "Q29",
+      "query": "liêm chính",
+      "expected_segment_ids": [
+        "seg-nd125-02",
+        "seg-khcn93-01",
+        "seg-khcn93-02"
+      ],
+      "category": "ambiguous",
+      "note": "Truy vấn rộng có nhiều đoạn liên quan; cần hiển thị nguồn và phạm vi để người dùng chọn."
+    },
+    {
+      "id": "Q30",
+      "query": "kiểm tra nguồn",
+      "expected_segment_ids": [
+        "seg-thuchanh01-02",
+        "seg-thuchanh01-03",
+        "seg-thuchanh01-05",
+        "seg-thuchanh02-05"
+      ],
+      "category": "ambiguous",
+      "note": "Truy vấn rộng; không ép một đoạn thành đáp án duy nhất. Chấp nhận kết quả liên quan thuộc danh sách."
+    }
+  ]
+}

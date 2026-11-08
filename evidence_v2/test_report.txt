@@ -1,0 +1,6 @@
+SỔ CĂN CỨ V2 — KẾT QUẢ TỰ ĐỘNG
+76/76 ca đạt.
+63 ca tương thích bản nền; 13 ca mới.
+Mô hình embedding và sinh phản hồi được mock để kiểm thử giao tiếp; KHÔNG phải đo chất lượng mô hình Ollama thực.
+Ảnh hai màn hình được kết xuất từ mã JS thật với dữ liệu bootstrap của server; đây không phải kiểm thử trình duyệt đầu-cuối đối với backend.
+Lệnh lặp lại: python -m unittest discover -s tests -v

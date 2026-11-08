@@ -1,0 +1,150 @@
+{
+  "started_at": "2026-10-26T09:06:17.247Z",
+  "finished_at": "2026-10-26T09:06:46.987Z",
+  "completed": true,
+  "base_url": "http://127.0.0.1:8767",
+  "viewport": {
+    "width": 1280,
+    "height": 960
+  },
+  "mobile_viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "browser": "Chromium via Playwright",
+  "scope": "Actual UI interactions on local demonstration data; not a human usability or institutional deployment study.",
+  "cases": [
+    {
+      "id": "B01",
+      "title": "Mở trang và kiểm tra tổng quan",
+      "status": "passed",
+      "duration_ms": 910
+    },
+    {
+      "id": "B02",
+      "title": "Tra cứu có dấu, không dấu và giới hạn nguồn",
+      "status": "passed",
+      "duration_ms": 1844
+    },
+    {
+      "id": "B03",
+      "title": "Trả trạng thái rỗng cho nội dung ngoài kho",
+      "status": "passed",
+      "duration_ms": 740
+    },
+    {
+      "id": "B04",
+      "title": "Đọc nguồn pháp luật tóm lược và chỉ dẫn nguồn gốc",
+      "status": "passed",
+      "duration_ms": 1584
+    },
+    {
+      "id": "B05",
+      "title": "Tạo nguồn thực hành ở trạng thái chưa đối chiếu",
+      "status": "passed",
+      "duration_ms": 2017
+    },
+    {
+      "id": "B06",
+      "title": "Chặn thao tác gắn căn cứ từ nguồn chưa đối chiếu",
+      "status": "passed",
+      "duration_ms": 883
+    },
+    {
+      "id": "B07",
+      "title": "Ghi nhận tự đối chiếu cho phiên bản thứ nhất",
+      "status": "passed",
+      "duration_ms": 1114
+    },
+    {
+      "id": "B08",
+      "title": "Tạo hồ sơ và hiển thị cảnh báo hồ sơ trống",
+      "status": "passed",
+      "duration_ms": 942
+    },
+    {
+      "id": "B09",
+      "title": "Tạo ba loại luận điểm và phân biệt yêu cầu căn cứ",
+      "status": "passed",
+      "duration_ms": 2105
+    },
+    {
+      "id": "B10",
+      "title": "Từ chối đoạn trích bị sửa câu chữ",
+      "status": "passed",
+      "duration_ms": 758
+    },
+    {
+      "id": "B11",
+      "title": "Gắn căn cứ hợp lệ và lưu thông tin nguồn",
+      "status": "passed",
+      "duration_ms": 1369
+    },
+    {
+      "id": "B12",
+      "title": "Tạo phiên bản mới và giữ căn cứ cũ",
+      "status": "passed",
+      "duration_ms": 1299
+    },
+    {
+      "id": "B13",
+      "title": "Đối chiếu phiên bản mới không tự xóa cảnh báo cũ",
+      "status": "passed",
+      "duration_ms": 981
+    },
+    {
+      "id": "B14",
+      "title": "Gắn bản mới rồi bỏ liên kết cũ theo từng luận điểm",
+      "status": "passed",
+      "duration_ms": 3277
+    },
+    {
+      "id": "B15",
+      "title": "Xuất HTML, Markdown và JSON từ hồ sơ đã xử lý",
+      "status": "passed",
+      "duration_ms": 1424
+    },
+    {
+      "id": "B16",
+      "title": "Giữ cảnh báo khi xuất hồ sơ mẫu chưa hoàn thiện",
+      "status": "passed",
+      "duration_ms": 712
+    },
+    {
+      "id": "B17",
+      "title": "Kiểm tra nhật ký và tải bản sao dữ liệu",
+      "status": "passed",
+      "duration_ms": 823
+    },
+    {
+      "id": "B18",
+      "title": "Hướng dẫn và thao tác bàn phím",
+      "status": "passed",
+      "duration_ms": 503
+    },
+    {
+      "id": "B19",
+      "title": "Quan sát trường hợp truy hồi bổ sung chưa đạt",
+      "status": "passed",
+      "duration_ms": 315
+    },
+    {
+      "id": "B20",
+      "title": "Kiểm tra sáu trang ở chiều rộng 390 điểm ảnh",
+      "status": "passed",
+      "duration_ms": 3963
+    },
+    {
+      "id": "B21",
+      "title": "Không có lỗi JavaScript chưa được xử lý trong chuỗi thao tác",
+      "status": "passed",
+      "duration_ms": 4
+    }
+  ],
+  "page_errors": [],
+  "created_records": {
+    "project_id": "prj-7dd678dfa1124b99a8e1",
+    "source_id": "src-8c92bdc44fb640359eaa"
+  },
+  "screenshots": 40
+}

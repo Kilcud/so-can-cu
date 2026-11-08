@@ -1,0 +1,761 @@
+{
+  "measured_at_utc": "2026-10-26T11:41:12.881527+00:00",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux",
+    "machine": "x86_64"
+  },
+  "total": 81,
+  "passed": 81,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 6.0123,
+  "cases": [
+    {
+      "id": "H01",
+      "automated_test": "test_H01_health_and_bootstrap",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H01_health_and_bootstrap",
+      "description": "Đọc phiên làm việc và kiểm tra số liệu xuất phát từ dữ liệu thật.",
+      "status": "passed",
+      "duration_ms": 4.034,
+      "detail": ""
+    },
+    {
+      "id": "H02",
+      "automated_test": "test_H02_localhost_host_is_allowed",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H02_localhost_host_is_allowed",
+      "description": "Địa chỉ localhost đúng cổng vẫn truy cập được máy chủ cục bộ.",
+      "status": "passed",
+      "duration_ms": 0.778,
+      "detail": ""
+    },
+    {
+      "id": "H03",
+      "automated_test": "test_H03_foreign_host_is_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H03_foreign_host_is_rejected",
+      "description": "Từ chối Host bên ngoài ngay cả khi kết nối tới loopback.",
+      "status": "passed",
+      "duration_ms": 0.789,
+      "detail": ""
+    },
+    {
+      "id": "H04",
+      "automated_test": "test_H04_wrong_local_port_is_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H04_wrong_local_port_is_rejected",
+      "description": "Host dùng sai cổng không được xem là địa chỉ tin cậy.",
+      "status": "passed",
+      "duration_ms": 0.86,
+      "detail": ""
+    },
+    {
+      "id": "H05",
+      "automated_test": "test_H05_foreign_origin_read_is_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H05_foreign_origin_read_is_rejected",
+      "description": "Không cấp dữ liệu phiên cho yêu cầu có Origin bên ngoài.",
+      "status": "passed",
+      "duration_ms": 0.606,
+      "detail": ""
+    },
+    {
+      "id": "H06",
+      "automated_test": "test_H06_cross_site_metadata_is_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H06_cross_site_metadata_is_rejected",
+      "description": "Dấu hiệu truy cập từ trang khác bị từ chối trước xử lý dữ liệu.",
+      "status": "passed",
+      "duration_ms": 0.721,
+      "detail": ""
+    },
+    {
+      "id": "H07",
+      "automated_test": "test_H07_missing_csrf_token_is_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H07_missing_csrf_token_is_rejected",
+      "description": "Yêu cầu ghi thiếu mã phiên không tạo hồ sơ.",
+      "status": "passed",
+      "duration_ms": 0.71,
+      "detail": ""
+    },
+    {
+      "id": "H08",
+      "automated_test": "test_H08_wrong_csrf_token_is_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H08_wrong_csrf_token_is_rejected",
+      "description": "Yêu cầu ghi có mã phiên sai không được chấp nhận.",
+      "status": "passed",
+      "duration_ms": 0.759,
+      "detail": ""
+    },
+    {
+      "id": "H09",
+      "automated_test": "test_H09_foreign_origin_mutation_is_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H09_foreign_origin_mutation_is_rejected",
+      "description": "Origin sai vẫn bị chặn khi biết mã phiên thử nghiệm.",
+      "status": "passed",
+      "duration_ms": 0.967,
+      "detail": ""
+    },
+    {
+      "id": "H10",
+      "automated_test": "test_H10_json_content_type_required",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H10_json_content_type_required",
+      "description": "Không diễn giải một biểu mẫu hoặc văn bản thường thành lệnh ghi JSON.",
+      "status": "passed",
+      "duration_ms": 0.912,
+      "detail": ""
+    },
+    {
+      "id": "H11",
+      "automated_test": "test_H11_invalid_json_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H11_invalid_json_rejected",
+      "description": "JSON sai cú pháp trả lỗi rõ ràng thay vì lỗi máy chủ.",
+      "status": "passed",
+      "duration_ms": 0.821,
+      "detail": ""
+    },
+    {
+      "id": "H12",
+      "automated_test": "test_H12_invalid_utf8_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H12_invalid_utf8_rejected",
+      "description": "Byte không phải UTF-8 không được lưu thành văn bản bị hỏng.",
+      "status": "passed",
+      "duration_ms": 0.792,
+      "detail": ""
+    },
+    {
+      "id": "H13",
+      "automated_test": "test_H13_json_array_rejected",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H13_json_array_rejected",
+      "description": "Hình dạng dữ liệu đầu vào phải là một đối tượng có trường xác định.",
+      "status": "passed",
+      "duration_ms": 0.665,
+      "detail": ""
+    },
+    {
+      "id": "H14",
+      "automated_test": "test_H14_request_size_is_bounded",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H14_request_size_is_bounded",
+      "description": "Giới hạn kích thước được kiểm tra trước khi đọc toàn bộ nội dung.",
+      "status": "passed",
+      "duration_ms": 0.67,
+      "detail": ""
+    },
+    {
+      "id": "H15",
+      "automated_test": "test_H15_static_whitelist_blocks_traversal_and_database",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H15_static_whitelist_blocks_traversal_and_database",
+      "description": "Chỉ tài sản giao diện được công bố; đường dẫn dữ liệu không được phục vụ.",
+      "status": "passed",
+      "duration_ms": 2.922,
+      "detail": ""
+    },
+    {
+      "id": "H16",
+      "automated_test": "test_H16_static_security_headers",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H16_static_security_headers",
+      "description": "Tệp giao diện có chính sách nguồn và loại nội dung phù hợp.",
+      "status": "passed",
+      "duration_ms": 3.346,
+      "detail": ""
+    },
+    {
+      "id": "H17",
+      "automated_test": "test_H17_cross_origin_preflight_is_not_enabled",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H17_cross_origin_preflight_is_not_enabled",
+      "description": "Ứng dụng không bật CORS cho trang bên ngoài gửi lệnh.",
+      "status": "passed",
+      "duration_ms": 0.615,
+      "detail": ""
+    },
+    {
+      "id": "H18",
+      "automated_test": "test_H18_invalid_search_parameters",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H18_invalid_search_parameters",
+      "description": "Giới hạn và bộ lọc tìm kiếm sai được báo tại giao diện API.",
+      "status": "passed",
+      "duration_ms": 1.749,
+      "detail": ""
+    },
+    {
+      "id": "H19",
+      "automated_test": "test_H19_complete_dossier_workflow",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H19_complete_dossier_workflow",
+      "description": "Tạo hồ sơ, gắn nguồn, đổi phiên bản và đọc lại căn cứ cũ qua HTTP.",
+      "status": "passed",
+      "duration_ms": 27.232,
+      "detail": ""
+    },
+    {
+      "id": "H20",
+      "automated_test": "test_H20_backup_download_and_audit",
+      "full_test_id": "test_contract_http.HttpContractTests.test_H20_backup_download_and_audit",
+      "description": "Tải bản sao ZIP có thể mở và nhật ký còn nhất quán sau giao dịch.",
+      "status": "passed",
+      "duration_ms": 8.529,
+      "detail": ""
+    },
+    {
+      "id": "S31",
+      "automated_test": "test_audit_detects_modified_event",
+      "full_test_id": "test_store.StoreTests.test_audit_detects_modified_event",
+      "description": "test_audit_detects_modified_event",
+      "status": "passed",
+      "duration_ms": 17.076,
+      "detail": ""
+    },
+    {
+      "id": "S38",
+      "automated_test": "test_backup_is_valid_and_can_open_as_separate_store",
+      "full_test_id": "test_store.StoreTests.test_backup_is_valid_and_can_open_as_separate_store",
+      "description": "test_backup_is_valid_and_can_open_as_separate_store",
+      "status": "passed",
+      "duration_ms": 22.422,
+      "detail": ""
+    },
+    {
+      "id": "S39",
+      "automated_test": "test_backup_verifier_rejects_changed_database",
+      "full_test_id": "test_store.StoreTests.test_backup_verifier_rejects_changed_database",
+      "description": "test_backup_verifier_rejects_changed_database",
+      "status": "passed",
+      "duration_ms": 15.283,
+      "detail": ""
+    },
+    {
+      "id": "S02",
+      "automated_test": "test_cannot_self_assign_reviewed_on_creation",
+      "full_test_id": "test_store.StoreTests.test_cannot_self_assign_reviewed_on_creation",
+      "description": "test_cannot_self_assign_reviewed_on_creation",
+      "status": "passed",
+      "duration_ms": 13.293,
+      "detail": ""
+    },
+    {
+      "id": "S29",
+      "automated_test": "test_delete_claim_cascades_evidence",
+      "full_test_id": "test_store.StoreTests.test_delete_claim_cascades_evidence",
+      "description": "test_delete_claim_cascades_evidence",
+      "status": "passed",
+      "duration_ms": 17.32,
+      "detail": ""
+    },
+    {
+      "id": "S26",
+      "automated_test": "test_direct_metadata_corruption_is_detected",
+      "full_test_id": "test_store.StoreTests.test_direct_metadata_corruption_is_detected",
+      "description": "test_direct_metadata_corruption_is_detected",
+      "status": "passed",
+      "duration_ms": 14.716,
+      "detail": ""
+    },
+    {
+      "id": "S25",
+      "automated_test": "test_direct_segment_corruption_is_detected",
+      "full_test_id": "test_store.StoreTests.test_direct_segment_corruption_is_detected",
+      "description": "test_direct_segment_corruption_is_detected",
+      "status": "passed",
+      "duration_ms": 15.059,
+      "detail": ""
+    },
+    {
+      "id": "S15",
+      "automated_test": "test_draft_cannot_be_attached",
+      "full_test_id": "test_store.StoreTests.test_draft_cannot_be_attached",
+      "description": "test_draft_cannot_be_attached",
+      "status": "passed",
+      "duration_ms": 11.764,
+      "detail": ""
+    },
+    {
+      "id": "S19",
+      "automated_test": "test_duplicate_evidence_rejected",
+      "full_test_id": "test_store.StoreTests.test_duplicate_evidence_rejected",
+      "description": "test_duplicate_evidence_rejected",
+      "status": "passed",
+      "duration_ms": 13.757,
+      "detail": ""
+    },
+    {
+      "id": "S06",
+      "automated_test": "test_duplicate_locators_rejected",
+      "full_test_id": "test_store.StoreTests.test_duplicate_locators_rejected",
+      "description": "test_duplicate_locators_rejected",
+      "status": "passed",
+      "duration_ms": 14.167,
+      "detail": ""
+    },
+    {
+      "id": "S07",
+      "automated_test": "test_empty_or_short_segments_rejected",
+      "full_test_id": "test_store.StoreTests.test_empty_or_short_segments_rejected",
+      "description": "test_empty_or_short_segments_rejected",
+      "status": "passed",
+      "duration_ms": 13.371,
+      "detail": ""
+    },
+    {
+      "id": "S36",
+      "automated_test": "test_empty_project_warning_survives_each_export_format",
+      "full_test_id": "test_store.StoreTests.test_empty_project_warning_survives_each_export_format",
+      "description": "test_empty_project_warning_survives_each_export_format",
+      "status": "passed",
+      "duration_ms": 14.78,
+      "detail": ""
+    },
+    {
+      "id": "S18",
+      "automated_test": "test_empty_quote_uses_entire_segment",
+      "full_test_id": "test_store.StoreTests.test_empty_quote_uses_entire_segment",
+      "description": "test_empty_quote_uses_entire_segment",
+      "status": "passed",
+      "duration_ms": 28.838,
+      "detail": ""
+    },
+    {
+      "id": "S27",
+      "automated_test": "test_evidence_quote_corruption_is_detected",
+      "full_test_id": "test_store.StoreTests.test_evidence_quote_corruption_is_detected",
+      "description": "test_evidence_quote_corruption_is_detected",
+      "status": "passed",
+      "duration_ms": 15.563,
+      "detail": ""
+    },
+    {
+      "id": "S16",
+      "automated_test": "test_exact_quote_required",
+      "full_test_id": "test_store.StoreTests.test_exact_quote_required",
+      "description": "test_exact_quote_required",
+      "status": "passed",
+      "duration_ms": 14.033,
+      "detail": ""
+    },
+    {
+      "id": "S34",
+      "automated_test": "test_export_escapes_html_and_preserves_citation_metadata",
+      "full_test_id": "test_store.StoreTests.test_export_escapes_html_and_preserves_citation_metadata",
+      "description": "test_export_escapes_html_and_preserves_citation_metadata",
+      "status": "passed",
+      "duration_ms": 16.834,
+      "detail": ""
+    },
+    {
+      "id": "S30",
+      "automated_test": "test_failed_transaction_rolls_back_content_and_audit",
+      "full_test_id": "test_store.StoreTests.test_failed_transaction_rolls_back_content_and_audit",
+      "description": "test_failed_transaction_rolls_back_content_and_audit",
+      "status": "passed",
+      "duration_ms": 15.285,
+      "detail": ""
+    },
+    {
+      "id": "S03",
+      "automated_test": "test_invalid_date_rejected",
+      "full_test_id": "test_store.StoreTests.test_invalid_date_rejected",
+      "description": "test_invalid_date_rejected",
+      "status": "passed",
+      "duration_ms": 18.547,
+      "detail": ""
+    },
+    {
+      "id": "S35",
+      "automated_test": "test_json_and_markdown_exports_include_warnings",
+      "full_test_id": "test_store.StoreTests.test_json_and_markdown_exports_include_warnings",
+      "description": "test_json_and_markdown_exports_include_warnings",
+      "status": "passed",
+      "duration_ms": 11.654,
+      "detail": ""
+    },
+    {
+      "id": "S05",
+      "automated_test": "test_law_metadata_required",
+      "full_test_id": "test_store.StoreTests.test_law_metadata_required",
+      "description": "test_law_metadata_required",
+      "status": "passed",
+      "duration_ms": 13.053,
+      "detail": ""
+    },
+    {
+      "id": "S20",
+      "automated_test": "test_missing_evidence_severity_depends_on_claim_type",
+      "full_test_id": "test_store.StoreTests.test_missing_evidence_severity_depends_on_claim_type",
+      "description": "test_missing_evidence_severity_depends_on_claim_type",
+      "status": "passed",
+      "duration_ms": 21.908,
+      "detail": ""
+    },
+    {
+      "id": "S01",
+      "automated_test": "test_new_source_is_draft",
+      "full_test_id": "test_store.StoreTests.test_new_source_is_draft",
+      "description": "test_new_source_is_draft",
+      "status": "passed",
+      "duration_ms": 13.134,
+      "detail": ""
+    },
+    {
+      "id": "S32",
+      "automated_test": "test_parallel_writes_preserve_audit_chain",
+      "full_test_id": "test_store.StoreTests.test_parallel_writes_preserve_audit_chain",
+      "description": "test_parallel_writes_preserve_audit_chain",
+      "status": "passed",
+      "duration_ms": 27.629,
+      "detail": ""
+    },
+    {
+      "id": "S33",
+      "automated_test": "test_read_transaction_keeps_one_snapshot_during_other_write",
+      "full_test_id": "test_store.StoreTests.test_read_transaction_keeps_one_snapshot_during_other_write",
+      "description": "test_read_transaction_keeps_one_snapshot_during_other_write",
+      "status": "passed",
+      "duration_ms": 15.284,
+      "detail": ""
+    },
+    {
+      "id": "S24",
+      "automated_test": "test_relink_new_version_resolves_staleness",
+      "full_test_id": "test_store.StoreTests.test_relink_new_version_resolves_staleness",
+      "description": "test_relink_new_version_resolves_staleness",
+      "status": "passed",
+      "duration_ms": 17.165,
+      "detail": ""
+    },
+    {
+      "id": "S23",
+      "automated_test": "test_review_new_version_does_not_silently_refresh_evidence",
+      "full_test_id": "test_store.StoreTests.test_review_new_version_does_not_silently_refresh_evidence",
+      "description": "test_review_new_version_does_not_silently_refresh_evidence",
+      "status": "passed",
+      "duration_ms": 15.498,
+      "detail": ""
+    },
+    {
+      "id": "S14",
+      "automated_test": "test_review_note_required",
+      "full_test_id": "test_store.StoreTests.test_review_note_required",
+      "description": "test_review_note_required",
+      "status": "passed",
+      "duration_ms": 10.13,
+      "detail": ""
+    },
+    {
+      "id": "S22",
+      "automated_test": "test_revision_preserves_old_evidence_and_marks_stale",
+      "full_test_id": "test_store.StoreTests.test_revision_preserves_old_evidence_and_marks_stale",
+      "description": "test_revision_preserves_old_evidence_and_marks_stale",
+      "status": "passed",
+      "duration_ms": 14.639,
+      "detail": ""
+    },
+    {
+      "id": "S11",
+      "automated_test": "test_search_empty_stopwords_and_out_of_scope",
+      "full_test_id": "test_store.StoreTests.test_search_empty_stopwords_and_out_of_scope",
+      "description": "test_search_empty_stopwords_and_out_of_scope",
+      "status": "passed",
+      "duration_ms": 23.082,
+      "detail": ""
+    },
+    {
+      "id": "S08",
+      "automated_test": "test_search_hides_drafts_by_default",
+      "full_test_id": "test_store.StoreTests.test_search_hides_drafts_by_default",
+      "description": "test_search_hides_drafts_by_default",
+      "status": "passed",
+      "duration_ms": 12.643,
+      "detail": ""
+    },
+    {
+      "id": "S13",
+      "automated_test": "test_search_limits_are_bounded",
+      "full_test_id": "test_store.StoreTests.test_search_limits_are_bounded",
+      "description": "test_search_limits_are_bounded",
+      "status": "passed",
+      "duration_ms": 10.32,
+      "detail": ""
+    },
+    {
+      "id": "S10",
+      "automated_test": "test_search_original_text_retains_accents",
+      "full_test_id": "test_store.StoreTests.test_search_original_text_retains_accents",
+      "description": "test_search_original_text_retains_accents",
+      "status": "passed",
+      "duration_ms": 10.776,
+      "detail": ""
+    },
+    {
+      "id": "S12",
+      "automated_test": "test_search_source_filter",
+      "full_test_id": "test_store.StoreTests.test_search_source_filter",
+      "description": "test_search_source_filter",
+      "status": "passed",
+      "duration_ms": 12.051,
+      "detail": ""
+    },
+    {
+      "id": "S09",
+      "automated_test": "test_search_vietnamese_accent_equivalence",
+      "full_test_id": "test_store.StoreTests.test_search_vietnamese_accent_equivalence",
+      "description": "test_search_vietnamese_accent_equivalence",
+      "status": "passed",
+      "duration_ms": 11.231,
+      "detail": ""
+    },
+    {
+      "id": "S40",
+      "automated_test": "test_seed_is_idempotent_across_restart",
+      "full_test_id": "test_store.StoreTests.test_seed_is_idempotent_across_restart",
+      "description": "test_seed_is_idempotent_across_restart",
+      "status": "passed",
+      "duration_ms": 19.955,
+      "detail": ""
+    },
+    {
+      "id": "S41",
+      "automated_test": "test_source_history_contains_all_versions",
+      "full_test_id": "test_store.StoreTests.test_source_history_contains_all_versions",
+      "description": "test_source_history_contains_all_versions",
+      "status": "passed",
+      "duration_ms": 11.694,
+      "detail": ""
+    },
+    {
+      "id": "S42",
+      "automated_test": "test_sql_control_characters_are_data",
+      "full_test_id": "test_store.StoreTests.test_sql_control_characters_are_data",
+      "description": "test_sql_control_characters_are_data",
+      "status": "passed",
+      "duration_ms": 11.768,
+      "detail": ""
+    },
+    {
+      "id": "S43",
+      "automated_test": "test_unknown_entities_return_not_found",
+      "full_test_id": "test_store.StoreTests.test_unknown_entities_return_not_found",
+      "description": "test_unknown_entities_return_not_found",
+      "status": "passed",
+      "duration_ms": 12.037,
+      "detail": ""
+    },
+    {
+      "id": "S37",
+      "automated_test": "test_unsupported_export_format_rejected",
+      "full_test_id": "test_store.StoreTests.test_unsupported_export_format_rejected",
+      "description": "test_unsupported_export_format_rejected",
+      "status": "passed",
+      "duration_ms": 10.898,
+      "detail": ""
+    },
+    {
+      "id": "S28",
+      "automated_test": "test_update_claim_preserves_evidence",
+      "full_test_id": "test_store.StoreTests.test_update_claim_preserves_evidence",
+      "description": "test_update_claim_preserves_evidence",
+      "status": "passed",
+      "duration_ms": 15.345,
+      "detail": ""
+    },
+    {
+      "id": "S04",
+      "automated_test": "test_url_schemes_and_userinfo_rejected",
+      "full_test_id": "test_store.StoreTests.test_url_schemes_and_userinfo_rejected",
+      "description": "test_url_schemes_and_userinfo_rejected",
+      "status": "passed",
+      "duration_ms": 10.018,
+      "detail": ""
+    },
+    {
+      "id": "S21",
+      "automated_test": "test_valid_evidence_has_no_technical_errors",
+      "full_test_id": "test_store.StoreTests.test_valid_evidence_has_no_technical_errors",
+      "description": "test_valid_evidence_has_no_technical_errors",
+      "status": "passed",
+      "duration_ms": 11.702,
+      "detail": ""
+    },
+    {
+      "id": "S17",
+      "automated_test": "test_whitespace_normalized_quote_accepted",
+      "full_test_id": "test_store.StoreTests.test_whitespace_normalized_quote_accepted",
+      "description": "test_whitespace_normalized_quote_accepted",
+      "status": "passed",
+      "duration_ms": 12.453,
+      "detail": ""
+    },
+    {
+      "id": "test_font_csp_remains_self_only",
+      "automated_test": "test_font_csp_remains_self_only",
+      "full_test_id": "test_style_delivery.StyleDeliveryTests.test_font_csp_remains_self_only",
+      "description": "test_font_csp_remains_self_only",
+      "status": "passed",
+      "duration_ms": 508.42,
+      "detail": ""
+    },
+    {
+      "id": "test_font_route_does_not_open_arbitrary_files",
+      "automated_test": "test_font_route_does_not_open_arbitrary_files",
+      "full_test_id": "test_style_delivery.StyleDeliveryTests.test_font_route_does_not_open_arbitrary_files",
+      "description": "test_font_route_does_not_open_arbitrary_files",
+      "status": "passed",
+      "duration_ms": 509.507,
+      "detail": ""
+    },
+    {
+      "id": "test_index_requests_font_css_from_same_origin",
+      "automated_test": "test_index_requests_font_css_from_same_origin",
+      "full_test_id": "test_style_delivery.StyleDeliveryTests.test_index_requests_font_css_from_same_origin",
+      "description": "test_index_requests_font_css_from_same_origin",
+      "status": "passed",
+      "duration_ms": 510.74,
+      "detail": ""
+    },
+    {
+      "id": "test_local_font_css_uses_no_remote_cdn",
+      "automated_test": "test_local_font_css_uses_no_remote_cdn",
+      "full_test_id": "test_style_delivery.StyleDeliveryTests.test_local_font_css_uses_no_remote_cdn",
+      "description": "test_local_font_css_uses_no_remote_cdn",
+      "status": "passed",
+      "duration_ms": 509.701,
+      "detail": ""
+    },
+    {
+      "id": "test_styles_have_green_palette_and_rounded_font_stack",
+      "automated_test": "test_styles_have_green_palette_and_rounded_font_stack",
+      "full_test_id": "test_style_delivery.StyleDeliveryTests.test_styles_have_green_palette_and_rounded_font_stack",
+      "description": "test_styles_have_green_palette_and_rounded_font_stack",
+      "status": "passed",
+      "duration_ms": 511.364,
+      "detail": ""
+    },
+    {
+      "id": "test_new_static_assets",
+      "automated_test": "test_new_static_assets",
+      "full_test_id": "test_v2_features.HTTPV2Tests.test_new_static_assets",
+      "description": "test_new_static_assets",
+      "status": "passed",
+      "duration_ms": 509.786,
+      "detail": ""
+    },
+    {
+      "id": "test_reject_public_host",
+      "automated_test": "test_reject_public_host",
+      "full_test_id": "test_v2_features.HTTPV2Tests.test_reject_public_host",
+      "description": "test_reject_public_host",
+      "status": "passed",
+      "duration_ms": 509.409,
+      "detail": ""
+    },
+    {
+      "id": "test_semantic_offline_is_explicit_error",
+      "automated_test": "test_semantic_offline_is_explicit_error",
+      "full_test_id": "test_v2_features.HTTPV2Tests.test_semantic_offline_is_explicit_error",
+      "description": "test_semantic_offline_is_explicit_error",
+      "status": "passed",
+      "duration_ms": 508.562,
+      "detail": ""
+    },
+    {
+      "id": "test_upload_then_search_draft_and_review",
+      "automated_test": "test_upload_then_search_draft_and_review",
+      "full_test_id": "test_v2_features.HTTPV2Tests.test_upload_then_search_draft_and_review",
+      "description": "test_upload_then_search_draft_and_review",
+      "status": "passed",
+      "duration_ms": 536.645,
+      "detail": ""
+    },
+    {
+      "id": "test_bad_extension",
+      "automated_test": "test_bad_extension",
+      "full_test_id": "test_v2_features.V2Tests.test_bad_extension",
+      "description": "test_bad_extension",
+      "status": "passed",
+      "duration_ms": 8.592,
+      "detail": ""
+    },
+    {
+      "id": "test_docx_import_is_draft_and_carries_locators",
+      "automated_test": "test_docx_import_is_draft_and_carries_locators",
+      "full_test_id": "test_v2_features.V2Tests.test_docx_import_is_draft_and_carries_locators",
+      "description": "test_docx_import_is_draft_and_carries_locators",
+      "status": "passed",
+      "duration_ms": 41.82,
+      "detail": ""
+    },
+    {
+      "id": "test_overlarge",
+      "automated_test": "test_overlarge",
+      "full_test_id": "test_v2_features.V2Tests.test_overlarge",
+      "description": "test_overlarge",
+      "status": "passed",
+      "duration_ms": 10.507,
+      "detail": ""
+    },
+    {
+      "id": "test_pdf_no_text_layer",
+      "automated_test": "test_pdf_no_text_layer",
+      "full_test_id": "test_v2_features.V2Tests.test_pdf_no_text_layer",
+      "description": "test_pdf_no_text_layer",
+      "status": "passed",
+      "duration_ms": 10.85,
+      "detail": ""
+    },
+    {
+      "id": "test_public_allowlist_blocks_private_and_unknown",
+      "automated_test": "test_public_allowlist_blocks_private_and_unknown",
+      "full_test_id": "test_v2_features.V2Tests.test_public_allowlist_blocks_private_and_unknown",
+      "description": "test_public_allowlist_blocks_private_and_unknown",
+      "status": "passed",
+      "duration_ms": 7.488,
+      "detail": ""
+    },
+    {
+      "id": "test_rag_citation_rejection_and_success",
+      "automated_test": "test_rag_citation_rejection_and_success",
+      "full_test_id": "test_v2_features.V2Tests.test_rag_citation_rejection_and_success",
+      "description": "test_rag_citation_rejection_and_success",
+      "status": "passed",
+      "duration_ms": 31.933,
+      "detail": ""
+    },
+    {
+      "id": "test_rag_no_source_does_not_call_llm",
+      "automated_test": "test_rag_no_source_does_not_call_llm",
+      "full_test_id": "test_v2_features.V2Tests.test_rag_no_source_does_not_call_llm",
+      "description": "test_rag_no_source_does_not_call_llm",
+      "status": "passed",
+      "duration_ms": 8.4,
+      "detail": ""
+    },
+    {
+      "id": "test_semantic_mocked_no_false_fallback",
+      "automated_test": "test_semantic_mocked_no_false_fallback",
+      "full_test_id": "test_v2_features.V2Tests.test_semantic_mocked_no_false_fallback",
+      "description": "test_semantic_mocked_no_false_fallback",
+      "status": "passed",
+      "duration_ms": 35.767,
+      "detail": ""
+    },
+    {
+      "id": "test_txt_utf8_import",
+      "automated_test": "test_txt_utf8_import",
+      "full_test_id": "test_v2_features.V2Tests.test_txt_utf8_import",
+      "description": "test_txt_utf8_import",
+      "status": "passed",
+      "duration_ms": 9.216,
+      "detail": ""
+    }
+  ],
+  "artifact_sha256": {
+    "app.py": "4188a1975a4c64540c8ddd0757702ba54b3e195c1be880d57acfe2176040be23",
+    "store.py": "4567b3059de425e2bff5450332a9c487baeb87183e67b56cfb2a75f304a3df83",
+    "static/app.js": "ef4a058b21a80ec1855de1ca2b5c7ef68550e07ddd427fea446b8c3598229519",
+    "static/favicon.svg": "e16e1162b82735a6f066db8e4f5ad1c4b8204b43729a64a33de1416e58d10124",
+    "static/index.html": "70e2fa51724979b58c4ca6f9ec1f9650a0235076ed47a744d4ce9aca1b0aaa73",
+    "static/styles.css": "607b21ff2f28d125bc2e83d22a64079141b7a245f5dace2aaf9f90215bec4774",
+    "static/ui_v2.js": "07f1c958cb6978bb9a74532ac64a732b229db3476ebd036fc0a751b85bae8b83",
+    "tests/test_contract_http.py": "66aa1c4c774af35240cc36c82f072e16a18fc46e52f9322ad791875940d37fd7",
+    "tests/test_store.py": "d3ad9d06afbcf1ced7dba28409c46663529b2488b112bd4c0087abb0cffdbcce",
+    "tests/test_style_delivery.py": "b58cadbe49150728950f046d9678d252df5ac1c5a0d08e8b11033c84ac6bd670",
+    "tests/test_v2_features.py": "2e06be34ab1fde96dad607b7b2bc7513d85fa76eafaea29bcde2d4c74aee455d",
+    "data/search_fixtures.json": "cb839600cb4226eee94b23c5edf5a241e39f6a8c276679108baef303d9bdbebd",
+    "data/search_holdout.json": "d49b8f14b57fd1045ad0c195a95889bb0122abb85c9313b7b1fe32bf1d8da6d3",
+    "data/source_seed.json": "527ef60c142344a9a93dc7edea53f7b9aa9c86b37c9e3233d91d6624b70a1e45"
+  }
+}

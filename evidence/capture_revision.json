@@ -1,0 +1,362 @@
+{
+  "captured_at_utc": "2026-10-26T09:13:16.962Z",
+  "base_url": "http://127.0.0.1:8765",
+  "read_only": true,
+  "reason": "Tighten figure06 to the query-labelled empty-results region for continuous report layout.",
+  "image_path": "evidence/screenshots/06_search_empty.png",
+  "previous_dimensions": {
+    "width": 960,
+    "height": 508
+  },
+  "new_dimensions": {
+    "width": 960,
+    "height": 290
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 960
+  },
+  "query": "liều amoxicillin trẻ em",
+  "source_id": "",
+  "reviewed_only": true,
+  "result_count": 0,
+  "capture": "Actual Chromium page screenshot of the visible search-results region, using native scrolling only.",
+  "page_errors": [],
+  "mutation_requests": [],
+  "completed_workflow_receipt_unchanged_sha256": "b8cd365781d957676a5717d0f1e8df6cd560c9fde62cc14c629ea2a076b585af",
+  "future_full_run_profile": "tools/browser_evidence.cjs shot(search_empty) captures search-results only",
+  "additional_captures": [
+    {
+      "reason": "Replace screenshots whose temporary toast obscured a control, source-history hash, or issue description in the final report.",
+      "captured_at_utc": "2026-10-26T09:28:55.617Z",
+      "original_completed_workflow_preserved": true,
+      "completed_workflow_receipt_unchanged_sha256": "b8cd365781d957676a5717d0f1e8df6cd560c9fde62cc14c629ea2a076b585af",
+      "existing_database_capture": {
+        "captured_at_utc": "2026-10-26T09:27:42.515Z",
+        "base_url": "http://127.0.0.1:8767",
+        "mode": "existing",
+        "read_only": true,
+        "viewport": {
+          "width": 1280,
+          "height": 960
+        },
+        "timezone": "Asia/Ho_Chi_Minh",
+        "device_scale_factor": 1,
+        "page_errors": [],
+        "mutation_requests": [],
+        "actions": [
+          "Opened the existing source through the source list",
+          "Captured the source-versions panel after confirming no toast",
+          "Compared source, project and audit API snapshots before and after; all unchanged"
+        ],
+        "captures": [
+          {
+            "image_path": "evidence/screenshots/25_version_history.png",
+            "pixel_width": 649,
+            "pixel_height": 328,
+            "capture": "element",
+            "toast_was_visible_before_wait": false,
+            "toast_wait_ms": 147,
+            "toast_visible_at_capture": false,
+            "image_sha256": "254f7a7c005013ce72cbb25f0e7c512ee3a263516e577334ae050f1090d754a0",
+            "details": "Read-only capture of the same two-version history in the completed original demonstration database; no data or UI content was altered.",
+            "previous_image_sha256": "7a064205ddd9966825848fd8e7e47c809424c5fc1c37f438c83c620a3a37f46b",
+            "previous_dimensions": {
+              "width": 649,
+              "height": 328
+            }
+          }
+        ],
+        "completed_workflow_receipt_unchanged_sha256": "b8cd365781d957676a5717d0f1e8df6cd560c9fde62cc14c629ea2a076b585af",
+        "data_directory": "work/part2/cropped_demo",
+        "snapshot_before_sha256": "0791ad9b7911cdc93623ed8d2f82de39a64a7aa13e723df1f8a94b227080655c",
+        "snapshot_after_sha256": "0791ad9b7911cdc93623ed8d2f82de39a64a7aa13e723df1f8a94b227080655c",
+        "created_records": null
+      },
+      "isolated_staged_captures": {
+        "captured_at_utc": "2026-10-26T09:28:55.617Z",
+        "base_url": "http://127.0.0.1:8767",
+        "mode": "staged",
+        "read_only": false,
+        "viewport": {
+          "width": 1280,
+          "height": 960
+        },
+        "timezone": "Asia/Ho_Chi_Minh",
+        "device_scale_factor": 1,
+        "page_errors": [],
+        "mutation_requests": [
+          {
+            "method": "POST",
+            "path": "/api/sources",
+            "status": 201,
+            "transport": "supported HTTP API",
+            "payload": {
+              "title": "Học liệu trình diễn về quản lý phiên bản trích dẫn",
+              "issuer": "Học liệu tự biên soạn cho kịch bản trình diễn",
+              "document_number": "DEMO-PHIENBAN-01",
+              "published_date": "2026-10-26",
+              "url": "",
+              "kind": "learning_note",
+              "text_kind": "original",
+              "segments": [
+                {
+                  "title": "Quản lý căn cứ theo phiên bản",
+                  "locator": "Mục 1",
+                  "text": "Căn cứ trích dẫn phải lưu thông tin nguồn, vị trí đoạn và phiên bản được sử dụng. Khi nội dung học liệu thay đổi, người viết cần đọc lại luận điểm và quyết định giữ hoặc thay căn cứ sau khi đối chiếu."
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/api/sources/src-e89a4a83d2e44dd78dba/review",
+            "status": 200,
+            "transport": "supported HTTP API",
+            "payload": {
+              "review_note": "Đối chiếu đoạn thực hành tự biên soạn với nội dung đã chuẩn bị; kiểm tra đúng chữ, vị trí Mục 1 và phạm vi trình diễn."
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/api/projects",
+            "status": 201,
+            "transport": "supported HTTP API",
+            "payload": {
+              "title": "Hồ sơ thực hành — kiểm tra căn cứ theo phiên bản",
+              "description": "Hồ sơ mô phỏng để kiểm tra việc gắn căn cứ, thay phiên bản học liệu, giữ cảnh báo và xuất dữ liệu. Không phải kết quả triển khai tại Học viện."
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/api/projects/prj-6b849249fe4647499aa3/claims",
+            "status": 201,
+            "transport": "supported HTTP API",
+            "payload": {
+              "claim_type": "factual",
+              "text": "Học liệu thực hành yêu cầu lưu nguồn, vị trí đoạn và phiên bản được sử dụng cho mỗi căn cứ trích dẫn."
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/api/projects/prj-6b849249fe4647499aa3/claims",
+            "status": 201,
+            "transport": "supported HTTP API",
+            "payload": {
+              "claim_type": "analysis",
+              "text": "Việc giữ lại phiên bản đã sử dụng giúp người viết kiểm tra lý do thay đổi căn cứ trong quá trình sửa hồ sơ."
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/api/projects/prj-6b849249fe4647499aa3/claims",
+            "status": 201,
+            "transport": "supported HTTP API",
+            "payload": {
+              "claim_type": "proposal",
+              "text": "Đề xuất tổ chức một buổi thực hành có nhiệm vụ sửa nguồn để người học tự xử lý cảnh báo phiên bản."
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/api/claims/clm-cd25332950a14678ab3b/evidence",
+            "status": 201,
+            "transport": "supported HTTP API",
+            "payload": {
+              "segment_id": "seg-c03060039fe442c48e0b",
+              "quote": "Căn cứ trích dẫn phải lưu thông tin nguồn, vị trí đoạn và phiên bản được sử dụng. Khi nội dung học liệu thay đổi, người viết cần đọc lại luận điểm và quyết định giữ hoặc thay căn cứ sau khi đối chiếu.",
+              "note": "Đoạn thực hành trực tiếp nêu ba thành phần cần lưu. Nhận định chỉ áp dụng cho nội dung học liệu này."
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/api/claims/clm-3f3841a6207f403ca013/evidence",
+            "status": 201,
+            "transport": "supported HTTP API",
+            "payload": {
+              "segment_id": "seg-c03060039fe442c48e0b",
+              "quote": "Căn cứ trích dẫn phải lưu thông tin nguồn, vị trí đoạn và phiên bản được sử dụng. Khi nội dung học liệu thay đổi, người viết cần đọc lại luận điểm và quyết định giữ hoặc thay căn cứ sau khi đối chiếu.",
+              "note": "Dùng làm cơ sở giải thích quy trình; người viết vẫn phải kiểm tra tính phù hợp của lập luận phân tích."
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/api/sources/src-e89a4a83d2e44dd78dba/revise",
+            "status": 200,
+            "transport": "actual browser form submission",
+            "payload": {
+              "segments": [
+                {
+                  "title": "Quản lý căn cứ theo phiên bản",
+                  "locator": "Mục 1",
+                  "text": "Căn cứ trích dẫn phải lưu thông tin nguồn, vị trí đoạn và phiên bản được sử dụng. Khi nội dung học liệu thay đổi, người viết cần đọc lại luận điểm, ghi lý do xử lý và quyết định giữ hoặc thay căn cứ sau khi đối chiếu."
+                }
+              ],
+              "change_note": "Bổ sung yêu cầu ghi lý do xử lý căn cứ để trình diễn việc thay đổi nội dung nguồn."
+            }
+          }
+        ],
+        "actions": [
+          "Created original demonstration source and recorded self-review through the API",
+          "Created the original project and three claim types through the API",
+          "Attached the original first-version quote and captured the first claim",
+          "Attached the second first-version evidence link",
+          "Submitted the original revision through the actual browser form",
+          "Verified four expected issues and preserved version-1 quotations",
+          "Waited for the actual toast to disappear and captured the check panel"
+        ],
+        "captures": [
+          {
+            "image_path": "evidence/screenshots/22_evidence_saved.png",
+            "pixel_width": 649,
+            "pixel_height": 477,
+            "capture": "element",
+            "toast_was_visible_before_wait": false,
+            "toast_wait_ms": 384,
+            "toast_visible_at_capture": false,
+            "image_sha256": "abcfab8d041df31a255e897fd1351b41f2ee17f76c833402144a9ab778cf07a7",
+            "details": "Fresh isolated demonstration, reconstructed through the supported API with the original first-version quote, claim text and usage note. The actual claim card was captured with no toast.",
+            "previous_image_sha256": "d4d47fc75c638e6bbba9a9501bb3b3266d12ed41318a24d4e99a7981ea9695c7",
+            "previous_dimensions": {
+              "width": 649,
+              "height": 477
+            }
+          },
+          {
+            "image_path": "evidence/screenshots/26_stale_warning.png",
+            "pixel_width": 649,
+            "pixel_height": 500,
+            "capture": "element",
+            "toast_was_visible_before_wait": true,
+            "toast_wait_ms": 4448,
+            "toast_visible_at_capture": false,
+            "image_sha256": "f771531e7a189fa68b3ecfca7e9d5ae7a637ee354dc89201227cd9d49f19f1e6",
+            "details": "Fresh isolated source revision with two pinned version-1 evidence links. Captured the actual four-issue technical-check panel after the notification expired; the source is draft at version 2.",
+            "previous_image_sha256": "e7114ea7516aa64b573b28abe90551122f8b5d12a15ef71553b7ff290bfdb3e3",
+            "previous_dimensions": {
+              "width": 649,
+              "height": 500
+            }
+          }
+        ],
+        "completed_workflow_receipt_unchanged_sha256": "b8cd365781d957676a5717d0f1e8df6cd560c9fde62cc14c629ea2a076b585af",
+        "data_directory": "work/part2/overlay_staged_demo",
+        "created_records": {
+          "source_id": "src-e89a4a83d2e44dd78dba",
+          "project_id": "prj-6b849249fe4647499aa3",
+          "claim_ids": [
+            "clm-cd25332950a14678ab3b",
+            "clm-3f3841a6207f403ca013",
+            "clm-fdf952765d4d47ebab7b"
+          ]
+        },
+        "check_at_capture": {
+          "summary": {
+            "claims": 3,
+            "pass": 1,
+            "warning": 0,
+            "error": 2
+          },
+          "checks": [
+            {
+              "claim_id": "clm-cd25332950a14678ab3b",
+              "status": "error",
+              "issues": [
+                {
+                  "claim_id": "clm-cd25332950a14678ab3b",
+                  "code": "SOURCE_UNREVIEWED",
+                  "severity": "error",
+                  "message": "Phiên bản hiện tại của nguồn chưa được đối chiếu.",
+                  "evidence_id": "evd-714c9c07d4314085a45b"
+                },
+                {
+                  "claim_id": "clm-cd25332950a14678ab3b",
+                  "code": "SOURCE_CHANGED",
+                  "severity": "error",
+                  "message": "Dẫn chứng giữ phiên bản 1, nguồn hiện tại đã là phiên bản 2; cần đọc lại và gắn dẫn chứng mới.",
+                  "evidence_id": "evd-714c9c07d4314085a45b"
+                }
+              ]
+            },
+            {
+              "claim_id": "clm-3f3841a6207f403ca013",
+              "status": "error",
+              "issues": [
+                {
+                  "claim_id": "clm-3f3841a6207f403ca013",
+                  "code": "SOURCE_UNREVIEWED",
+                  "severity": "error",
+                  "message": "Phiên bản hiện tại của nguồn chưa được đối chiếu.",
+                  "evidence_id": "evd-b971d3f5981e413c9552"
+                },
+                {
+                  "claim_id": "clm-3f3841a6207f403ca013",
+                  "code": "SOURCE_CHANGED",
+                  "severity": "error",
+                  "message": "Dẫn chứng giữ phiên bản 1, nguồn hiện tại đã là phiên bản 2; cần đọc lại và gắn dẫn chứng mới.",
+                  "evidence_id": "evd-b971d3f5981e413c9552"
+                }
+              ]
+            },
+            {
+              "claim_id": "clm-fdf952765d4d47ebab7b",
+              "status": "pass",
+              "issues": []
+            }
+          ],
+          "issues": [
+            {
+              "claim_id": "clm-cd25332950a14678ab3b",
+              "code": "SOURCE_UNREVIEWED",
+              "severity": "error",
+              "message": "Phiên bản hiện tại của nguồn chưa được đối chiếu.",
+              "evidence_id": "evd-714c9c07d4314085a45b"
+            },
+            {
+              "claim_id": "clm-cd25332950a14678ab3b",
+              "code": "SOURCE_CHANGED",
+              "severity": "error",
+              "message": "Dẫn chứng giữ phiên bản 1, nguồn hiện tại đã là phiên bản 2; cần đọc lại và gắn dẫn chứng mới.",
+              "evidence_id": "evd-714c9c07d4314085a45b"
+            },
+            {
+              "claim_id": "clm-3f3841a6207f403ca013",
+              "code": "SOURCE_UNREVIEWED",
+              "severity": "error",
+              "message": "Phiên bản hiện tại của nguồn chưa được đối chiếu.",
+              "evidence_id": "evd-b971d3f5981e413c9552"
+            },
+            {
+              "claim_id": "clm-3f3841a6207f403ca013",
+              "code": "SOURCE_CHANGED",
+              "severity": "error",
+              "message": "Dẫn chứng giữ phiên bản 1, nguồn hiện tại đã là phiên bản 2; cần đọc lại và gắn dẫn chứng mới.",
+              "evidence_id": "evd-b971d3f5981e413c9552"
+            }
+          ],
+          "note": "Kết quả kiểm tra tính nhất quán của dẫn nguồn; không xác nhận tính đúng của luận điểm hoặc hiệu lực pháp lý của văn bản.",
+          "checked_at": "2026-10-26T09:28:51.151Z"
+        }
+      },
+      "visually_inspected_images": [
+        "evidence/screenshots/25_version_history.png",
+        "evidence/screenshots/22_evidence_saved.png",
+        "evidence/screenshots/26_stale_warning.png"
+      ],
+      "visual_result": "All three replacement panels were inspected at original resolution. No toast remains; every control, hash and issue description is visible. Pixel dimensions are unchanged.",
+      "caption_corrections": [
+        {
+          "image": "evidence/screenshots/36_guide.png",
+          "title": "Các bước khởi đầu trong hướng dẫn sử dụng"
+        },
+        {
+          "image": "evidence/screenshots/38_retrieval_limit.png",
+          "title": "Truy vấn bổ sung chưa tìm thấy đoạn chuẩn ở năm vị trí đầu"
+        }
+      ],
+      "reproducibility_change": "tools/browser_evidence.cjs shot() now waits for #toast-region .toast to be hidden before every screenshot; source data, UI content and screenshot boundaries are not altered.",
+      "local_server_stopped": true,
+      "core_product_files_changed": false
+    }
+  ]
+}

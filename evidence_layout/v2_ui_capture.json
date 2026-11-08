@@ -1,0 +1,45 @@
+{
+  "scope": "Actual UI scripts rendered locally; API requests relayed to real localhost server because direct browser navigation is restricted. No real Ollama models used.",
+  "font": "Comfortaa fallback; Nunito not installed in capture environment",
+  "docx_import": {
+    "status": 201,
+    "result": {
+      "created_sources": [
+        {
+          "id": "src-05d6fa9414384c8e8a18",
+          "title": "demo_import_v2.docx",
+          "segments": 3,
+          "status": "draft"
+        }
+      ],
+      "total_segments": 3,
+      "origin": "demo_import_v2.docx",
+      "warning": "Tài liệu mới chưa được đối chiếu; văn bản trích xuất có thể sai bố cục. Phải kiểm tra trước khi dùng làm căn cứ."
+    }
+  },
+  "rag": {
+    "status": 503,
+    "result": {
+      "error": {
+        "code": "MODEL_UNAVAILABLE",
+        "message": "Không kết nối được Ollama hoặc mô hình chưa cài. Chạy Ollama và tải mô hình theo README."
+      }
+    }
+  },
+  "javascript_errors": [],
+  "screenshot_crops": {
+    "41_v2_import.png": [
+      35,
+      195,
+      997,
+      957
+    ],
+    "42_v2_rag_unavailable.png": [
+      35,
+      195,
+      997,
+      741
+    ]
+  },
+  "crop_scope": "Contiguous functional regions cropped from the actual interface screenshots; no content or status modified."
+}

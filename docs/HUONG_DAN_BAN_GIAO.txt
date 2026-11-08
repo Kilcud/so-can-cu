@@ -1,0 +1,11 @@
+SỔ CĂN CỨ — PHIẾU TIẾP NHẬN
+
+1. Giữ ZIP gốc; ghi ngày, hệ điều hành và phiên bản Python.
+
+2. Theo README.md, chạy kiểm thử; thử tra cứu, gắn căn cứ, đổi phiên bản và xuất hồ sơ.
+
+3. Kiểm tra bản sao, phục hồi vào thư mục mới, đối chiếu dữ liệu.
+
+4. So SHA-256 với provenance/final_source_hashes.json theo đường dẫn tương đối. Mã băm không phải chữ ký số. docs/ và evidence/ nằm ngoài phạm vi băm.
+
+Ghi kết quả, người thực hiện và vấn đề chưa xử lý vào biên bản tiếp nhận.

@@ -1,0 +1,967 @@
+{
+  "cases": [
+    {
+      "id": "S01",
+      "automated_test": "test_new_source_is_draft",
+      "title": "Nguồn mới bắt đầu ở trạng thái nháp",
+      "purpose": "Xác định trạng thái khởi tạo của nguồn, tránh coi việc nhập học liệu là đã hoàn thành bước rà soát nội dung.",
+      "preconditions": "Mỗi ca có thư mục tạm riêng; dữ liệu trình diễn không được tự nạp. Hàm chuẩn bị đã tạo một nguồn thực hành gồm hai đoạn.",
+      "steps": [
+        "Lấy đối tượng nguồn được trả về khi tạo trong bước chuẩn bị.",
+        "Đối chiếu trường trạng thái và số phiên bản của đối tượng đó."
+      ],
+      "expected": "Trạng thái bằng draft và phiên bản bằng 1. Hai giá trị phải cùng đúng để ca được chấp nhận.",
+      "scope_limit": "Ca chỉ đọc đối tượng trả về lúc tạo; không kiểm tra nội dung ghi chú rà soát, quyền phê duyệt độc lập hoặc hành vi giao diện."
+    },
+    {
+      "id": "S02",
+      "automated_test": "test_cannot_self_assign_reviewed_on_creation",
+      "title": "Không tự cấp trạng thái đã rà soát khi tạo nguồn",
+      "purpose": "Kiểm tra yêu cầu tách bước nhập nguồn khỏi bước ghi nhận rà soát, kể cả khi bên gọi cố gửi sẵn trạng thái reviewed.",
+      "preconditions": "Dùng bộ thông tin học liệu thực hành hợp lệ với hai đoạn; bổ sung trường status có giá trị reviewed.",
+      "steps": [
+        "Gọi tạo nguồn với trường trạng thái được thêm vào.",
+        "Bắt ngoại lệ ứng dụng và đối chiếu mã lỗi cụ thể."
+      ],
+      "expected": "Lệnh tạo bị từ chối bằng AppError có mã REVIEW_REQUIRED; trạng thái không được chấp nhận như một thuộc tính tự cấp lúc tạo.",
+      "scope_limit": "Bài thử xác nhận đường gọi này từ chối trạng thái gửi kèm; không thay thế kiểm tra cơ chế định danh hoặc phân quyền nhiều người, vốn ngoài phạm vi bản mẫu."
+    },
+    {
+      "id": "S03",
+      "automated_test": "test_invalid_date_rejected",
+      "title": "Từ chối ngày không tồn tại",
+      "purpose": "Kiểm tra dữ liệu ngày được xác thực theo lịch, tránh lưu một chuỗi có hình thức giống ngày nhưng không hợp lệ.",
+      "preconditions": "Chuẩn bị thông tin nguồn hợp lệ rồi đặt published_date thành 2026-02-30.",
+      "steps": [
+        "Gọi chức năng tạo nguồn với ngày đã sửa.",
+        "Đọc mã của ngoại lệ được trả về."
+      ],
+      "expected": "Chức năng phải phát sinh AppError với mã INVALID_DATE. Giá trị ngày không được đi qua bước xác thực chỉ vì có cấu trúc năm tháng ngày.",
+      "scope_limit": "Ca kiểm tra một ngày không tồn tại của tháng hai; chưa bao phủ toàn bộ năm nhuận, múi giờ hoặc mọi hình thức ngày có thể được người dùng nhập."
+    },
+    {
+      "id": "S04",
+      "automated_test": "test_url_schemes_and_userinfo_rejected",
+      "title": "Từ chối địa chỉ nguồn không đáp ứng quy tắc",
+      "purpose": "Kiểm tra một số dạng địa chỉ không được chấp nhận trước khi lưu thông tin nguồn để hiển thị cho người dùng.",
+      "preconditions": "Mỗi lượt dùng lại bộ thông tin học liệu hợp lệ và thay riêng trường URL.",
+      "steps": [
+        "Lần lượt nhập địa chỉ javascript, địa chỉ HTTP, HTTPS chứa tên và mật khẩu, HTTPS có cổng không phải số.",
+        "Gọi tạo nguồn cho từng giá trị và bắt lỗi."
+      ],
+      "expected": "Cả bốn giá trị đều bị từ chối bằng mã INVALID_URL. Ca kiểm tra từng trường hợp, không chỉ yêu cầu có một lỗi trong danh sách.",
+      "scope_limit": "Đây là kiểm tra cú pháp và quy tắc địa chỉ đã liệt kê; không xác nhận trang đích đáng tin cậy hoặc kiểm tra mọi dạng URL có thể tồn tại."
+    },
+    {
+      "id": "S05",
+      "automated_test": "test_law_metadata_required",
+      "title": "Yêu cầu thông tin cần thiết đối với nguồn pháp luật",
+      "purpose": "Kiểm tra sự khác biệt giữa học liệu tự biên soạn và nguồn được phân loại là văn bản pháp luật khi thông tin nguồn chưa đầy đủ.",
+      "preconditions": "Bộ nguồn thực hành có URL rỗng; thay kind từ learning_note thành law, giữ các trường khác.",
+      "steps": [
+        "Gửi dữ liệu đã đổi loại vào chức năng tạo nguồn.",
+        "Đối chiếu mã lỗi phát sinh."
+      ],
+      "expected": "Chức năng phải trả AppError với mã INCOMPLETE_METADATA, không tiếp nhận bộ dữ liệu đó như một nguồn pháp luật đủ thông tin.",
+      "scope_limit": "Trong đầu vào cụ thể, địa chỉ nguồn vẫn rỗng. Ca không lần lượt xóa từng trường để chứng minh mọi điều kiện thông tin đều được kiểm tra độc lập."
+    },
+    {
+      "id": "S06",
+      "automated_test": "test_duplicate_locators_rejected",
+      "title": "Không cho trùng vị trí đoạn trong một nguồn",
+      "purpose": "Kiểm tra việc dùng vị trí để phân biệt các đoạn học liệu, tránh hai đoạn cùng mang một locator trong phiên bản được tạo.",
+      "preconditions": "Nguồn thực hành có hai đoạn với vị trí Mục 1 và Mục 2.",
+      "steps": [
+        "Sửa vị trí của đoạn thứ hai thành Mục 1.",
+        "Gọi tạo nguồn và lấy mã ngoại lệ."
+      ],
+      "expected": "Yêu cầu bị từ chối bằng DUPLICATE_LOCATOR. Hai đoạn không được tạo thành công với cùng giá trị vị trí trong bộ đầu vào này.",
+      "scope_limit": "Ca kiểm tra hai chuỗi vị trí giống hệt nhau; không xác nhận các cách viết gần nghĩa hoặc khác khoảng trắng đều được coi là một vị trí."
+    },
+    {
+      "id": "S07",
+      "automated_test": "test_empty_or_short_segments_rejected",
+      "title": "Từ chối kho đoạn rỗng và đoạn quá ngắn",
+      "purpose": "Kiểm tra nguồn phải có nội dung đoạn đủ điều kiện, thay vì chỉ có thông tin thư mục hoặc văn bản quá ngắn.",
+      "preconditions": "Bộ thông tin nguồn hợp lệ được sử dụng trong hai lượt thử riêng.",
+      "steps": [
+        "Lượt thứ nhất thay danh sách đoạn bằng danh sách rỗng.",
+        "Lượt thứ hai chỉ gửi một đoạn có nội dung ngắn.",
+        "Gọi tạo nguồn ở mỗi lượt."
+      ],
+      "expected": "Cả hai lượt đều phát sinh AppError. Bài thử yêu cầu từ chối, nhưng không quy định mã lỗi cụ thể trong các phép khẳng định.",
+      "scope_limit": "Các giá trị được thử nằm rõ ngoài điều kiện chấp nhận. Ca không kiểm tra chính xác điểm biên độ dài tối thiểu hoặc tối đa của đoạn."
+    },
+    {
+      "id": "S08",
+      "automated_test": "test_search_hides_drafts_by_default",
+      "title": "Ẩn nguồn nháp trong tìm kiếm mặc định",
+      "purpose": "Kiểm tra bộ lọc mặc định chỉ đưa nguồn đã rà soát vào kết quả, đồng thời cho phép xem nguồn nháp khi được yêu cầu rõ.",
+      "preconditions": "Nguồn thực hành mới tạo vẫn ở trạng thái draft và có đoạn về trích dẫn phiên bản.",
+      "steps": [
+        "Tìm cụm trích dẫn phiên bản bằng tham số mặc định.",
+        "Lặp lại cùng truy vấn với reviewed_only bằng false."
+      ],
+      "expected": "Lượt mặc định trả danh sách rỗng; lượt cho phép nguồn nháp trả ít nhất một kết quả. Hai trạng thái phải được phân biệt.",
+      "scope_limit": "Ca xác nhận bộ lọc trên một nguồn nháp. Nó không đo chất lượng xếp hạng hoặc kiểm tra một kho trộn nhiều trạng thái với số lượng lớn."
+    },
+    {
+      "id": "S09",
+      "automated_test": "test_search_vietnamese_accent_equivalence",
+      "title": "Đối chiếu tìm kiếm tiếng Việt có dấu và không dấu",
+      "purpose": "Kiểm tra người dùng nhập không dấu vẫn nhận cùng thứ tự đoạn như truy vấn có dấu trong trường hợp được chọn.",
+      "preconditions": "Nguồn thực hành đã được rà soát với ghi chú hợp lệ.",
+      "steps": [
+        "Tìm trích dẫn phiên bản bằng tiếng Việt có dấu.",
+        "Tìm trich dan phien ban bằng chuỗi không dấu.",
+        "Lấy danh sách ID theo thứ tự của hai kết quả."
+      ],
+      "expected": "Danh sách có dấu phải khác rỗng và hai danh sách ID phải bằng nhau hoàn toàn.",
+      "scope_limit": "Bài thử kiểm tra một cặp truy vấn xác định; chưa chứng minh tương đương cho mọi dấu, lỗi chính tả, từ đồng nghĩa hoặc câu hỏi tiếng Việt."
+    },
+    {
+      "id": "S10",
+      "automated_test": "test_search_original_text_retains_accents",
+      "title": "Giữ nguyên dấu trong văn bản kết quả",
+      "purpose": "Kiểm tra việc chuẩn hóa phục vụ tìm kiếm không làm mất chữ có dấu của nội dung hiển thị cho người dùng.",
+      "preconditions": "Nguồn thực hành đã được rà soát và có cụm học liệu trong đoạn gốc.",
+      "steps": [
+        "Tìm bằng chuỗi không dấu hoc lieu phien ban.",
+        "Lấy văn bản của kết quả đứng đầu.",
+        "Kiểm tra sự hiện diện của cụm học liệu có dấu."
+      ],
+      "expected": "Trường text của kết quả đầu chứa đúng cụm học liệu. Người dùng vẫn nhận văn bản có dấu sau truy vấn không dấu.",
+      "scope_limit": "Phép kiểm chỉ đối chiếu một cụm trong kết quả đầu; không kiểm tra mọi ký tự Unicode hoặc cách trình duyệt thể hiện toàn bộ đoạn."
+    },
+    {
+      "id": "S11",
+      "automated_test": "test_search_empty_stopwords_and_out_of_scope",
+      "title": "Trả rỗng cho truy vấn không có nội dung phù hợp",
+      "purpose": "Kiểm tra các đầu vào rỗng, chỉ gồm từ thông dụng hoặc không thuộc nội dung nguồn không tạo kết quả tìm kiếm không cần thiết.",
+      "preconditions": "Nguồn thực hành được rà soát trước khi chạy bốn lượt tìm kiếm.",
+      "steps": [
+        "Lần lượt tìm chuỗi rỗng, cụm và của là, truy vấn về amoxicillin trẻ sơ sinh và chuỗi ký tự lạ.",
+        "Đọc danh sách results của từng lượt."
+      ],
+      "expected": "Mọi danh sách results đều rỗng. Bài thử không chấp nhận việc chỉ một phần các truy vấn trả rỗng.",
+      "scope_limit": "Đây là bốn ví dụ trên kho nhỏ; không chứng minh hệ thống luôn nhận biết được mọi câu hỏi ngoài phạm vi hoặc mọi dạng truy vấn mơ hồ."
+    },
+    {
+      "id": "S12",
+      "automated_test": "test_search_source_filter",
+      "title": "Lọc tìm kiếm theo định danh nguồn",
+      "purpose": "Kiểm tra tham số nguồn giới hạn kết quả theo nguồn được yêu cầu và không tìm rộng ra nguồn khác khi ID không tồn tại.",
+      "preconditions": "Nguồn thực hành đã được rà soát; biết ID thực tế được trả khi tạo.",
+      "steps": [
+        "Tìm học liệu phiên bản với source_id hợp lệ.",
+        "Lặp lại truy vấn với source_id bằng missing."
+      ],
+      "expected": "Lượt dùng ID thực trả ít nhất một kết quả; lượt dùng ID không tồn tại trả danh sách rỗng.",
+      "scope_limit": "Ca kiểm tra một nguồn và một ID không tồn tại; không đối chiếu xếp hạng giữa nhiều nguồn có nội dung giống nhau."
+    },
+    {
+      "id": "S13",
+      "automated_test": "test_search_limits_are_bounded",
+      "title": "Giới hạn độ dài truy vấn và số kết quả",
+      "purpose": "Kiểm tra các đầu vào vượt giới hạn trên được từ chối bằng mã rõ thay vì tiếp tục thực hiện tìm kiếm.",
+      "preconditions": "Sử dụng kho tạm của ca và gọi trực tiếp chức năng tìm kiếm.",
+      "steps": [
+        "Gửi truy vấn gồm 201 ký tự a.",
+        "Gửi một truy vấn khác với giới hạn kết quả bằng 51.",
+        "Đối chiếu mã ngoại lệ của từng lượt."
+      ],
+      "expected": "Truy vấn quá dài trả INVALID_QUERY; giới hạn 51 trả INVALID_LIMIT.",
+      "scope_limit": "Ca chỉ kiểm hai giá trị vượt giới hạn trên. Nó chưa kiểm tra các giá trị biên hợp lệ, giới hạn bằng không, số âm hoặc mọi kiểu dữ liệu của tham số."
+    },
+    {
+      "id": "S14",
+      "automated_test": "test_review_note_required",
+      "title": "Yêu cầu ghi chú khi rà soát nguồn",
+      "purpose": "Kiểm tra bước ghi nhận rà soát không chấp nhận một ghi chú quá ngắn, giúp thao tác có phần giải thích tối thiểu.",
+      "preconditions": "Nguồn thực hành đang ở trạng thái nháp; ghi chú được đặt thành ok.",
+      "steps": [
+        "Gọi rà soát nguồn bằng ID hợp lệ và ghi chú đã chuẩn bị.",
+        "Bắt ngoại lệ ứng dụng và đối chiếu mã."
+      ],
+      "expected": "Chức năng từ chối bằng INVALID_LENGTH. Ghi chú hai ký tự không đáp ứng điều kiện đầu vào được áp dụng.",
+      "scope_limit": "Độ dài không chứng minh nội dung rà soát có chất lượng. Bài thử không xác nhận người dùng thực sự đọc nguồn hoặc có người thứ hai kiểm tra độc lập."
+    },
+    {
+      "id": "S15",
+      "automated_test": "test_draft_cannot_be_attached",
+      "title": "Không gắn căn cứ từ nguồn chưa rà soát",
+      "purpose": "Kiểm tra điều kiện trạng thái nguồn được thực hiện tại lúc gắn đoạn, không chỉ dựa vào bộ lọc của giao diện tìm kiếm.",
+      "preconditions": "Nguồn thực hành đang nháp; hồ sơ có một luận điểm dữ kiện chưa có căn cứ. Lấy ID đoạn trực tiếp từ nguồn.",
+      "steps": [
+        "Gửi yêu cầu gắn ID đoạn và toàn bộ nội dung của đoạn đó vào luận điểm.",
+        "Bắt ngoại lệ và đối chiếu mã."
+      ],
+      "expected": "Chức năng phải từ chối bằng SOURCE_UNREVIEWED dù đoạn và luận điểm đều tồn tại.",
+      "scope_limit": "Ca gọi trực tiếp lớp lưu trữ, chưa xét yêu cầu HTTP. Nó cũng không xác định nội dung nguồn có đúng về chuyên môn hay không."
+    },
+    {
+      "id": "S16",
+      "automated_test": "test_exact_quote_required",
+      "title": "Từ chối câu dẫn không có trong đoạn đã chọn",
+      "purpose": "Kiểm tra người dùng không thể gắn một câu không tồn tại vào một đoạn nguồn hợp lệ chỉ bằng cách cung cấp ID đoạn.",
+      "preconditions": "Nguồn đã được rà soát; chọn đoạn thứ nhất và chuẩn bị một câu hoàn toàn khác với văn bản nguồn.",
+      "steps": [
+        "Gửi yêu cầu gắn căn cứ với ID đoạn đúng nhưng quote là câu không xuất hiện.",
+        "Đối chiếu loại ngoại lệ và mã trả về."
+      ],
+      "expected": "Chức năng phát sinh AppError có mã QUOTE_MISMATCH; yêu cầu không được chấp nhận như trích dẫn khớp.",
+      "scope_limit": "Ca kiểm một câu khác rõ ràng; chưa bao phủ mọi khác biệt dấu câu, chuẩn hóa Unicode hoặc lỗi thay một ký tự trong một đoạn dài."
+    },
+    {
+      "id": "S17",
+      "automated_test": "test_whitespace_normalized_quote_accepted",
+      "title": "Chấp nhận và chuẩn hóa khoảng trắng của đoạn dẫn",
+      "purpose": "Kiểm tra khác biệt về nhiều dấu cách và xuống dòng không làm một trích dẫn có cùng từ ngữ bị từ chối trong trường hợp đã quy định.",
+      "preconditions": "Nguồn đã được rà soát; câu đầu của đoạn nguồn có trong bộ học liệu thực hành.",
+      "steps": [
+        "Gửi phần đầu câu với ba dấu cách sau Khi và ký tự xuống dòng trước thay đổi.",
+        "Lấy quote của đối tượng căn cứ được tạo."
+      ],
+      "expected": "Đoạn lưu phải đúng chuỗi Khi học liệu thay đổi phiên bản, với khoảng trắng đã chuẩn hóa.",
+      "scope_limit": "Bài thử chỉ xác nhận quy tắc khoảng trắng của chuỗi cụ thể. Nó không cho phép thay từ, đổi dấu câu hoặc coi một bản diễn đạt lại là nguyên văn."
+    },
+    {
+      "id": "S18",
+      "automated_test": "test_empty_quote_uses_entire_segment",
+      "title": "Dùng toàn bộ đoạn khi không nhập phần trích riêng",
+      "purpose": "Kiểm tra quy ước quote rỗng lấy toàn bộ đoạn đã chọn, giúp thao tác có kết quả xác định và có thể đối chiếu.",
+      "preconditions": "Nguồn thực hành được rà soát; đã biết văn bản và ID của đoạn đầu.",
+      "steps": [
+        "Gắn căn cứ với segment_id hợp lệ và quote là chuỗi rỗng.",
+        "Đối chiếu phần quote đã lưu với toàn bộ đoạn sau chuẩn hóa khoảng trắng."
+      ],
+      "expected": "Hai chuỗi phải bằng nhau. Giá trị rỗng không được lưu thành một căn cứ không có nội dung.",
+      "scope_limit": "Ca kiểm quy ước đầu vào rỗng tại lớp lưu trữ; không đánh giá liệu toàn bộ đoạn có cần thiết hoặc đủ phù hợp cho luận điểm về mặt nội dung."
+    },
+    {
+      "id": "S19",
+      "automated_test": "test_duplicate_evidence_rejected",
+      "title": "Không tạo trùng cùng một căn cứ",
+      "purpose": "Kiểm tra việc gắn lại cùng đoạn và cùng câu dẫn vào một luận điểm được nhận diện, tránh tăng số căn cứ chỉ bằng bản sao giống nhau.",
+      "preconditions": "Nguồn đã được rà soát và một căn cứ đã được gắn thành công vào luận điểm.",
+      "steps": [
+        "Lấy segment_id và quote của căn cứ vừa tạo.",
+        "Gọi gắn lại vào cùng luận điểm bằng các giá trị đó."
+      ],
+      "expected": "Yêu cầu thứ hai bị từ chối bằng DUPLICATE_EVIDENCE.",
+      "scope_limit": "Ca kiểm trùng theo luận điểm, đoạn và câu dẫn cụ thể. Nó không xác định các đoạn khác nhau có sao chép cùng thông tin hoặc cùng bắt nguồn từ một tài liệu ban đầu hay không."
+    },
+    {
+      "id": "S20",
+      "automated_test": "test_missing_evidence_severity_depends_on_claim_type",
+      "title": "Phân mức thiếu căn cứ theo loại luận điểm",
+      "purpose": "Kiểm tra việc đánh giá hồ sơ phân biệt dữ kiện, phân tích và đề xuất thay vì áp cùng một mức lỗi cho mọi nội dung.",
+      "preconditions": "Luận điểm ban đầu thuộc loại factual và chưa được gắn căn cứ.",
+      "steps": [
+        "Kiểm tra hồ sơ ở trạng thái dữ kiện.",
+        "Chuyển luận điểm sang analysis rồi kiểm tra lại.",
+        "Chuyển sang proposal và tiếp tục kiểm tra."
+      ],
+      "expected": "Trạng thái của mục kiểm tra lần lượt là error, warning và pass.",
+      "scope_limit": "Các phép khẳng định trong ca đối chiếu trạng thái, không đối chiếu trực tiếp mã vấn đề. Trạng thái pass của đề xuất không chứng minh đề xuất khả thi hoặc đã có hiệu quả."
+    },
+    {
+      "id": "S21",
+      "automated_test": "test_valid_evidence_has_no_technical_errors",
+      "title": "Hồ sơ có căn cứ hợp lệ không có vấn đề kỹ thuật",
+      "purpose": "Kiểm tra đường đi thành công sau khi nguồn được rà soát và đoạn khớp được gắn vào luận điểm dữ kiện.",
+      "preconditions": "Bộ chuẩn bị có một hồ sơ và một luận điểm; hàm hỗ trợ tạo căn cứ hợp lệ kèm ghi chú.",
+      "steps": [
+        "Chạy chức năng kiểm tra hồ sơ sau khi gắn căn cứ.",
+        "Đối chiếu số mục pass, danh sách vấn đề và ghi chú về giới hạn kiểm tra."
+      ],
+      "expected": "Tổng pass bằng 1; issues rỗng; ghi chú kết quả chứa cụm không xác nhận.",
+      "scope_limit": "Kết quả xác nhận liên kết kỹ thuật của ví dụ. Ca không chấm quan hệ suy luận giữa câu dẫn với luận điểm, cũng không chứng nhận tính đúng của nguồn."
+    },
+    {
+      "id": "S22",
+      "automated_test": "test_revision_preserves_old_evidence_and_marks_stale",
+      "title": "Giữ căn cứ cũ và cảnh báo khi tạo phiên bản mới",
+      "purpose": "Kiểm tra nguồn đổi phiên bản không âm thầm ghi đè căn cứ đã gắn, kể cả khi danh sách đoạn mới có cùng nội dung như bản trước.",
+      "preconditions": "Một căn cứ đã gắn với nguồn phiên bản 1; lưu đối tượng căn cứ để đối chiếu sau thao tác.",
+      "steps": [
+        "Tạo phiên bản mới bằng bộ đoạn ban đầu và ghi chú thay đổi hợp lệ.",
+        "Đọc lại căn cứ trong hồ sơ.",
+        "Chạy kiểm tra và lấy tập mã vấn đề."
+      ],
+      "expected": "Nguồn mới ở phiên bản 2, trạng thái draft; quote cũ giữ nguyên và source_version vẫn bằng 1. Tập mã đúng bằng SOURCE_CHANGED và SOURCE_UNREVIEWED.",
+      "scope_limit": "Ca kiểm cơ chế phiên bản và lưu trạng thái đã gắn; không chứng minh mọi thay đổi nội dung đều làm sai luận điểm."
+    },
+    {
+      "id": "S23",
+      "automated_test": "test_review_new_version_does_not_silently_refresh_evidence",
+      "title": "Rà soát bản mới không tự làm mới căn cứ cũ",
+      "purpose": "Kiểm tra việc xác nhận một nguồn phiên bản mới không được coi là đã xác nhận lại từng liên kết cũ đang dùng nguồn đó.",
+      "preconditions": "Căn cứ gắn với phiên bản 1; nguồn được tạo phiên bản mới rồi rà soát bằng ghi chú hợp lệ.",
+      "steps": [
+        "Chạy kiểm tra hồ sơ sau khi rà soát bản mới.",
+        "Thử gắn thêm căn cứ bằng ID đoạn thuộc phiên bản cũ."
+      ],
+      "expected": "Danh sách mã vấn đề chỉ còn SOURCE_CHANGED. Việc gắn bằng ID đoạn cũ tiếp tục bị từ chối với cùng mã.",
+      "scope_limit": "Ca không tự sửa luận điểm hoặc chọn đoạn thay thế. Trách nhiệm đọc và quyết định liên kết mới vẫn thuộc người dùng."
+    },
+    {
+      "id": "S24",
+      "automated_test": "test_relink_new_version_resolves_staleness",
+      "title": "Liên kết lại bản mới giải quyết trạng thái cũ",
+      "purpose": "Kiểm tra đường xử lý chủ động sau thay đổi nguồn: người dùng bỏ căn cứ cũ và gắn đoạn của phiên bản đã rà soát hiện tại.",
+      "preconditions": "Hồ sơ đã có căn cứ cũ; nguồn được tạo phiên bản mới và được rà soát với ghi chú hợp lệ.",
+      "steps": [
+        "Xóa căn cứ đang gắn với bản trước.",
+        "Gắn đoạn đầu của phiên bản mới vào luận điểm.",
+        "Chạy kiểm tra hồ sơ."
+      ],
+      "expected": "Danh sách issues phải rỗng sau chuỗi thao tác.",
+      "scope_limit": "Ca chứng minh cơ chế gắn lại giải quyết vấn đề kỹ thuật trong ví dụ. Nó không đánh giá người dùng đã đọc phần thay đổi hoặc xác định đúng ảnh hưởng đối với nội dung luận điểm."
+    },
+    {
+      "id": "S25",
+      "automated_test": "test_direct_segment_corruption_is_detected",
+      "title": "Phát hiện đoạn bị sửa trực tiếp trong cơ sở dữ liệu",
+      "purpose": "Kiểm tra sự không nhất quán khi nội dung đoạn đã dùng bị thay đổi ngoài chức năng tạo phiên bản của ứng dụng.",
+      "preconditions": "Một căn cứ hợp lệ đã được gắn. Ca dùng giao dịch thấp hơn để sửa trường text của đoạn bằng câu khác.",
+      "steps": [
+        "Chạy câu UPDATE trực tiếp trên bảng segments theo ID đoạn đã gắn.",
+        "Kiểm tra hồ sơ và lấy các mã vấn đề.",
+        "Thử rà soát lại nguồn bị thay đổi."
+      ],
+      "expected": "Kết quả kiểm tra chứa SNAPSHOT_HASH_MISMATCH; thao tác rà soát nguồn bị từ chối bằng SOURCE_INTEGRITY_ERROR.",
+      "scope_limit": "Ca mô phỏng sửa nội dung mà không cập nhật đồng bộ giá trị kiểm tra. Nó không chứng minh chống được người có toàn quyền sửa cả dữ liệu, mã băm và chương trình."
+    },
+    {
+      "id": "S26",
+      "automated_test": "test_direct_metadata_corruption_is_detected",
+      "title": "Phát hiện thông tin cơ quan nguồn bị sửa trực tiếp",
+      "purpose": "Kiểm tra thay đổi thông tin nhận diện nguồn ngoài luồng ứng dụng có thể được phát hiện khi đối chiếu căn cứ đã lưu.",
+      "preconditions": "Hồ sơ có một căn cứ hợp lệ. Trường issuer của nguồn được chọn để tạo sai khác có kiểm soát.",
+      "steps": [
+        "Dùng câu UPDATE sửa issuer trong bảng sources theo ID nguồn.",
+        "Chạy kiểm tra hồ sơ và lấy tập mã vấn đề."
+      ],
+      "expected": "Tập mã phải chứa SNAPSHOT_HASH_MISMATCH.",
+      "scope_limit": "Ca chỉ sửa một trường thông tin nguồn và chỉ yêu cầu có mã vấn đề này. Nó không lần lượt kiểm mọi trường hoặc xác nhận khả năng khôi phục thông tin gốc sau sửa trái luồng."
+    },
+    {
+      "id": "S27",
+      "automated_test": "test_evidence_quote_corruption_is_detected",
+      "title": "Phát hiện câu dẫn trong căn cứ bị sửa trực tiếp",
+      "purpose": "Kiểm tra sự nhất quán của nội dung căn cứ khi phần quote bị thay bằng một câu không có trong nguồn đã lưu.",
+      "preconditions": "Một căn cứ hợp lệ đã có ID; chuẩn bị câu giả khác với đoạn nguồn.",
+      "steps": [
+        "Dùng UPDATE thay quote trong bảng evidence, không đi qua chức năng gắn căn cứ.",
+        "Chạy kiểm tra hồ sơ và lấy các mã vấn đề."
+      ],
+      "expected": "Kết quả phải đồng thời chứa SNAPSHOT_HASH_MISMATCH và QUOTE_MISMATCH.",
+      "scope_limit": "Ca thể hiện hai kiểm tra phát hiện sai khác được tạo ra. Nó không bảo đảm mọi hình thức sửa dữ liệu đều bị phát hiện nếu toàn bộ giá trị đối chiếu cũng bị thay đổi có chủ ý."
+    },
+    {
+      "id": "S28",
+      "automated_test": "test_update_claim_preserves_evidence",
+      "title": "Giữ liên kết khi sửa nội dung luận điểm",
+      "purpose": "Kiểm tra sửa câu chữ của một luận điểm không tự động xóa căn cứ đang gắn, giúp người dùng còn thông tin để xem lại quan hệ.",
+      "preconditions": "Một luận điểm đã có đúng một căn cứ hợp lệ.",
+      "steps": [
+        "Gọi cập nhật nội dung luận điểm bằng câu mới yêu cầu tác giả xem xét lại dẫn chứng.",
+        "Lấy đối tượng luận điểm trả về và đếm các căn cứ."
+      ],
+      "expected": "Danh sách evidence của đối tượng trả về có đúng một phần tử.",
+      "scope_limit": "Phép kiểm xác nhận số liên kết được giữ. Nó không chứng minh căn cứ vẫn hỗ trợ câu mới; bản mẫu cần người dùng tự đọc lại ý nghĩa sau thay đổi luận điểm."
+    },
+    {
+      "id": "S29",
+      "automated_test": "test_delete_claim_cascades_evidence",
+      "title": "Xóa luận điểm đồng thời loại các căn cứ gắn với nó",
+      "purpose": "Kiểm tra không để lại căn cứ mồ côi sau khi người dùng xóa luận điểm trong hồ sơ.",
+      "preconditions": "Luận điểm có một căn cứ hợp lệ; cơ sở dữ liệu tạm chỉ chứa các đối tượng của ca.",
+      "steps": [
+        "Xóa luận điểm bằng ID thực.",
+        "Đọc lại danh sách luận điểm của hồ sơ.",
+        "Đếm trực tiếp số dòng trong bảng evidence."
+      ],
+      "expected": "Danh sách luận điểm rỗng và số dòng căn cứ trong bảng bằng 0.",
+      "scope_limit": "Ca kiểm tra tác dụng xóa trong kho nhỏ có một luận điểm. Nó không đánh giá thông báo xác nhận trên giao diện hoặc khả năng hoàn tác sau khi người dùng đồng ý xóa."
+    },
+    {
+      "id": "S30",
+      "automated_test": "test_failed_transaction_rolls_back_content_and_audit",
+      "title": "Hoàn tác nội dung khi ghi nhật ký gặp lỗi",
+      "purpose": "Kiểm tra việc ghi dữ liệu và ghi nhật ký nằm trong cùng giao dịch, tránh có hồ sơ mới nhưng thiếu sự kiện tương ứng.",
+      "preconditions": "Ghi số hồ sơ và số sự kiện đã được kiểm tra trước thao tác; thay hàm ghi nhật ký bằng lỗi mô phỏng.",
+      "steps": [
+        "Dùng patch để hàm _audit phát sinh RuntimeError.",
+        "Thử tạo một hồ sơ mới và yêu cầu lỗi được truyền ra.",
+        "Đếm lại hồ sơ và sự kiện nhật ký."
+      ],
+      "expected": "Số hồ sơ và số sự kiện đều bằng trước thử nghiệm. Không có bản ghi mới được giữ khi bước ghi nhật ký thất bại.",
+      "scope_limit": "Lỗi được tạo tại một điểm xác định; ca không mô phỏng mất điện, đầy đĩa hoặc mọi kiểu hỏng giao dịch của hệ điều hành."
+    },
+    {
+      "id": "S31",
+      "automated_test": "test_audit_detects_modified_event",
+      "title": "Phát hiện sự kiện nhật ký bị sửa",
+      "purpose": "Kiểm tra chuỗi kiểm tra nhật ký nhận biết nội dung một sự kiện đã bị thay đổi mà không cập nhật quan hệ kiểm tra.",
+      "preconditions": "Nhật ký ban đầu được xác nhận valid; sự kiện số 1 tồn tại từ bước chuẩn bị.",
+      "steps": [
+        "Dùng UPDATE sửa trường action của sự kiện có ID bằng 1.",
+        "Chạy lại kiểm tra toàn vẹn nhật ký."
+      ],
+      "expected": "Giá trị valid phải bằng false và first_invalid_id bằng 1.",
+      "scope_limit": "Ca kiểm việc sửa một trường trong một sự kiện. Nó không chứng minh nhật ký bất biến hoặc chống người có quyền sửa lại toàn bộ chuỗi và các điểm đối chiếu tin cậy."
+    },
+    {
+      "id": "S32",
+      "automated_test": "test_parallel_writes_preserve_audit_chain",
+      "title": "Ghi đồng thời vẫn giữ nhất quán nhật ký",
+      "purpose": "Kiểm tra nhiều yêu cầu tạo hồ sơ trong các luồng cùng tiến trình không gây mất giao dịch hoặc phá quan hệ nhật ký.",
+      "preconditions": "Kho tạm đã có một hồ sơ. Danh sách dùng để thu lỗi của các luồng ban đầu rỗng.",
+      "steps": [
+        "Khởi tạo mười hai luồng, mỗi luồng tạo một hồ sơ khác tên.",
+        "Chạy và chờ toàn bộ luồng kết thúc.",
+        "Đọc số hồ sơ và kết quả kiểm tra nhật ký."
+      ],
+      "expected": "Không có ngoại lệ được thu; tổng số hồ sơ bằng 13; nhật ký vẫn valid.",
+      "scope_limit": "Ca chỉ dùng mười hai luồng và một loại thao tác trên một tiến trình. Nó không phải đo tải lớn, hiệu năng nhiều người hoặc kiểm tra cạnh tranh giữa nhiều máy chủ."
+    },
+    {
+      "id": "S33",
+      "automated_test": "test_read_transaction_keeps_one_snapshot_during_other_write",
+      "title": "Giữ một ảnh chụp dữ liệu trong giao dịch đọc",
+      "purpose": "Kiểm tra giao dịch đọc đang mở không nhìn thấy nửa chừng thay đổi được luồng khác ghi thành công, đồng thời lần đọc sau có thể thấy dữ liệu mới.",
+      "preconditions": "Kho tạm có hồ sơ chuẩn bị; một kết nối được mở bằng store.read trước khi tạo luồng ghi.",
+      "steps": [
+        "Đếm hồ sơ trong giao dịch đọc và giữ số ban đầu.",
+        "Khởi chạy một luồng tạo thêm hồ sơ, chờ tối đa năm giây và kiểm tra luồng đã kết thúc.",
+        "Đếm lại trên chính kết nối đọc; sau khi kết thúc giao dịch, đọc danh sách hồ sơ mới."
+      ],
+      "expected": "Hai lần đếm trong giao dịch bằng nhau; ngoài giao dịch, số hồ sơ tăng đúng một. Luồng ghi phải kết thúc trong thời gian chờ.",
+      "scope_limit": "Ca kiểm một lần ghi xen giữa hai lần đọc số lượng. Nó không kiểm mọi truy vấn kết hợp nhiều bảng, đọc kéo dài hoặc lịch xen kẽ nhiều giao dịch."
+    },
+    {
+      "id": "S34",
+      "automated_test": "test_export_escapes_html_and_preserves_citation_metadata",
+      "title": "Xuất HTML mã hóa nội dung có thẻ script",
+      "purpose": "Kiểm tra văn bản người dùng đưa vào hồ sơ được biểu diễn như nội dung, đồng thời tệp xuất giữ thông tin trích dẫn cần thiết.",
+      "preconditions": "Luận điểm đã có căn cứ; nội dung luận điểm được đổi thành câu chứa thẻ script mô phỏng.",
+      "steps": [
+        "Xuất hồ sơ ở định dạng HTML và giải mã nội dung.",
+        "Tìm chuỗi thẻ gốc, dạng đã mã hóa và các nhãn thông tin thư mục."
+      ],
+      "expected": "Không có chuỗi <script>; có &lt;script&gt;, Tài liệu tham khảo, DEMO-TEST-01 và SHA-256.",
+      "scope_limit": "Ca kiểm các chuỗi trong tệp xuất, không thực thi tệp trên trình duyệt. Nó không bao phủ toàn bộ dạng chèn nội dung hoặc mọi vị trí dữ liệu có thể xuất hiện."
+    },
+    {
+      "id": "S35",
+      "automated_test": "test_json_and_markdown_exports_include_warnings",
+      "title": "Giữ cảnh báo trong bản JSON và Markdown",
+      "purpose": "Kiểm tra thao tác xuất không làm mất trạng thái thiếu căn cứ đang tồn tại trong hồ sơ.",
+      "preconditions": "Luận điểm dữ kiện chưa được gắn căn cứ và vẫn thuộc hồ sơ chuẩn bị của ca.",
+      "steps": [
+        "Xuất JSON rồi đọc mã vấn đề đầu tiên trong phần validation.",
+        "Xuất Markdown và tìm mã cảnh báo cùng câu nêu giới hạn kiểm tra."
+      ],
+      "expected": "JSON có mã MISSING_EVIDENCE; Markdown chứa MISSING_EVIDENCE và cụm không xác nhận.",
+      "scope_limit": "Ca kiểm một loại vấn đề thiếu căn cứ trên hai định dạng. Nó không chứng minh mọi trường thông tin hoặc mọi loại cảnh báo đều được trình bày đầy đủ trong mọi tệp xuất."
+    },
+    {
+      "id": "S36",
+      "automated_test": "test_empty_project_warning_survives_each_export_format",
+      "title": "Giữ cảnh báo hồ sơ rỗng trong từng định dạng xuất",
+      "purpose": "Kiểm tra hồ sơ không có luận điểm vẫn mang thông báo cần thiết khi xuất, giúp người đọc nhận biết chưa có nội dung để đối chiếu.",
+      "preconditions": "Kho tạm có một hồ sơ và một luận điểm từ bước chuẩn bị; xóa luận điểm để tạo hồ sơ rỗng.",
+      "steps": [
+        "Xóa luận điểm bằng ID đã biết.",
+        "Xuất JSON, đọc mã vấn đề đầu tiên trong validation.",
+        "Xuất Markdown và HTML, kiểm tra các chuỗi cảnh báo được quy định."
+      ],
+      "expected": "JSON có mã EMPTY_PROJECT ở vấn đề đầu tiên. Markdown chứa EMPTY_PROJECT và Hồ sơ chưa có luận điểm. HTML chứa Hồ sơ chưa có luận điểm.",
+      "scope_limit": "Ca kiểm thông tin cảnh báo trong nội dung xuất; không kiểm bố cục in. Riêng HTML chỉ được đối chiếu câu thông báo, không có phép khẳng định yêu cầu mã EMPTY_PROJECT xuất hiện."
+    },
+    {
+      "id": "S37",
+      "automated_test": "test_unsupported_export_format_rejected",
+      "title": "Từ chối định dạng xuất không được hỗ trợ",
+      "purpose": "Kiểm tra lớp xử lý chỉ chấp nhận các định dạng đã quy định và trả lỗi xác định khi nhận một lựa chọn khác.",
+      "preconditions": "Hồ sơ có ID hợp lệ; yêu cầu xuất được đặt định dạng exe.",
+      "steps": [
+        "Gọi export_project với ID hồ sơ và định dạng không được hỗ trợ.",
+        "Bắt ngoại lệ ứng dụng, đối chiếu mã lỗi."
+      ],
+      "expected": "Chức năng trả AppError với mã INVALID_FORMAT.",
+      "scope_limit": "Ca kiểm một giá trị định dạng ngoài danh sách. Nó không chứng minh hành vi cho mọi chuỗi sai, tên tệp đặc biệt hoặc đường tải HTTP; các phạm vi đó cần đối chiếu riêng."
+    },
+    {
+      "id": "S38",
+      "automated_test": "test_backup_is_valid_and_can_open_as_separate_store",
+      "title": "Sao lưu hợp lệ và mở lại trên thư mục riêng",
+      "purpose": "Kiểm tra bản sao có thể được xác minh và dùng để mở lại hồ sơ trong môi trường tách biệt mà không ghi đè kho đang hoạt động.",
+      "preconditions": "Hồ sơ có căn cứ hợp lệ; đã chuẩn bị đường lưu ZIP và thư mục phục hồi riêng trong vùng tạm.",
+      "steps": [
+        "Tạo bản sao ZIP và chạy công cụ verify.",
+        "Lấy tệp SQLite trong ZIP sang thư mục riêng.",
+        "Mở Store mới không nạp dữ liệu mẫu, đọc và kiểm tra hồ sơ."
+      ],
+      "expected": "Công cụ xác minh trả valid; đối tượng hồ sơ của kho mới bằng kho gốc; danh sách issues sau mở lại rỗng.",
+      "scope_limit": "Ca thử phục hồi thủ công một hồ sơ qua lớp dữ liệu; không phải chức năng khôi phục bằng giao diện hoặc bảo đảm phục hồi mọi sự cố thiết bị."
+    },
+    {
+      "id": "S39",
+      "automated_test": "test_backup_verifier_rejects_changed_database",
+      "title": "Từ chối bản sao có dữ liệu bị thay đổi",
+      "purpose": "Kiểm tra giá trị đối chiếu trong bản sao phát hiện nội dung cơ sở dữ liệu không còn giống bản được đóng gói.",
+      "preconditions": "Tạo một bản sao hợp lệ từ kho tạm, rồi chuẩn bị một ZIP khác để lưu tình huống sai.",
+      "steps": [
+        "Đọc từng thành phần trong ZIP gốc.",
+        "Ghi lại các thành phần nhưng nối thêm byte changed vào tệp SQLite, giữ phần còn lại.",
+        "Chạy công cụ xác minh trên ZIP đã sửa."
+      ],
+      "expected": "Công cụ verify phải phát sinh ValueError.",
+      "scope_limit": "Ca kiểm thay đổi byte của dữ liệu trong khi thông tin đối chiếu giữ nguyên. Nó không xác nhận tính xác thực của người tạo bản sao hoặc chống thay đồng thời dữ liệu và manifest."
+    },
+    {
+      "id": "S40",
+      "automated_test": "test_seed_is_idempotent_across_restart",
+      "title": "Khởi động lại không nạp trùng dữ liệu mẫu",
+      "purpose": "Kiểm tra việc khởi tạo lại Store trên cùng thư mục không làm thay đổi các số liệu khởi đầu do nạp lại bộ trình diễn.",
+      "preconditions": "Dùng một thư mục tạm mới, khác kho chuẩn bị thường lệ; Store được mở với chế độ nạp mẫu mặc định.",
+      "steps": [
+        "Mở Store lần đầu và lưu thống kê bootstrap.",
+        "Mở Store lần thứ hai trên cùng thư mục.",
+        "So sánh thống kê hai lần và số nguồn ban đầu."
+      ],
+      "expected": "Hai bộ thống kê bằng nhau; số nguồn của lần đầu bằng 5.",
+      "scope_limit": "Ca đối chiếu thống kê chứ không so sánh từng byte hoặc từng bản ghi. Nó không kiểm nâng cấp lược đồ dữ liệu qua các phiên bản phần mềm khác nhau."
+    },
+    {
+      "id": "S41",
+      "automated_test": "test_source_history_contains_all_versions",
+      "title": "Lịch sử nguồn trả đủ thứ tự phiên bản",
+      "purpose": "Kiểm tra người dùng có thể nhận biết phiên bản trước khi nguồn được sửa, với thứ tự trả về xác định.",
+      "preconditions": "Nguồn phiên bản 1 đã được rà soát; chuẩn bị danh sách đoạn và ghi chú tạo bản thứ hai.",
+      "steps": [
+        "Tạo một phiên bản nguồn mới.",
+        "Đọc danh sách versions của nguồn.",
+        "Lấy số phiên bản theo đúng thứ tự trả về."
+      ],
+      "expected": "Danh sách số phiên bản bằng [2, 1].",
+      "scope_limit": "Ca xác nhận số lượng và thứ tự hai bản; không đối chiếu từng nội dung, trạng thái lịch sử hoặc giới hạn khi nguồn có rất nhiều lần sửa."
+    },
+    {
+      "id": "S42",
+      "automated_test": "test_sql_control_characters_are_data",
+      "title": "Chuỗi có cú pháp SQL vẫn được lưu như dữ liệu",
+      "purpose": "Kiểm tra ký tự điều khiển giống câu lệnh SQL trong tên hồ sơ không bị thực thi thành thao tác xóa bảng.",
+      "preconditions": "Kho chuẩn bị có một nguồn; tên hồ sơ thử chứa dấu nháy, DROP TABLE sources và dấu chú thích.",
+      "steps": [
+        "Tạo hồ sơ bằng chuỗi đã chuẩn bị.",
+        "Đối chiếu tên được trả về với toàn bộ chuỗi đầu vào.",
+        "Đọc số nguồn còn trong kho."
+      ],
+      "expected": "Tên hồ sơ giữ nguyên và số nguồn vẫn bằng 1.",
+      "scope_limit": "Ca kiểm một đầu vào tại chức năng tạo hồ sơ. Nó không thay thế rà soát mọi câu SQL trong ứng dụng hoặc chứng minh an toàn cho tất cả trường và đường gọi."
+    },
+    {
+      "id": "S43",
+      "automated_test": "test_unknown_entities_return_not_found",
+      "title": "Báo không tìm thấy cho định danh không tồn tại",
+      "purpose": "Kiểm tra các thao tác đọc và xóa được chọn trả lỗi thống nhất khi ID không có trong kho.",
+      "preconditions": "Kho tạm có dữ liệu chuẩn bị; chuỗi missing-id không trùng các đối tượng đã tạo.",
+      "steps": [
+        "Lần lượt gọi đọc nguồn, đọc hồ sơ, xóa luận điểm và xóa căn cứ bằng ID không tồn tại.",
+        "Bắt ngoại lệ ứng dụng của từng lệnh."
+      ],
+      "expected": "Cả bốn lệnh đều trả AppError có mã NOT_FOUND.",
+      "scope_limit": "Ca bao phủ bốn hàm được liệt kê. Nó không kiểm mọi đường cập nhật, mọi quan hệ ID sai hoặc mã trạng thái HTTP của các trường hợp tương tự."
+    },
+    {
+      "id": "H01",
+      "automated_test": "test_H01_health_and_bootstrap",
+      "title": "Kiểm tra máy chủ và dữ liệu khởi tạo phiên",
+      "purpose": "Kiểm tra hai đường đọc cơ bản của máy chủ thực trả trạng thái, phiên bản và thông tin phiên nhất quán với dữ liệu được trả.",
+      "preconditions": "Lớp kiểm thử khởi chạy LocalServer trên loopback bằng cổng tự cấp, dùng thư mục tạm chung cho nhóm ca HTTP.",
+      "steps": [
+        "Gửi GET tới health và đọc trạng thái cùng phiên bản.",
+        "Gửi GET tới bootstrap, đối chiếu mã phiên và số nguồn.",
+        "Đọc tiêu đề Cache-Control của phản hồi health."
+      ],
+      "expected": "Health trả 200, ok bằng true, version bằng 1.0.0; bootstrap trả 200, mã phiên đúng và số nguồn bằng độ dài danh sách nguồn; health có no-store.",
+      "scope_limit": "Ca không xác nhận danh tính người dùng hoặc kiểm tra toàn bộ trường của bootstrap."
+    },
+    {
+      "id": "H02",
+      "automated_test": "test_H02_localhost_host_is_allowed",
+      "title": "Chấp nhận localhost với đúng cổng",
+      "purpose": "Kiểm tra địa chỉ localhost hợp lệ được phép truy cập cùng dịch vụ cục bộ, bên cạnh địa chỉ IP loopback.",
+      "preconditions": "Kết nối thực tới 127.0.0.1 tại cổng máy chủ đang chạy; biết số cổng được cấp cho nhóm ca.",
+      "steps": [
+        "Gửi GET tới health với Host đặt thành localhost và đúng số cổng.",
+        "Đọc mã trạng thái HTTP trả về."
+      ],
+      "expected": "Mã trạng thái bằng 200.",
+      "scope_limit": "Ca chỉ kiểm một dạng Host hợp lệ và trạng thái phản hồi. Nó không kiểm mọi cách biểu diễn địa chỉ cục bộ, IPv6 hoặc cấu hình máy chủ trên môi trường triển khai khác."
+    },
+    {
+      "id": "H03",
+      "automated_test": "test_H03_foreign_host_is_rejected",
+      "title": "Từ chối Host bên ngoài",
+      "purpose": "Kiểm tra máy chủ không coi mọi yêu cầu kết nối đến loopback là hợp lệ nếu tiêu đề Host chỉ đến một tên ngoài danh sách cho phép.",
+      "preconditions": "Kết nối mạng vẫn tới máy chủ cục bộ; Host được đặt thành attacker.invalid.",
+      "steps": [
+        "Gửi GET tới bootstrap với tiêu đề Host đã thay.",
+        "Đọc trạng thái và mã lỗi trong JSON trả về."
+      ],
+      "expected": "Phản hồi có HTTP 403 và mã INVALID_HOST.",
+      "scope_limit": "Ca kiểm một tên Host bên ngoài. Nó không mô phỏng đầy đủ một chuỗi tấn công trên trình duyệt hoặc mọi biến thể định dạng tiêu đề Host."
+    },
+    {
+      "id": "H04",
+      "automated_test": "test_H04_wrong_local_port_is_rejected",
+      "title": "Từ chối Host cục bộ dùng sai cổng",
+      "purpose": "Kiểm tra số cổng là một phần của điều kiện tin cậy, tránh chấp nhận tên máy đúng nhưng không khớp dịch vụ hiện tại.",
+      "preconditions": "Kết nối tới cổng thực của máy chủ; tiêu đề Host được đặt 127.0.0.1:1.",
+      "steps": [
+        "Gửi GET tới health với Host mang cổng sai.",
+        "Đối chiếu trạng thái HTTP và mã lỗi."
+      ],
+      "expected": "Máy chủ trả 403 cùng mã INVALID_HOST.",
+      "scope_limit": "Ca dùng một giá trị cổng sai xác định. Nó không kiểm mọi dạng cổng, địa chỉ IPv6 hoặc trường hợp cổng mặc định bị lược bỏ khỏi Host."
+    },
+    {
+      "id": "H05",
+      "automated_test": "test_H05_foreign_origin_read_is_rejected",
+      "title": "Từ chối Origin bên ngoài khi đọc phiên",
+      "purpose": "Kiểm tra yêu cầu đọc thông tin bootstrap có Origin ngoài phạm vi cho phép bị chặn tại ranh giới HTTP.",
+      "preconditions": "Máy chủ thực đang chạy; helper gửi yêu cầu với các thiết lập bình thường, bổ sung Origin là https://attacker.invalid.",
+      "steps": [
+        "Gửi GET tới bootstrap bằng Origin đã chuẩn bị.",
+        "Đọc mã trạng thái và mã lỗi của phản hồi."
+      ],
+      "expected": "Phản hồi là 403 và INVALID_ORIGIN.",
+      "scope_limit": "Ca xác nhận quy tắc đối với một Origin cụ thể. Nó không chứng minh cơ chế xác thực người dùng hoặc toàn bộ hành vi bảo vệ được mọi trình duyệt áp dụng giống nhau."
+    },
+    {
+      "id": "H06",
+      "automated_test": "test_H06_cross_site_metadata_is_rejected",
+      "title": "Từ chối dấu hiệu truy cập từ trang khác",
+      "purpose": "Kiểm tra máy chủ xử lý tiêu đề cho biết yêu cầu xuất phát từ trang khác trước khi cung cấp danh sách nguồn.",
+      "preconditions": "Kết nối cục bộ hợp lệ; đặt Sec-Fetch-Site thành cross-site.",
+      "steps": [
+        "Gửi GET tới danh sách nguồn với tiêu đề đã đặt.",
+        "Đọc trạng thái và mã lỗi JSON."
+      ],
+      "expected": "Phản hồi phải có 403 và CROSS_SITE_REQUEST.",
+      "scope_limit": "Ca kiểm một giá trị tiêu đề và một đường đọc. Nó không khẳng định tiêu đề luôn có mặt ở mọi trình duyệt hoặc thay thế các phép kiểm Host, Origin và mã phiên khác."
+    },
+    {
+      "id": "H07",
+      "automated_test": "test_H07_missing_csrf_token_is_rejected",
+      "title": "Từ chối lệnh ghi thiếu mã phiên",
+      "purpose": "Kiểm tra đường tạo hồ sơ yêu cầu mã chống giả mạo trong phiên, dù dữ liệu gửi có cấu trúc JSON hợp lệ.",
+      "preconditions": "Máy chủ đang hoạt động; helper được yêu cầu không thêm X-CSRF-Token.",
+      "steps": [
+        "Gửi POST tạo hồ sơ với tiêu đề và dữ liệu hợp lệ nhưng không có mã phiên.",
+        "Đối chiếu mã HTTP cùng mã lỗi."
+      ],
+      "expected": "Máy chủ trả 403 và CSRF_REJECTED.",
+      "scope_limit": "Ca chỉ khẳng định phản hồi từ chối; mã kiểm thử không đếm lại hồ sơ để xác nhận trực tiếp trạng thái dữ liệu sau yêu cầu. Đây không phải kiểm tra tài khoản hoặc phân quyền người dùng."
+    },
+    {
+      "id": "H08",
+      "automated_test": "test_H08_wrong_csrf_token_is_rejected",
+      "title": "Từ chối lệnh ghi có mã phiên sai",
+      "purpose": "Kiểm tra một mã phiên bất kỳ không được chấp nhận thay cho mã hiện có của máy chủ.",
+      "preconditions": "Dữ liệu tạo hồ sơ là JSON hợp lệ; tiêu đề X-CSRF-Token được ghi đè bằng invalid.",
+      "steps": [
+        "Gửi POST tới đường tạo hồ sơ với mã phiên sai.",
+        "Đọc trạng thái và mã lỗi của phản hồi."
+      ],
+      "expected": "Kết quả là HTTP 403 với CSRF_REJECTED.",
+      "scope_limit": "Ca thử một giá trị sai và kiểm phản hồi, không đếm thay đổi trong cơ sở dữ liệu. Nó cũng không kiểm độ ngẫu nhiên, thời hạn hoặc cách thay mã giữa các lần chạy máy chủ."
+    },
+    {
+      "id": "H09",
+      "automated_test": "test_H09_foreign_origin_mutation_is_rejected",
+      "title": "Origin ngoài phạm vi vẫn bị chặn khi có mã phiên",
+      "purpose": "Kiểm tra mã phiên đúng không làm bỏ qua điều kiện Origin đối với yêu cầu thay đổi dữ liệu.",
+      "preconditions": "Helper dùng mã phiên thật của máy chủ, đồng thời gửi Origin là https://attacker.invalid.",
+      "steps": [
+        "Gửi POST tạo hồ sơ với JSON hợp lệ và Origin ngoài phạm vi.",
+        "Đối chiếu mã trạng thái và mã lỗi."
+      ],
+      "expected": "Phản hồi phải là 403 và INVALID_ORIGIN.",
+      "scope_limit": "Ca kiểm một yêu cầu ghi với mã phiên đã biết trong môi trường thử. Nó không mô phỏng cách bên ngoài có được mã hoặc khẳng định đã kiểm mọi nguồn gốc truy cập."
+    },
+    {
+      "id": "H10",
+      "automated_test": "test_H10_json_content_type_required",
+      "title": "Yêu cầu Content-Type JSON đối với lệnh ghi",
+      "purpose": "Kiểm tra máy chủ không tự diễn giải văn bản thường thành lệnh ghi JSON chỉ vì nội dung byte có hình thức giống JSON.",
+      "preconditions": "Mã phiên hợp lệ; phần thân chứa đối tượng có title nhưng Content-Type là text/plain.",
+      "steps": [
+        "Gửi POST tạo hồ sơ với phần thân thô và loại nội dung đã đặt.",
+        "Đọc trạng thái cùng mã lỗi."
+      ],
+      "expected": "Máy chủ trả 415 và UNSUPPORTED_CONTENT_TYPE.",
+      "scope_limit": "Ca kiểm một loại nội dung bị từ chối. Nó không bao phủ mọi kiểu biểu mẫu, biến thể tham số charset hoặc tất cả phương thức HTTP có thể mang phần thân."
+    },
+    {
+      "id": "H11",
+      "automated_test": "test_H11_invalid_json_rejected",
+      "title": "Báo lỗi rõ cho JSON sai cú pháp",
+      "purpose": "Kiểm tra dữ liệu không giải mã được thành JSON được xử lý như lỗi đầu vào, không trở thành lỗi máy chủ không kiểm soát.",
+      "preconditions": "Mã phiên và Content-Type hợp lệ; phần thân thô là chuỗi JSON chưa đúng cú pháp.",
+      "steps": [
+        "Gửi POST tạo hồ sơ với nội dung {broken.",
+        "Đọc mã trạng thái và mã lỗi trong phản hồi JSON."
+      ],
+      "expected": "Phản hồi bằng 400 và INVALID_JSON.",
+      "scope_limit": "Ca kiểm một dạng sai cú pháp. Nó không thử toàn bộ cấu trúc JSON lỗi, độ lồng sâu bất thường hoặc mọi trường hợp vượt khả năng bộ phân tích."
+    },
+    {
+      "id": "H12",
+      "automated_test": "test_H12_invalid_utf8_rejected",
+      "title": "Từ chối phần thân không phải UTF-8 hợp lệ",
+      "purpose": "Kiểm tra byte không hợp lệ trong văn bản đầu vào không được chuyển thành nội dung bị hỏng để tiếp tục xử lý.",
+      "preconditions": "Phần thân có cấu trúc gần giống một đối tượng title nhưng chứa byte FF; Content-Type là application/json.",
+      "steps": [
+        "Gửi POST tạo hồ sơ với phần thân byte đã chuẩn bị.",
+        "Đọc trạng thái và mã lỗi của phản hồi."
+      ],
+      "expected": "Máy chủ trả 400 cùng INVALID_JSON.",
+      "scope_limit": "Ca dùng một byte không hợp lệ xác định. Nó không kiểm mọi chuỗi Unicode hoặc phát hiện văn bản đúng mã hóa nhưng bị sai chính tả, mất dấu từ trước."
+    },
+    {
+      "id": "H13",
+      "automated_test": "test_H13_json_array_rejected",
+      "title": "Từ chối mảng JSON tại đường tạo hồ sơ",
+      "purpose": "Kiểm tra hình dạng đầu vào phải là đối tượng trường dữ liệu, không chấp nhận mọi giá trị JSON hợp lệ về cú pháp.",
+      "preconditions": "Mã phiên hợp lệ, Content-Type JSON; phần thân là mảng rỗng.",
+      "steps": [
+        "Gửi POST tới đường tạo hồ sơ bằng phần thân [].",
+        "Đọc mã HTTP và mã lỗi ứng dụng."
+      ],
+      "expected": "Phản hồi có trạng thái 400 và mã INVALID_JSON.",
+      "scope_limit": "Ca xác nhận việc từ chối một mảng rỗng. Nó không kiểm mọi giá trị JSON nguyên thủy hoặc đầy đủ quy tắc về trường bắt buộc bên trong một đối tượng."
+    },
+    {
+      "id": "H14",
+      "automated_test": "test_H14_request_size_is_bounded",
+      "title": "Giới hạn kích thước phần thân yêu cầu",
+      "purpose": "Kiểm tra một yêu cầu lớn hơn giới hạn cấu hình được từ chối bằng thông báo riêng tại ranh giới máy chủ.",
+      "preconditions": "Mã phiên và loại nội dung JSON hợp lệ; phần thân gồm số byte lớn hơn BODY_LIMIT đúng một byte.",
+      "steps": [
+        "Tạo chuỗi byte theo giới hạn thực được nhập từ ứng dụng.",
+        "Gửi POST tạo hồ sơ với phần thân đó.",
+        "Đọc trạng thái và mã lỗi."
+      ],
+      "expected": "Phản hồi là 413 và BODY_TOO_LARGE.",
+      "scope_limit": "Ca xác nhận giá trị vừa vượt giới hạn bị chặn; không đo bộ nhớ, thời điểm đọc từng byte hoặc khả năng chịu nhiều yêu cầu lớn đồng thời."
+    },
+    {
+      "id": "H15",
+      "automated_test": "test_H15_static_whitelist_blocks_traversal_and_database",
+      "title": "Không phục vụ đường dẫn ngoài tài sản giao diện",
+      "purpose": "Kiểm tra các yêu cầu đi ra ngoài danh sách tệp giao diện không được dùng để đọc mã nguồn hoặc dữ liệu.",
+      "preconditions": "Máy chủ cục bộ đang chạy; chuẩn bị bốn đường dẫn gồm đường lùi thư mục thường, dạng mã hóa và đường dữ liệu.",
+      "steps": [
+        "Lần lượt gửi GET tới /../store.py, /%2e%2e/store.py, /local_data/socancu.sqlite3 và /data/source_seed.json.",
+        "Đối chiếu từng phản hồi."
+      ],
+      "expected": "Cả bốn yêu cầu đều trả 404 với NOT_FOUND.",
+      "scope_limit": "Ca thử đúng bốn đường đã liệt kê; đường cơ sở dữ liệu là một giá trị thăm dò. Nó không kiểm mọi biến thể mã hóa hoặc mọi tên tệp có thể có trong môi trường."
+    },
+    {
+      "id": "H16",
+      "automated_test": "test_H16_static_security_headers",
+      "title": "Kiểm tra tiêu đề bảo vệ của tệp giao diện",
+      "purpose": "Kiểm tra các tài sản giao diện được phục vụ có nội dung và các tiêu đề bảo vệ đã quy định.",
+      "preconditions": "Ứng dụng có ba đường tĩnh được sử dụng trong ca: trang chính, mã JavaScript và tệp CSS.",
+      "steps": [
+        "Gửi GET riêng cho từng đường.",
+        "Đọc mã trạng thái, phần thân và ba tiêu đề bảo vệ của phản hồi."
+      ],
+      "expected": "Mỗi đường trả 200 và phần thân khác rỗng; CSP chứa chỉ thị script-src với giá trị self; X-Content-Type-Options bằng nosniff; X-Frame-Options bằng DENY.",
+      "scope_limit": "Ca kiểm chuỗi tiêu đề, không chạy giao diện trên trình duyệt và không chứng minh mọi cơ chế bảo vệ phía trình duyệt đã được kiểm thử."
+    },
+    {
+      "id": "H17",
+      "automated_test": "test_H17_cross_origin_preflight_is_not_enabled",
+      "title": "Không bật preflight cho nguồn bên ngoài",
+      "purpose": "Kiểm tra máy chủ không cấp chính sách CORS cho yêu cầu thăm dò từ một Origin ngoài phạm vi.",
+      "preconditions": "Máy chủ đang chạy; yêu cầu OPTIONS gửi tới đường tạo hồ sơ với Origin https://attacker.invalid.",
+      "steps": [
+        "Gửi yêu cầu OPTIONS bằng Origin đã chuẩn bị.",
+        "Đọc mã trạng thái và tập tiêu đề phản hồi."
+      ],
+      "expected": "Trạng thái bằng 405; không có tiêu đề Access-Control-Allow-Origin.",
+      "scope_limit": "Ca kiểm phản hồi preflight cụ thể. Nó không thay thế các ca chặn yêu cầu đọc hoặc ghi đơn giản từ bên ngoài và không mô phỏng toàn bộ phiên trình duyệt."
+    },
+    {
+      "id": "H18",
+      "automated_test": "test_H18_invalid_search_parameters",
+      "title": "Báo lỗi cho tham số tìm kiếm sai dạng",
+      "purpose": "Kiểm tra API phản hồi rõ khi các tham số điều khiển tìm kiếm không có giá trị hợp lệ.",
+      "preconditions": "Dùng đường tìm kiếm của máy chủ thực với các truy vấn được mã hóa trong URL.",
+      "steps": [
+        "Gửi limit bằng abc.",
+        "Gửi reviewed_only bằng maybe.",
+        "Đối chiếu từng mã HTTP và mã lỗi."
+      ],
+      "expected": "Lượt giới hạn không phải số trả 400 và INVALID_LIMIT; lượt bộ lọc không hợp lệ trả 400 và INVALID_FILTER.",
+      "scope_limit": "Ca kiểm hai giá trị sai dạng. Nó không kiểm mọi điểm biên số lượng kết quả hoặc đo chất lượng tìm kiếm theo từng cách diễn đạt câu hỏi."
+    },
+    {
+      "id": "H19",
+      "automated_test": "test_H19_complete_dossier_workflow",
+      "title": "Thực hiện hồ sơ và thay phiên bản qua HTTP",
+      "purpose": "Kiểm tra một chuỗi thao tác liên thông qua máy chủ thực, từ hồ sơ thiếu căn cứ đến gắn nguồn rồi phát hiện thay đổi phiên bản.",
+      "preconditions": "Máy chủ dùng kho tạm; dữ liệu H19 là học liệu tự biên soạn mô phỏng, có mã phiên hợp lệ.",
+      "steps": [
+        "Tạo hồ sơ và luận điểm factual; kiểm tra có MISSING_EVIDENCE.",
+        "Tạo nguồn nháp, rà soát rồi gắn toàn bộ đoạn; lưu số phiên bản đã gắn.",
+        "Kiểm tra không còn mục error, sau đó sửa nguồn bằng đoạn bổ sung ngày đối chiếu.",
+        "Kiểm tra có SOURCE_CHANGED và đọc lại phiên bản căn cứ vẫn bằng giá trị đã lưu.",
+        "Xuất HTML, Markdown, JSON và kiểm tra nội dung cảnh báo."
+      ],
+      "expected": "Các lệnh tạo trả 201, rà soát và sửa trả 200; ba bản xuất trả 200, có attachment và chứa SOURCE_CHANGED.",
+      "scope_limit": "Ca không gắn lại bản mới hoặc so sánh nguyên văn quote sau sửa. Nó kiểm liên thông API, không kiểm thao tác giao diện của người dùng."
+    },
+    {
+      "id": "H20",
+      "automated_test": "test_H20_backup_download_and_audit",
+      "title": "Tải bản sao và đọc nhật ký qua HTTP",
+      "purpose": "Kiểm tra đường tải bản sao trả tệp ZIP đọc được, đồng thời nhật ký vẫn được báo nhất quán sau các giao dịch của nhóm ca.",
+      "preconditions": "Dùng máy chủ thực và kho tạm của nhóm kiểm thử HTTP; không thực hiện khôi phục lên kho đang hoạt động.",
+      "steps": [
+        "Gửi GET tải backup và mở ZIP trong bộ nhớ.",
+        "Kiểm tra CRC và sự hiện diện của tệp JSON cùng tệp cơ sở dữ liệu theo phần mở rộng.",
+        "Gửi GET đọc nhật ký."
+      ],
+      "expected": "Backup trả 200 và application/zip; testzip không báo lỗi; có hai loại tệp yêu cầu. Nhật ký trả 200 và verification.valid bằng true.",
+      "scope_limit": "Ca không chạy công cụ đối chiếu manifest hoặc phục hồi dữ liệu; các yêu cầu đó được kiểm riêng trong S38 và S39."
+    }
+  ],
+  "groups": [
+    {
+      "title": "Tiếp nhận nguồn và ghi nhận rà soát",
+      "case_ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S14",
+        "S15"
+      ],
+      "analysis": "Nhóm này kiểm tra đầu vào và các điều kiện chuyển nguồn sang trạng thái có thể dùng làm căn cứ. Các trường hợp thất bại được đặt ở từng bước, gồm ngày, URL, thông tin bắt buộc, vị trí đoạn và ghi chú. Kết quả mong đợi giúp phân biệt nguồn nhập được với nguồn đã qua thao tác rà soát. Trạng thái reviewed vẫn là ghi nhận của người dùng trong bản mẫu một người sử dụng. Các phép thử không xác nhận tư cách của người rà soát, chất lượng học thuật hoặc hiệu lực pháp lý của nội dung được nhập."
+    },
+    {
+      "title": "Tìm kiếm và giới hạn truy vấn",
+      "case_ids": [
+        "S08",
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "H18"
+      ],
+      "analysis": "Các phép thử đối chiếu bộ lọc, xử lý dấu tiếng Việt, nội dung trả về và một số đầu vào bị từ chối. Cặp truy vấn có dấu và không dấu được so sánh theo toàn bộ danh sách ID, nên kiểm tra cả thứ tự trong ví dụ. Những truy vấn trả rỗng chỉ thể hiện hành vi trên kho thực hành đã biết. Nhóm này không đo độ bao phủ học liệu, chất lượng tìm kiếm trên câu hỏi tự nhiên đa dạng hoặc tính đúng của câu trả lời. Đánh giá truy hồi bằng bộ câu hỏi riêng phải được báo cáo tách khỏi số ca kiểm thử phần mềm."
+    },
+    {
+      "title": "Liên kết căn cứ, phân loại luận điểm và phiên bản",
+      "case_ids": [
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23",
+        "S24",
+        "S28",
+        "S41",
+        "H19"
+      ],
+      "analysis": "Nhóm này theo dõi quan hệ giữa luận điểm, đoạn dẫn và phiên bản nguồn. Các ca ngắn kiểm tra từng quy tắc; H19 kiểm tra chuỗi thao tác qua HTTP. Sửa nguồn và rà soát bản mới không làm căn cứ cũ tự đổi phiên bản. Khi sửa luận điểm, số căn cứ được giữ nhưng ý nghĩa của quan hệ cần được tác giả đọc lại. Việc hết lỗi kỹ thuật không đồng nghĩa với luận điểm đã đúng. Không dùng tổng số pass trong nhóm này để suy ra độ chính xác khoa học hoặc kết quả thẩm định nội dung."
+    },
+    {
+      "title": "Toàn vẹn dữ liệu, nhật ký và giao dịch",
+      "case_ids": [
+        "S25",
+        "S26",
+        "S27",
+        "S30",
+        "S31",
+        "S32",
+        "S33"
+      ],
+      "analysis": "Các tình huống sửa trực tiếp dữ liệu tạo sai khác có kiểm soát để kiểm tra cơ chế đối chiếu. Phép thử hoàn tác đặt lỗi tại hàm ghi nhật ký; phép thử đồng thời kiểm số hồ sơ và chuỗi nhật ký; phép thử giao dịch đọc kiểm một ảnh chụp nhất quán trong khi luồng khác ghi. Chúng bổ sung cho nhau nhưng không phải chứng nhận chống sửa đổi. Người có quyền thay cả dữ liệu và giá trị đối chiếu vẫn nằm ngoài mô hình được kiểm. Lỗi thiết bị, mất điện và cạnh tranh nhiều tiến trình chưa được mô phỏng trong nhóm."
+    },
+    {
+      "title": "Vòng đời đối tượng và chuỗi có ký tự điều khiển",
+      "case_ids": [
+        "S29",
+        "S42",
+        "S43"
+      ],
+      "analysis": "Ba ca tập trung vào hậu quả khi xóa, cách xử lý định danh không tồn tại và việc lưu một chuỗi giống lệnh SQL. Phép đếm trực tiếp bảng evidence sau xóa hỗ trợ kiểm tra không còn bản ghi con trong ví dụ. Việc giữ nguyên tên hồ sơ có dấu nháy và chuỗi DROP TABLE kiểm một đường nhận dữ liệu cụ thể. Phạm vi này chưa bao phủ mọi trường nhập hoặc mọi quan hệ giữa đối tượng. Kết quả cần đọc theo đúng hàm được gọi, tránh suy rộng thành đánh giá toàn bộ an toàn cơ sở dữ liệu."
+    },
+    {
+      "title": "Bản xuất hồ sơ và thông tin kiểm tra đi kèm",
+      "case_ids": [
+        "S34",
+        "S35",
+        "S36",
+        "S37"
+      ],
+      "analysis": "Nhóm xuất tệp kiểm việc mã hóa một chuỗi HTML có nguy cơ bị hiểu thành thẻ, giữ một số thông tin thư mục và đưa cảnh báo vào JSON, Markdown. Định dạng ngoài danh sách được từ chối bằng mã xác định. Nội dung được kiểm bằng chuỗi và cấu trúc dữ liệu, không bằng việc mở mọi định dạng trên các phần mềm khác nhau. Vì vậy, danh mục này chưa xác nhận bố cục in hoặc cách trình bày trích dẫn đáp ứng mọi quy chuẩn. Các bản xuất tiếp tục là hồ sơ làm việc cần biên tập khi đưa vào tài liệu chính thức."
+    },
+    {
+      "title": "Sao lưu, mở lại và khởi tạo dữ liệu",
+      "case_ids": [
+        "S38",
+        "S39",
+        "S40",
+        "H20"
+      ],
+      "analysis": "Có ba mức đối chiếu: tệp ZIP tải được và đọc được; thành phần dữ liệu khớp thông tin kiểm tra; hồ sơ mở lại từ SQLite trên thư mục riêng bằng hồ sơ gốc. Các mức này cần được phân biệt khi báo cáo kết quả. Kiểm tra khởi động lại xác nhận thống kê không tăng do nạp mẫu lặp. Bộ thử chưa đánh giá việc nâng cấp lược đồ hoặc phục hồi sau hỏng thiết bị. Quy trình sử dụng thực tế vẫn cần nơi lưu bản sao và người chịu trách nhiệm kiểm tra; các điều kiện tổ chức đó không được đo bằng ca tự động."
+    },
+    {
+      "title": "Ranh giới truy cập máy chủ cục bộ",
+      "case_ids": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H09",
+        "H17"
+      ],
+      "analysis": "Các ca HTTP dùng kết nối thật tới máy chủ loopback để kiểm trạng thái và mã lỗi. Host, Origin, dấu hiệu cross-site và mã chống giả mạo được thay riêng trong các yêu cầu chọn trước. H07 và H08 khẳng định phản hồi từ chối, chưa đếm lại dữ liệu sau yêu cầu. OPTIONS không cấp tiêu đề cho phép CORS trong ví dụ. Những phép kiểm này bảo vệ ranh giới ứng dụng cục bộ, không tạo cơ chế tài khoản nhiều người. Không suy từ kết quả của nhóm thành điều kiện đủ để công bố máy chủ ra mạng dùng chung."
+    },
+    {
+      "title": "Phần thân HTTP và tài sản giao diện",
+      "case_ids": [
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16"
+      ],
+      "analysis": "Nhóm này kiểm loại nội dung, cú pháp JSON, mã hóa, hình dạng dữ liệu, kích thước yêu cầu, đường tệp và tiêu đề phản hồi. Danh sách giá trị thử được xác định trước, nên mỗi kết luận chỉ gắn với tình huống đã mô tả. Việc trả tiêu đề CSP, nosniff và DENY không thay cho kiểm tương tác trình duyệt. Tương tự, bốn đường tệp bị từ chối chưa phải phép quét mọi biến thể đường dẫn. Chất lượng giao diện, khả năng đọc, điều hướng bàn phím và cách xử lý thao tác nhầm cần được quan sát bằng phương pháp riêng."
+    }
+  ]
+}

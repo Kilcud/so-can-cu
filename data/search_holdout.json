@@ -1,0 +1,17 @@
+{
+  "purpose": "Bộ truy vấn bổ sung được xác định sau khi chốt thuật toán; không dùng để điều chỉnh thứ hạng. Chỉ là đánh giá trong kho mẫu nhỏ, không đại diện người dùng tại Học viện.",
+  "queries": [
+    {"id":"V01","query":"dấu vết thay đổi nguồn","expected_segment_ids":["seg-thuchanh01-04"],"category":"paraphrase","note":"Tìm yêu cầu xem lại căn cứ khi nguồn đổi."},
+    {"id":"V02","query":"giới hạn của phép kiểm tra đối với tính đúng của lập luận","expected_segment_ids":["seg-thuchanh01-05"],"category":"paraphrase","note":"Tách khớp kỹ thuật với hỗ trợ về ý nghĩa."},
+    {"id":"V03","query":"cơ sở dữ liệu phục vụ đổi mới sáng tạo","expected_segment_ids":["seg-gddh125-03"],"category":"topic","note":"Tìm căn cứ phát triển hạ tầng thông tin nghiên cứu."},
+    {"id":"V04","query":"học liệu diễn đạt lại có phải câu chữ chính thức không","expected_segment_ids":["seg-thuchanh01-03"],"category":"paraphrase","note":"Phân biệt tóm lược với lời của cơ quan ban hành."},
+    {"id":"V05","query":"khong co ket noi Internet van tao ho so","expected_segment_ids":["seg-thuchanh02-01"],"category":"unaccented","note":"Tìm điều kiện chạy cục bộ."},
+    {"id":"V06","query":"kiểm tra lại bản sao trong môi trường tách biệt","expected_segment_ids":["seg-thuchanh02-04"],"category":"topic","note":"Khôi phục trên môi trường độc lập."},
+    {"id":"V07","query":"lợi ích thời gian cần tính cả sửa lỗi","expected_segment_ids":["seg-thuchanh02-03"],"category":"paraphrase","note":"Tính đủ thời gian thực hiện và sửa kết quả."},
+    {"id":"V08","query":"biên soạn phần nội dung chưa thực hiện","expected_segment_ids":["seg-thuchanh01-01"],"category":"paraphrase","note":"Nhận diện đề xuất thay vì mô tả việc đã làm."},
+    {"id":"V09","query":"quyền tự chủ của trường Bộ Công an","expected_segment_ids":["seg-gddh125-01"],"category":"topic","note":"Ngoại lệ của quyền tự chủ chung."},
+    {"id":"V10","query":"tự do chia sẻ bí mật nhà nước","expected_segment_ids":["seg-nd125-03"],"category":"counterclaim","note":"Truy vấn có giả định sai; kết quả phải để người đọc thấy giới hạn."},
+    {"id":"V11","query":"cách điều trị tăng huyết áp","expected_segment_ids":[],"category":"no_match","note":"Ngoài phạm vi kho mẫu."},
+    {"id":"V12","query":"điểm chuẩn tuyển sinh năm 2027","expected_segment_ids":[],"category":"no_match","note":"Kho mẫu không có thông tin tuyển sinh2027."}
+  ]
+}

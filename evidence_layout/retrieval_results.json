@@ -1,0 +1,869 @@
+{
+  "measured_at_utc": "2026-10-26T11:41:12.881527+00:00",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux",
+    "machine": "x86_64"
+  },
+  "development": {
+    "file": "data/search_fixtures.json",
+    "records": [
+      {
+        "id": "Q01",
+        "query": "thu thập quản lý tư liệu khoa học phục vụ đào tạo",
+        "expected_segment_ids": [
+          "seg-nd125-01"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-nd125-01",
+          "seg-gddh125-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q02",
+        "query": "lồng ghép liêm chính trong đào tạo bồi dưỡng",
+        "expected_segment_ids": [
+          "seg-nd125-02"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-nd125-02"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q03",
+        "query": "giới hạn chia sẻ dữ liệu bí mật nhà nước",
+        "expected_segment_ids": [
+          "seg-nd125-03"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-nd125-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q04",
+        "query": "đánh giá bằng chứng định lượng định tính",
+        "expected_segment_ids": [
+          "seg-nd125-04"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-nd125-04",
+          "seg-thuchanh02-05"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q05",
+        "query": "tự chủ tài chính cơ sở thuộc Bộ Công an",
+        "expected_segment_ids": [
+          "seg-gddh125-01"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-gddh125-01",
+          "seg-nd125-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q06",
+        "query": "đưa kết quả nghiên cứu vào chương trình đào tạo",
+        "expected_segment_ids": [
+          "seg-gddh125-02"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-gddh125-02"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q07",
+        "query": "mạng lưới hợp tác hệ thống thông tin khoa học",
+        "expected_segment_ids": [
+          "seg-gddh125-03"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-gddh125-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q08",
+        "query": "nghiên cứu đào tạo chất lượng minh bạch",
+        "expected_segment_ids": [
+          "seg-gddh125-04"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-gddh125-04",
+          "seg-khcn93-01"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q09",
+        "query": "ngụy tạo dữ liệu đạo văn xung đột lợi ích",
+        "expected_segment_ids": [
+          "seg-khcn93-01"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-khcn93-01"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q10",
+        "query": "tổ chức ban hành quy tắc liêm chính",
+        "expected_segment_ids": [
+          "seg-khcn93-02"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-khcn93-02",
+          "seg-nd125-02"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q11",
+        "query": "rủi ro kết quả không đạt mục tiêu miễn trách nhiệm",
+        "expected_segment_ids": [
+          "seg-khcn93-03"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-khcn93-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q12",
+        "query": "thử nghiệm có kiểm soát cơ quan có thẩm quyền",
+        "expected_segment_ids": [
+          "seg-khcn93-04"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-khcn93-04"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q13",
+        "query": "phân biệt dữ kiện nhận định đề xuất",
+        "expected_segment_ids": [
+          "seg-thuchanh01-01"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh01-01",
+          "seg-thuchanh01-02",
+          "seg-thuchanh02-06"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q14",
+        "query": "đường dẫn đúng nhưng đoạn không liên quan",
+        "expected_segment_ids": [
+          "seg-thuchanh01-02"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh01-02",
+          "seg-thuchanh01-05",
+          "seg-thuchanh02-01",
+          "seg-thuchanh02-02",
+          "seg-thuchanh01-06",
+          "seg-thuchanh02-04"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q15",
+        "query": "bản tóm lược có phải nguyên văn",
+        "expected_segment_ids": [
+          "seg-thuchanh01-03"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh01-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q16",
+        "query": "nguồn thay đổi phiên bản cũ",
+        "expected_segment_ids": [
+          "seg-thuchanh01-04"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh01-04",
+          "seg-thuchanh01-06"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q17",
+        "query": "đoạn khớp ký tự nhưng sai ngữ cảnh",
+        "expected_segment_ids": [
+          "seg-thuchanh01-05"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh01-05"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q18",
+        "query": "hồ sơ bàn giao cần những thông tin nào",
+        "expected_segment_ids": [
+          "seg-thuchanh01-06"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh01-06",
+          "seg-gddh125-03",
+          "seg-nd125-01",
+          "seg-nd125-03",
+          "seg-nd125-02"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q19",
+        "query": "kiểm tra vận hành cục bộ ngắt mạng",
+        "expected_segment_ids": [
+          "seg-thuchanh02-01"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh02-01"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q20",
+        "query": "đánh giá truy vấn tiếng Việt không dấu",
+        "expected_segment_ids": [
+          "seg-thuchanh02-02"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh02-02"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q21",
+        "query": "so sánh thời gian sửa lỗi đổi thứ tự công cụ",
+        "expected_segment_ids": [
+          "seg-thuchanh02-03"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh02-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q22",
+        "query": "sao lưu phục hồi môi trường tách biệt",
+        "expected_segment_ids": [
+          "seg-thuchanh02-04"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh02-04"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q23",
+        "query": "mã băm có xác nhận nguồn chính thức",
+        "expected_segment_ids": [
+          "seg-thuchanh02-05"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh02-05"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q24",
+        "query": "dừng thử nghiệm khi mất hồ sơ",
+        "expected_segment_ids": [
+          "seg-thuchanh02-06"
+        ],
+        "category": "accented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-thuchanh02-06",
+          "seg-thuchanh02-04",
+          "seg-khcn93-04",
+          "seg-thuchanh02-01",
+          "seg-nd125-02"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q25",
+        "query": "tu chu tai chinh Bo Cong an",
+        "expected_segment_ids": [
+          "seg-gddh125-01"
+        ],
+        "category": "unaccented",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-gddh125-01",
+          "seg-nd125-02"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q26",
+        "query": "93/2025/QH15 ngụy tạo dữ liệu",
+        "expected_segment_ids": [
+          "seg-khcn93-01"
+        ],
+        "category": "numeric",
+        "note": "Đối chiếu đoạn học liệu liên quan; kết quả tìm kiếm không phải câu trả lời pháp lý tự động.",
+        "returned_ids": [
+          "seg-khcn93-01",
+          "seg-khcn93-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q27",
+        "query": "lịch thi đấu bóng đá Champions League",
+        "expected_segment_ids": [],
+        "category": "no_match",
+        "note": "Ngoài phạm vi bộ học liệu; không được tạo nội dung trả lời giả.",
+        "returned_ids": [],
+        "best_expected_rank": null,
+        "hit_at_5": null,
+        "empty_when_expected": true
+      },
+      {
+        "id": "Q28",
+        "query": "liều dùng amoxicillin trẻ sơ sinh",
+        "expected_segment_ids": [],
+        "category": "no_match",
+        "note": "Ngoài phạm vi bộ học liệu; không được suy diễn kiến thức y tế.",
+        "returned_ids": [],
+        "best_expected_rank": null,
+        "hit_at_5": null,
+        "empty_when_expected": true
+      },
+      {
+        "id": "Q29",
+        "query": "liêm chính",
+        "expected_segment_ids": [
+          "seg-nd125-02",
+          "seg-khcn93-01",
+          "seg-khcn93-02"
+        ],
+        "category": "ambiguous",
+        "note": "Truy vấn rộng có nhiều đoạn liên quan; cần hiển thị nguồn và phạm vi để người dùng chọn.",
+        "returned_ids": [
+          "seg-khcn93-02",
+          "seg-nd125-02",
+          "seg-khcn93-01",
+          "seg-nd125-04"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "Q30",
+        "query": "kiểm tra nguồn",
+        "expected_segment_ids": [
+          "seg-thuchanh01-02",
+          "seg-thuchanh01-03",
+          "seg-thuchanh01-05",
+          "seg-thuchanh02-05"
+        ],
+        "category": "ambiguous",
+        "note": "Truy vấn rộng; không ép một đoạn thành đáp án duy nhất. Chấp nhận kết quả liên quan thuộc danh sách.",
+        "returned_ids": [
+          "seg-thuchanh02-05",
+          "seg-thuchanh01-06",
+          "seg-thuchanh01-03",
+          "seg-thuchanh01-05",
+          "seg-thuchanh02-04",
+          "seg-thuchanh02-06",
+          "seg-thuchanh02-01",
+          "seg-thuchanh02-02",
+          "seg-thuchanh01-01"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      }
+    ],
+    "summary": {
+      "queries": 30,
+      "positive_queries": 28,
+      "hit_at_5_count": 28,
+      "hit_at_5_rate": 1.0,
+      "mrr_at_5": 1.0,
+      "no_match_queries": 2,
+      "correct_empty_count": 2
+    }
+  },
+  "supplementary": {
+    "file": "data/search_holdout.json",
+    "records": [
+      {
+        "id": "V01",
+        "query": "dấu vết thay đổi nguồn",
+        "expected_segment_ids": [
+          "seg-thuchanh01-04"
+        ],
+        "category": "paraphrase",
+        "note": "Tìm yêu cầu xem lại căn cứ khi nguồn đổi.",
+        "returned_ids": [
+          "seg-thuchanh01-04",
+          "seg-thuchanh02-04"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V02",
+        "query": "giới hạn của phép kiểm tra đối với tính đúng của lập luận",
+        "expected_segment_ids": [
+          "seg-thuchanh01-05"
+        ],
+        "category": "paraphrase",
+        "note": "Tách khớp kỹ thuật với hỗ trợ về ý nghĩa.",
+        "returned_ids": [
+          "seg-thuchanh01-05",
+          "seg-thuchanh02-05",
+          "seg-khcn93-04"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V03",
+        "query": "cơ sở dữ liệu phục vụ đổi mới sáng tạo",
+        "expected_segment_ids": [
+          "seg-gddh125-03"
+        ],
+        "category": "topic",
+        "note": "Tìm căn cứ phát triển hạ tầng thông tin nghiên cứu.",
+        "returned_ids": [
+          "seg-nd125-01",
+          "seg-khcn93-01",
+          "seg-thuchanh02-04",
+          "seg-gddh125-03",
+          "seg-nd125-03",
+          "seg-nd125-04",
+          "seg-thuchanh02-03"
+        ],
+        "best_expected_rank": 4,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V04",
+        "query": "học liệu diễn đạt lại có phải câu chữ chính thức không",
+        "expected_segment_ids": [
+          "seg-thuchanh01-03"
+        ],
+        "category": "paraphrase",
+        "note": "Phân biệt tóm lược với lời của cơ quan ban hành.",
+        "returned_ids": [
+          "seg-thuchanh01-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V05",
+        "query": "khong co ket noi Internet van tao ho so",
+        "expected_segment_ids": [
+          "seg-thuchanh02-01"
+        ],
+        "category": "unaccented",
+        "note": "Tìm điều kiện chạy cục bộ.",
+        "returned_ids": [
+          "seg-thuchanh02-01",
+          "seg-thuchanh01-05",
+          "seg-thuchanh02-06"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V06",
+        "query": "kiểm tra lại bản sao trong môi trường tách biệt",
+        "expected_segment_ids": [
+          "seg-thuchanh02-04"
+        ],
+        "category": "topic",
+        "note": "Khôi phục trên môi trường độc lập.",
+        "returned_ids": [
+          "seg-thuchanh02-04"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V07",
+        "query": "lợi ích thời gian cần tính cả sửa lỗi",
+        "expected_segment_ids": [
+          "seg-thuchanh02-03"
+        ],
+        "category": "paraphrase",
+        "note": "Tính đủ thời gian thực hiện và sửa kết quả.",
+        "returned_ids": [
+          "seg-thuchanh02-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V08",
+        "query": "biên soạn phần nội dung chưa thực hiện",
+        "expected_segment_ids": [
+          "seg-thuchanh01-01"
+        ],
+        "category": "paraphrase",
+        "note": "Nhận diện đề xuất thay vì mô tả việc đã làm.",
+        "returned_ids": [
+          "seg-thuchanh01-02",
+          "seg-thuchanh01-03",
+          "seg-khcn93-04"
+        ],
+        "best_expected_rank": null,
+        "hit_at_5": false,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V09",
+        "query": "quyền tự chủ của trường Bộ Công an",
+        "expected_segment_ids": [
+          "seg-gddh125-01"
+        ],
+        "category": "topic",
+        "note": "Ngoại lệ của quyền tự chủ chung.",
+        "returned_ids": [
+          "seg-gddh125-01"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V10",
+        "query": "tự do chia sẻ bí mật nhà nước",
+        "expected_segment_ids": [
+          "seg-nd125-03"
+        ],
+        "category": "counterclaim",
+        "note": "Truy vấn có giả định sai; kết quả phải để người đọc thấy giới hạn.",
+        "returned_ids": [
+          "seg-nd125-03"
+        ],
+        "best_expected_rank": 1,
+        "hit_at_5": true,
+        "empty_when_expected": null
+      },
+      {
+        "id": "V11",
+        "query": "cách điều trị tăng huyết áp",
+        "expected_segment_ids": [],
+        "category": "no_match",
+        "note": "Ngoài phạm vi kho mẫu.",
+        "returned_ids": [],
+        "best_expected_rank": null,
+        "hit_at_5": null,
+        "empty_when_expected": true
+      },
+      {
+        "id": "V12",
+        "query": "điểm chuẩn tuyển sinh năm 2027",
+        "expected_segment_ids": [],
+        "category": "no_match",
+        "note": "Kho mẫu không có thông tin tuyển sinh2027.",
+        "returned_ids": [],
+        "best_expected_rank": null,
+        "hit_at_5": null,
+        "empty_when_expected": true
+      }
+    ],
+    "summary": {
+      "queries": 12,
+      "positive_queries": 10,
+      "hit_at_5_count": 9,
+      "hit_at_5_rate": 0.9,
+      "mrr_at_5": 0.825,
+      "no_match_queries": 2,
+      "correct_empty_count": 2
+    }
+  },
+  "performance": {
+    "method": "Wall-clock Store.search with SQLite I/O, one warm-up pass, serial requests, fixed24segmentseed; excludes HTTP/browser/network/human work.",
+    "samples": 150,
+    "repetitions_per_query": 5,
+    "median_ms": 2.4420205000978967,
+    "p95_ms": 2.693995000072391,
+    "min_ms": 2.267793000100937,
+    "max_ms": 3.0936949999613716,
+    "raw_ms": [
+      2.345809999951598,
+      2.5564269999449607,
+      2.498079999895708,
+      2.3569570000745443,
+      2.5372989998686535,
+      2.5103380000928155,
+      2.45053799994821,
+      2.3834670000724145,
+      2.3897060000308556,
+      2.608917000088695,
+      2.637109000033888,
+      2.683767999997144,
+      2.5988310001139325,
+      2.6095170001099177,
+      2.5719509999362344,
+      2.5013239999225334,
+      2.436948000195116,
+      2.424129000019093,
+      2.331438000055641,
+      2.3746839999603253,
+      2.341995000051611,
+      2.4058210001385305,
+      2.4635570000555163,
+      2.4980690000120376,
+      2.541243999985454,
+      2.5839790000645735,
+      2.4441790001219488,
+      2.3147740000695194,
+      2.3595909999585274,
+      2.5337729998682335,
+      2.453703000128371,
+      2.4054699999851437,
+      2.434764000099676,
+      2.500783999948908,
+      2.414442999906896,
+      2.4594310000338737,
+      2.3689859999649343,
+      2.3337420000189013,
+      2.4988509999275266,
+      2.449436999995669,
+      2.4436580001747643,
+      2.328383999838479,
+      3.066204999868205,
+      3.0936949999613716,
+      2.525581000099919,
+      2.3308580000502843,
+      2.437309000015375,
+      2.5509889999284496,
+      2.554004000103305,
+      2.5481749999016756,
+      2.4565070000335254,
+      2.391078999835372,
+      2.4108989998694597,
+      2.739593000114837,
+      2.346421000083865,
+      2.4330220001047564,
+      2.34425899998314,
+      2.3361360001672438,
+      2.3377580000669695,
+      2.6752860001124645,
+      2.530908999915482,
+      2.6593519999096316,
+      2.4316389999512467,
+      2.536948000170014,
+      2.540053000075204,
+      2.693995000072391,
+      2.445159999979296,
+      2.427252999950724,
+      2.4644279999392893,
+      2.5421860000278684,
+      2.560433000098783,
+      2.6535140000305546,
+      2.471819999982472,
+      2.5030670001342514,
+      2.3357860000032815,
+      2.4225859999660315,
+      2.341083000146682,
+      2.4321410000993637,
+      2.3424749999776395,
+      2.3063609999098844,
+      2.426702000093428,
+      2.321923999943465,
+      2.941186000043672,
+      2.505892000044696,
+      2.5468229998750758,
+      2.3224850001497543,
+      2.30314600003112,
+      2.267793000100937,
+      2.435704999925292,
+      2.5804839999636897,
+      2.701655999999275,
+      2.3390710000512627,
+      2.384377999987919,
+      2.3529109998889908,
+      2.3527409998678195,
+      2.5387709999904473,
+      2.506602000039493,
+      2.3725010000816837,
+      2.3204619999432907,
+      2.5404929999695014,
+      2.462965999939115,
+      2.358810000032463,
+      2.435916000194993,
+      2.448404999995546,
+      2.3640379999960714,
+      3.0441910000718053,
+      2.5389610000274843,
+      2.5411350000013044,
+      2.3863510000410315,
+      2.344407999999021,
+      2.3801919999186794,
+      2.410488000123223,
+      2.3896059999515273,
+      2.4558760001127666,
+      2.3204720000649104,
+      2.3503879999680066,
+      2.399241999910373,
+      2.3998220001431037,
+      2.542317000006733,
+      2.5581499999134394,
+      2.396896999925957,
+      2.528054000094926,
+      2.3951350001425453,
+      2.7011449999463366,
+      2.333932999817989,
+      2.4621959998967213,
+      2.3410430001149507,
+      2.3296959998333477,
+      2.302645999861852,
+      2.4449289999211032,
+      2.3498059999838006,
+      2.5404230000276584,
+      2.3994309999579855,
+      2.6414550000026793,
+      2.307162000079188,
+      2.3403319999033556,
+      2.321403999985705,
+      2.478559999872232,
+      2.35658700012209,
+      2.3301459998492646,
+      2.3356850001619023,
+      2.5209640000412037,
+      2.440383000021029,
+      2.45972199991229,
+      2.8409059998466546,
+      2.618060000031619,
+      2.3334820000400214,
+      2.4896170000374696,
+      2.444790000026842,
+      2.5378089999321674
+    ]
+  },
+  "limits": [
+    "Development queries were used to adjust retrieval; their result is a regression result.",
+    "Supplementary queries were defined before this measurement and not used to tune the algorithm.",
+    "A24segment corpus cannot establish general retrieval quality.",
+    "No human usability experiment or Academy deployment was conducted."
+  ]
+}

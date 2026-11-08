@@ -1,0 +1,121 @@
+{
+  "application_version": "2.0.0",
+  "exported_at": "2026-10-26T11:36:41.328Z",
+  "technical_note": "Kết quả kiểm tra tính nhất quán của dẫn nguồn; không xác nhận tính đúng của luận điểm hoặc hiệu lực pháp lý của văn bản.",
+  "project": {
+    "id": "prj-5dd6add979594dcdbb4c",
+    "title": "Hồ sơ thực hành — kiểm tra căn cứ theo phiên bản",
+    "description": "Hồ sơ mô phỏng để kiểm tra việc gắn căn cứ, thay phiên bản học liệu, giữ cảnh báo và xuất dữ liệu. Không phải kết quả triển khai tại Học viện.",
+    "created_at": "2026-10-26T11:35:58.239Z",
+    "updated_at": "2026-10-26T11:36:36.160Z",
+    "claim_count": 3
+  },
+  "claims": [
+    {
+      "id": "clm-7932f00206924a8d9963",
+      "project_id": "prj-5dd6add979594dcdbb4c",
+      "text": "Học liệu thực hành yêu cầu lưu nguồn, vị trí đoạn và phiên bản được sử dụng cho mỗi căn cứ trích dẫn.",
+      "claim_type": "factual",
+      "created_at": "2026-10-26T11:36:03.462Z",
+      "updated_at": "2026-10-26T11:36:03.462Z",
+      "evidence": [
+        {
+          "id": "evd-a99d293e7ee54d82b103",
+          "claim_id": "clm-7932f00206924a8d9963",
+          "segment_id": "seg-15f10244678b4c6fa77a",
+          "source_id": "src-cbadfddfed0a4098bfa0",
+          "source_version": 2,
+          "source_sha256": "a889bc7569855ad79f30f4c76db64b6339aad82cca43b99000e334a0fa65c6ce",
+          "segment_sha256": "39eef35b454080c701862ab24ba70fde478e56d09677c17febd93d0fe62a7355",
+          "quote": "Căn cứ trích dẫn phải lưu thông tin nguồn, vị trí đoạn và phiên bản được sử dụng. Khi nội dung học liệu thay đổi, người viết cần đọc lại luận điểm, ghi lý do xử lý và quyết định giữ hoặc thay căn cứ sau khi đối chiếu.",
+          "note": "Đã đọc bản thứ hai và thay liên kết cũ sau khi kiểm tra phạm vi của luận điểm.",
+          "created_at": "2026-10-26T11:36:30.582Z",
+          "document_number": "DEMO-PHIENBAN-01",
+          "issuer": "Học liệu tự biên soạn cho kịch bản trình diễn",
+          "locator": "Mục 1",
+          "published_date": "2026-10-26",
+          "source_title": "Học liệu trình diễn về quản lý phiên bản trích dẫn",
+          "source_url": "",
+          "text_kind": "original",
+          "citation_number": 1
+        }
+      ]
+    },
+    {
+      "id": "clm-35d58f95975b4e3d85a4",
+      "project_id": "prj-5dd6add979594dcdbb4c",
+      "text": "Việc giữ lại phiên bản đã sử dụng giúp người viết kiểm tra lý do thay đổi căn cứ trong quá trình sửa hồ sơ.",
+      "claim_type": "analysis",
+      "created_at": "2026-10-26T11:36:03.600Z",
+      "updated_at": "2026-10-26T11:36:03.600Z",
+      "evidence": [
+        {
+          "id": "evd-e4aa259ff7a647afb80c",
+          "claim_id": "clm-35d58f95975b4e3d85a4",
+          "segment_id": "seg-15f10244678b4c6fa77a",
+          "source_id": "src-cbadfddfed0a4098bfa0",
+          "source_version": 2,
+          "source_sha256": "a889bc7569855ad79f30f4c76db64b6339aad82cca43b99000e334a0fa65c6ce",
+          "segment_sha256": "39eef35b454080c701862ab24ba70fde478e56d09677c17febd93d0fe62a7355",
+          "quote": "Căn cứ trích dẫn phải lưu thông tin nguồn, vị trí đoạn và phiên bản được sử dụng. Khi nội dung học liệu thay đổi, người viết cần đọc lại luận điểm, ghi lý do xử lý và quyết định giữ hoặc thay căn cứ sau khi đối chiếu.",
+          "note": "Đã đọc bản thứ hai và thay liên kết cũ sau khi kiểm tra phạm vi của luận điểm.",
+          "created_at": "2026-10-26T11:36:35.996Z",
+          "document_number": "DEMO-PHIENBAN-01",
+          "issuer": "Học liệu tự biên soạn cho kịch bản trình diễn",
+          "locator": "Mục 1",
+          "published_date": "2026-10-26",
+          "source_title": "Học liệu trình diễn về quản lý phiên bản trích dẫn",
+          "source_url": "",
+          "text_kind": "original",
+          "citation_number": 1
+        }
+      ]
+    },
+    {
+      "id": "clm-47ec7c446aa64ea39ce2",
+      "project_id": "prj-5dd6add979594dcdbb4c",
+      "text": "Đề xuất tổ chức một buổi thực hành có nhiệm vụ sửa nguồn để người học tự xử lý cảnh báo phiên bản.",
+      "claim_type": "proposal",
+      "created_at": "2026-10-26T11:36:03.786Z",
+      "updated_at": "2026-10-26T11:36:03.786Z",
+      "evidence": []
+    }
+  ],
+  "validation": {
+    "summary": {
+      "claims": 3,
+      "pass": 3,
+      "warning": 0,
+      "error": 0
+    },
+    "checks": [
+      {
+        "claim_id": "clm-7932f00206924a8d9963",
+        "status": "pass",
+        "issues": []
+      },
+      {
+        "claim_id": "clm-35d58f95975b4e3d85a4",
+        "status": "pass",
+        "issues": []
+      },
+      {
+        "claim_id": "clm-47ec7c446aa64ea39ce2",
+        "status": "pass",
+        "issues": []
+      }
+    ],
+    "issues": [],
+    "note": "Kết quả kiểm tra tính nhất quán của dẫn nguồn; không xác nhận tính đúng của luận điểm hoặc hiệu lực pháp lý của văn bản.",
+    "checked_at": "2026-10-26T11:36:41.328Z"
+  },
+  "bibliography": [
+    {
+      "number": 1,
+      "text": "Học liệu tự biên soạn cho kịch bản trình diễn (2026), Học liệu trình diễn về quản lý phiên bản trích dẫn, DEMO-PHIENBAN-01, ngày 2026-10-26. Bản học liệu lưu phiên bản 2.",
+      "source_id": "src-cbadfddfed0a4098bfa0",
+      "source_version": 2,
+      "sha256": "a889bc7569855ad79f30f4c76db64b6339aad82cca43b99000e334a0fa65c6ce"
+    }
+  ]
+}

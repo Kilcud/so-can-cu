@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "application": "Sổ căn cứ",
+  "application_version": "1.0.0",
+  "created_at_utc": "2026-10-26T08:58:24+00:00",
+  "hash_algorithm": "SHA-256",
+  "path_base": "Thư mục gói chứa app.py; tất cả path là đường dẫn tương đối dạng POSIX.",
+  "scope": "13 tệp ổn định: mã chạy, trình khởi động, giao diện, dữ liệu mẫu và bộ truy vấn, kiểm thử Python, công cụ kiểm tra bản sao.",
+  "files_count": 13,
+  "total_bytes": 203928,
+  "files": [
+    {
+      "path": "app.py",
+      "role": "runtime",
+      "bytes": 12729,
+      "sha256": "98d7ea7eb38d7fda4b023007605b242d9cc410f3b4f95f018969432d69757390"
+    },
+    {
+      "path": "data/search_fixtures.json",
+      "role": "development_fixture",
+      "bytes": 10186,
+      "sha256": "cb839600cb4226eee94b23c5edf5a241e39f6a8c276679108baef303d9bdbebd"
+    },
+    {
+      "path": "data/search_holdout.json",
+      "role": "held_out_fixture",
+      "bytes": 2766,
+      "sha256": "d49b8f14b57fd1045ad0c195a95889bb0122abb85c9313b7b1fe32bf1d8da6d3"
+    },
+    {
+      "path": "data/source_seed.json",
+      "role": "seed",
+      "bytes": 14707,
+      "sha256": "527ef60c142344a9a93dc7edea53f7b9aa9c86b37c9e3233d91d6624b70a1e45"
+    },
+    {
+      "path": "start.bat",
+      "role": "launcher",
+      "bytes": 62,
+      "sha256": "4dff386d6f7ac64ec49c0993cf2fb2f65dc6441e46215566abe29e8dad1fe03a"
+    },
+    {
+      "path": "start.sh",
+      "role": "launcher",
+      "bytes": 64,
+      "sha256": "61cf92182ebfa77e23df4eb9d9a0b67af149959bff2e04632acdc516a7daf0b3"
+    },
+    {
+      "path": "static/app.js",
+      "role": "frontend",
+      "bytes": 57886,
+      "sha256": "c8245a24e01a6d4777bec1ceb7961ddcf1eecba6ae40b5b44796853a8396497c"
+    },
+    {
+      "path": "static/index.html",
+      "role": "frontend",
+      "bytes": 2149,
+      "sha256": "b8231e60f4486b44baf12488cabd27b7d2a3bce1718a2df22e11fa20510b020a"
+    },
+    {
+      "path": "static/styles.css",
+      "role": "frontend",
+      "bytes": 22965,
+      "sha256": "30622d7601904572f2238c961408bd11cc3ebfc9021d386f72f36c16cc703552"
+    },
+    {
+      "path": "store.py",
+      "role": "runtime",
+      "bytes": 46571,
+      "sha256": "b33bfeddbc707beeb708d477d92e149f8ff438921dcc787bf95e47ea68538022"
+    },
+    {
+      "path": "tests/test_contract_http.py",
+      "role": "test",
+      "bytes": 11794,
+      "sha256": "1e46790025a07411bed6c27df7a6a87b5e67e3168e463da3df59860b29e80a29"
+    },
+    {
+      "path": "tests/test_store.py",
+      "role": "test",
+      "bytes": 18231,
+      "sha256": "d3ad9d06afbcf1ced7dba28409c46663529b2488b112bd4c0087abb0cffdbcce"
+    },
+    {
+      "path": "tools/verify_backup.py",
+      "role": "backup_verifier",
+      "bytes": 3818,
+      "sha256": "5ec180e13e320a2301cde66e766db2c6aab75d36171a874151e699ad15d84d4e"
+    }
+  ],
+  "source_set_sha256": "a7d8352050e6f26f81ba0b1f217795265776c3c51b87410689d2f456a097c1e3",
+  "source_set_encoding": "SHA-256 của JSON files, UTF-8; sort_keys=True; ensure_ascii=False; separators=(comma,colon); không thêm xuống dòng.",
+  "excluded": [
+    "README.md",
+    "docs/",
+    "evidence/",
+    "work/",
+    "provenance/",
+    "local_data/ và các thư mục dữ liệu chạy thử",
+    "__pycache__/ và *.pyc",
+    "tools/run_evidence.py",
+    "tools/browser_evidence.cjs"
+  ],
+  "exclusion_reason": "Tài liệu, kết quả đo và chương trình tạo bằng chứng có thể tiếp tục được biên tập; dữ liệu người dùng không phải mã nguồn bàn giao.",
+  "integrity_note": "Đối chiếu mã băm xác định tệp còn khớp bản kê này. Bản kê không có chữ ký số và không xác thực danh tính tác giả; cần giữ bản ZIP hoặc bản kê tại mốc tiếp nhận độc lập."
+}

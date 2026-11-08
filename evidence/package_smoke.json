@@ -1,0 +1,170 @@
+{
+  "check": "isolated_runtime_package_smoke",
+  "measured_at_utc": "2026-10-26T09:04:25+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "machine": "x86_64",
+    "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3"
+  },
+  "port": 8769,
+  "base_url": "http://127.0.0.1:8769",
+  "passed": true,
+  "checks": [
+    {
+      "name": "health",
+      "path": "/api/health",
+      "status": 200,
+      "response": {
+        "ok": true,
+        "version": "1.0.0"
+      },
+      "passed": true
+    },
+    {
+      "name": "fresh_seed",
+      "path": "/api/bootstrap",
+      "status": 200,
+      "source_count": 5,
+      "segment_count": 24,
+      "stats": {
+        "sources": 5,
+        "reviewed_sources": 5,
+        "projects": 1,
+        "claims": 3,
+        "issues": 2
+      },
+      "passed": true
+    },
+    {
+      "name": "web_ui",
+      "path": "/",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 2149,
+      "sha256": "b8231e60f4486b44baf12488cabd27b7d2a3bce1718a2df22e11fa20510b020a",
+      "matches_copied_file": true,
+      "passed": true
+    },
+    {
+      "name": "static_asset",
+      "path": "/app.js",
+      "status": 200,
+      "content_type": "text/javascript",
+      "bytes": 57886,
+      "sha256": "c8245a24e01a6d4777bec1ceb7961ddcf1eecba6ae40b5b44796853a8396497c",
+      "matches_copied_file": true,
+      "passed": true
+    },
+    {
+      "name": "static_asset",
+      "path": "/styles.css",
+      "status": 200,
+      "content_type": "text/css",
+      "bytes": 22965,
+      "sha256": "30622d7601904572f2238c961408bd11cc3ebfc9021d386f72f36c16cc703552",
+      "matches_copied_file": true,
+      "passed": true
+    },
+    {
+      "name": "one_search",
+      "path": "/api/search",
+      "query": "liêm chính khoa học",
+      "status": 200,
+      "result_count": 4,
+      "segment_ids": [
+        "seg-nd125-02",
+        "seg-khcn93-02",
+        "seg-khcn93-01",
+        "seg-nd125-04"
+      ],
+      "passed": true
+    }
+  ],
+  "note": "Kiểm tra chạy từ bản sao chỉ có tệp runtime, trên Linux. Không suy ra đã kiểm thử Windows hoặc macOS. Không chạy lại bộ 63 kiểm thử.",
+  "core_source_set_sha256": "a7d8352050e6f26f81ba0b1f217795265776c3c51b87410689d2f456a097c1e3",
+  "core_source_manifest": "provenance/final_source_hashes.json",
+  "core_source_manifest_matches": true,
+  "copied_files": [
+    {
+      "path": "app.py",
+      "bytes": 12729,
+      "sha256": "98d7ea7eb38d7fda4b023007605b242d9cc410f3b4f95f018969432d69757390"
+    },
+    {
+      "path": "data/search_fixtures.json",
+      "bytes": 10186,
+      "sha256": "cb839600cb4226eee94b23c5edf5a241e39f6a8c276679108baef303d9bdbebd"
+    },
+    {
+      "path": "data/search_holdout.json",
+      "bytes": 2766,
+      "sha256": "d49b8f14b57fd1045ad0c195a95889bb0122abb85c9313b7b1fe32bf1d8da6d3"
+    },
+    {
+      "path": "data/source_seed.json",
+      "bytes": 14707,
+      "sha256": "527ef60c142344a9a93dc7edea53f7b9aa9c86b37c9e3233d91d6624b70a1e45"
+    },
+    {
+      "path": "start.bat",
+      "bytes": 62,
+      "sha256": "4dff386d6f7ac64ec49c0993cf2fb2f65dc6441e46215566abe29e8dad1fe03a"
+    },
+    {
+      "path": "start.sh",
+      "bytes": 64,
+      "sha256": "61cf92182ebfa77e23df4eb9d9a0b67af149959bff2e04632acdc516a7daf0b3"
+    },
+    {
+      "path": "static/app.js",
+      "bytes": 57886,
+      "sha256": "c8245a24e01a6d4777bec1ceb7961ddcf1eecba6ae40b5b44796853a8396497c"
+    },
+    {
+      "path": "static/index.html",
+      "bytes": 2149,
+      "sha256": "b8231e60f4486b44baf12488cabd27b7d2a3bce1718a2df22e11fa20510b020a"
+    },
+    {
+      "path": "static/styles.css",
+      "bytes": 22965,
+      "sha256": "30622d7601904572f2238c961408bd11cc3ebfc9021d386f72f36c16cc703552"
+    },
+    {
+      "path": "store.py",
+      "bytes": 46571,
+      "sha256": "b33bfeddbc707beeb708d477d92e149f8ff438921dcc787bf95e47ea68538022"
+    }
+  ],
+  "copied_files_count": 10,
+  "runtime_copy_sha256": "7ae501229232708a9bdce79b5785d7ab699c057c88ebd56bd270c330027c09c9",
+  "isolated_package_directory": "/tmp/so_can_cu_package_smoke__r_ggqwv/package",
+  "fresh_data_directory": "/tmp/so_can_cu_package_smoke__r_ggqwv/fresh_data",
+  "data_directory_absent_before_start": true,
+  "original_project_directory_used_as_cwd": false,
+  "launch_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-S",
+    "app.py",
+    "--port",
+    "8769",
+    "--data-dir",
+    "/tmp/so_can_cu_package_smoke__r_ggqwv/fresh_data",
+    "--quiet"
+  ],
+  "python_site_packages_disabled": true,
+  "sqlite_created_in_separate_data_directory": true,
+  "server_exit_code": 0,
+  "server_stopped_by_check": true,
+  "server_stdout": [
+    "Sổ căn cứ 1.0.0: http://127.0.0.1:8769",
+    "Dữ liệu: /tmp/so_can_cu_package_smoke__r_ggqwv/fresh_data/so_can_cu.sqlite3",
+    "Một người dùng trên máy cục bộ. Nhấn Ctrl+C để dừng.",
+    "",
+    "Đã dừng ứng dụng."
+  ],
+  "server_stderr": [],
+  "port_released_after_stop": true,
+  "temporary_directory_removed": true
+}
